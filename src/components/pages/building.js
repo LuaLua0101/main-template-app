@@ -82,7 +82,7 @@ const BuildingPage = props => {
                   tn khách hàng thông minh. Bạn có thể khai thác toàn diện hiệu
                   quả kinh doanh online và tối ưu chi phí tốt nhất.
                 </p>
-                <a href="#" className="learn-more d-none d-lg-block">
+                {/* <a href="#" className="learn-more d-none d-lg-block">
                   <span>Learn more</span>
                   <span>
                     <img
@@ -90,7 +90,7 @@ const BuildingPage = props => {
                       alt="learn more"
                     />
                   </span>
-                </a>
+                </a> */}
               </div>
               <div className="col-12 col-md-12 col-lg-7 col-xl-7 img-block">
                 <img
@@ -127,7 +127,7 @@ const BuildingPage = props => {
                   tn khách hàng thông minh. Bạn có thể khai thác toàn diện hiệu
                   quả kinh doanh online và tối ưu chi phí tốt nhất.
                 </p>
-                <a href="#" className="learn-more d-none d-lg-block">
+                {/* <a href="#" className="learn-more d-none d-lg-block">
                   <span>Learn more</span>
                   <span>
                     <img
@@ -135,7 +135,7 @@ const BuildingPage = props => {
                       alt="learn more"
                     />
                   </span>
-                </a>
+                </a> */}
               </div>
               <div className="col-12 col-md-12 col-lg-5 col-xl-5 img-block">
                 <img
@@ -171,7 +171,7 @@ const BuildingPage = props => {
                   tn khách hàng thông minh. Bạn có thể khai thác toàn diện hiệu
                   quả kinh doanh online và tối ưu chi phí tốt nhất.
                 </p>
-                <a href="#" className="learn-more d-none d-lg-block">
+                {/* <a href="#" className="learn-more d-none d-lg-block">
                   <span>Learn more</span>
                   <span>
                     <img
@@ -179,7 +179,7 @@ const BuildingPage = props => {
                       alt="learn more"
                     />
                   </span>
-                </a>
+                </a> */}
               </div>
               <div className="col-12 col-md-12 col-lg-6 col-xl-6 img-block">
                 <img

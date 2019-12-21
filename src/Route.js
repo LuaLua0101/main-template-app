@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import DynamicImport from "./utils/lazyImport";
 
 const MainPage = DynamicImport(() => import("./components/pages/main"));
-const LoginPage = DynamicImport(() => import("./components/pages/login"));
 const NotFoundPage = DynamicImport(() => import("./components/pages/404"));
 const ApplicationPage = DynamicImport(() =>
   import("./components/pages/application")
@@ -29,7 +28,6 @@ const RouteMap = () => {
   return (
     <Switch>
       <Route exact path="/" component={MainPage} />
-      <Route exact path="/login" component={LoginPage} />
       <Route exact path="/application" component={ApplicationPage} />
       <Route exact path="/building" component={BuildingPage} />
       <Route exact path="/manuals" component={ManualPage} />

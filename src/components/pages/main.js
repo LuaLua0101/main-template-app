@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function MainPage() {
+export default function MainPage(props) {
+  const [teachMeSeries, setTeachMeSeries] = useState([1, 2, 3, 4, 5, 6]);
   return (
     <>
       <div>
@@ -154,472 +155,87 @@ export default function MainPage() {
               {/* End item feature laptop  */}
               {/*============= ITEMS ARTICLES - 2 FOR MOBILE, 6 FOR LAPTOP * NOTE (Item display on left and right
           side is slightly different) -=============*/}
-              {/* Item mobile */}
-              <div className="col-12 col-md-6 col-lg-6 col-xl-6">
-                <article className="article-box">
-                  {/* Views, date, comments*/}
-                  <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-                    <time>December 25, 2019</time>
-                    <div className="view d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-eye.png"
-                        alt="views"
-                        className="img-fluid"
-                      />
-                      <span className="text-uppercase">1.2k</span>
-                    </div>
-                    <div className="comments d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-chat.png"
-                        alt="comment"
-                        className="img-fluid"
-                      />
-                      <span>12</span>
-                    </div>
-                    <div className="share d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-share.png"
-                        alt="share"
-                        className="img-fluid"
-                      />
-                      <span>302</span>
-                    </div>
-                  </div>
-                  {/* Feature img, title, description */}
-                  <div className="article-detail secondary-article secondary-article--left">
-                    <div className="row align-items-center">
-                      <div className="col-12 col-xl-6 left-block">
-                        <div className="img-box">
-                          <img
-                            className="img-fluid thumbnail"
-                            src="./assets/images/laptop/article/fox-article.png"
-                            alt="article"
-                          />
-                          <img
-                            className="play-btn"
-                            src="./assets/images/mobile/icons/icn-play.png"
-                            alt="play"
-                          />
-                        </div>
+              {teachMeSeries.map((item, index) => (
+                <div className="col-12 col-md-6 col-lg-6 col-xl-6">
+                  <article className="article-box">
+                    {/* Views, date, comments*/}
+                    <div className="article-brief-info d-flex align-items-center d-block d-md-none">
+                      <time>December 25, 2019</time>
+                      <div className="view d-flex align-items-center">
+                        <img
+                          src="./assets/images/mobile/icons/icn-eye.png"
+                          alt="views"
+                          className="img-fluid"
+                        />
+                        <span className="text-uppercase">1.2k</span>
                       </div>
-                      <div className="col-12 col-xl-6 right-block">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                          <h3 className="text-black">
-                            Huawei Sound X - Loa thông minh Hi-Res Audio đầu
-                            tiên, Devialet thiết kế, âm thanh.
-                          </h3>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facere, labore. Lorem ipsum dolor sit amet.
-                          </p>
-                        </a>
-                        {/* Views, date visible on laptop*/}
-                        <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                          <time>December 25, 2019</time>
-                          <div className="view d-flex align-items-center">
+                      <div className="comments d-flex align-items-center">
+                        <img
+                          src="./assets/images/mobile/icons/icn-chat.png"
+                          alt="comment"
+                          className="img-fluid"
+                        />
+                        <span>12</span>
+                      </div>
+                      <div className="share d-flex align-items-center">
+                        <img
+                          src="./assets/images/mobile/icons/icn-share.png"
+                          alt="share"
+                          className="img-fluid"
+                        />
+                        <span>302</span>
+                      </div>
+                    </div>
+                    {/* Feature img, title, description */}
+                    <div className="article-detail secondary-article secondary-article--left">
+                      <div className="row align-items-center">
+                        <div className="col-12 col-xl-6 left-block">
+                          <div className="img-box">
                             <img
-                              src="./assets/images/mobile/icons/icn-eye.png"
-                              alt="views"
-                              className="img-fluid"
+                              className="img-fluid thumbnail"
+                              src="./assets/images/laptop/article/fox-article.png"
+                              alt="article"
                             />
-                            <span className="text-uppercase">1.2k</span>
+                            <img
+                              className="play-btn"
+                              src="./assets/images/mobile/icons/icn-play.png"
+                              alt="play"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-12 col-xl-6 right-block">
+                          <a href="#" target="_blank" rel="noopener noreferrer">
+                            <h3 className="text-black">
+                              Huawei Sound X - Loa thông minh Hi-Res Audio đầu
+                              tiên, Devialet thiết kế, âm thanh.
+                            </h3>
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Facere, labore. Lorem ipsum dolor sit amet.
+                            </p>
+                          </a>
+                          {/* Views, date visible on laptop*/}
+                          <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
+                            <time>December 25, 2019</time>
+                            <div className="view d-flex align-items-center">
+                              <img
+                                src="./assets/images/mobile/icons/icn-eye.png"
+                                alt="views"
+                                className="img-fluid"
+                              />
+                              <span className="text-uppercase">1.2k</span>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-              </div>
-              {/* End item  */}
-              {/* Item mobile */}
-              <div className="col-12 col-md-6 col-lg-6 col-xl-6">
-                <article className="article-box">
-                  {/* Views, date, comments*/}
-                  <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-                    <time>December 25, 2019</time>
-                    <div className="view d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-eye.png"
-                        alt="views"
-                        className="img-fluid"
-                      />
-                      <span className="text-uppercase">1.2k</span>
-                    </div>
-                    <div className="comments d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-chat.png"
-                        alt="comment"
-                        className="img-fluid"
-                      />
-                      <span>12</span>
-                    </div>
-                    <div className="share d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-share.png"
-                        alt="share"
-                        className="img-fluid"
-                      />
-                      <span>302</span>
-                    </div>
-                  </div>
-                  {/* Feature img, title, description */}
-                  <div className="article-detail secondary-article secondary-article--right">
-                    <div className="row align-items-center">
-                      <div className="col-12 col-xl-6 left-block">
-                        <div className="img-box">
-                          <img
-                            className="img-fluid thumbnail"
-                            src="./assets/images/laptop/article/fox-article.png"
-                            alt="article"
-                          />
-                          <img
-                            className="play-btn"
-                            src="./assets/images/mobile/icons/icn-play.png"
-                            alt="play"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-12 col-xl-6 right-block">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                          <h3 className="text-black">
-                            Huawei Sound X - Loa thông minh Hi-Res Audio đầu
-                            tiên, Devialet thiết kế, âm thanh.
-                          </h3>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facere, labore. Lorem ipsum dolor sit amet.
-                          </p>
-                        </a>
-                        {/* Views, date visible on laptop*/}
-                        <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                          <time>December 25, 2019</time>
-                          <div className="view d-flex align-items-center">
-                            <img
-                              src="./assets/images/mobile/icons/icn-eye.png"
-                              alt="views"
-                              className="img-fluid"
-                            />
-                            <span className="text-uppercase">1.2k</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              {/* End item  */}
-              {/*================= HIDE REST ITEMS ON MOBILE================= */}
-              {/* Item mobile */}
-              <div className="col-12 col-md-6 col-lg-6 col-xl-6 d-none d-lg-block">
-                <article className="article-box">
-                  {/* Views, date, comments*/}
-                  <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-                    <time>December 25, 2019</time>
-                    <div className="view d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-eye.png"
-                        alt="views"
-                        className="img-fluid"
-                      />
-                      <span className="text-uppercase">1.2k</span>
-                    </div>
-                    <div className="comments d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-chat.png"
-                        alt="comment"
-                        className="img-fluid"
-                      />
-                      <span>12</span>
-                    </div>
-                    <div className="share d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-share.png"
-                        alt="share"
-                        className="img-fluid"
-                      />
-                      <span>302</span>
-                    </div>
-                  </div>
-                  {/* Feature img, title, description */}
-                  <div className="article-detail secondary-article secondary-article--left">
-                    <div className="row align-items-center">
-                      <div className="col-12 col-xl-6 left-block">
-                        <div className="img-box">
-                          <img
-                            className="img-fluid thumbnail"
-                            src="./assets/images/laptop/article/beaver-clipping.png"
-                            alt="article"
-                          />
-                          <img
-                            className="play-btn"
-                            src="./assets/images/mobile/icons/icn-play.png"
-                            alt="play"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-12 col-xl-6 right-block">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                          <h3 className="text-black">
-                            Huawei Sound X - Loa thông minh Hi-Res Audio đầu
-                            tiên, Devialet thiết kế, âm thanh.
-                          </h3>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facere, labore. Lorem ipsum dolor sit amet.
-                          </p>
-                        </a>
-                        {/* Views, date visible on laptop*/}
-                        <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                          <time>December 25, 2019</time>
-                          <div className="view d-flex align-items-center">
-                            <img
-                              src="./assets/images/mobile/icons/icn-eye.png"
-                              alt="views"
-                              className="img-fluid"
-                            />
-                            <span className="text-uppercase">1.2k</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              {/* End item  */}
-              {/* Item mobile */}
-              <div className="col-12 col-md-6 col-lg-6 col-xl-6 d-none d-lg-block">
-                <article className="article-box">
-                  {/* Views, date, comments*/}
-                  <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-                    <time>December 25, 2019</time>
-                    <div className="view d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-eye.png"
-                        alt="views"
-                        className="img-fluid"
-                      />
-                      <span className="text-uppercase">1.2k</span>
-                    </div>
-                    <div className="comments d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-chat.png"
-                        alt="comment"
-                        className="img-fluid"
-                      />
-                      <span>12</span>
-                    </div>
-                    <div className="share d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-share.png"
-                        alt="share"
-                        className="img-fluid"
-                      />
-                      <span>302</span>
-                    </div>
-                  </div>
-                  {/* Feature img, title, description */}
-                  <div className="article-detail secondary-article secondary-article--right">
-                    <div className="row align-items-center">
-                      <div className="col-12 col-xl-6 left-block">
-                        <div className="img-box">
-                          <img
-                            className="img-fluid thumbnail"
-                            src="./assets/images/laptop/article/beaver-clipping.png"
-                            alt="article"
-                          />
-                          <img
-                            className="play-btn"
-                            src="./assets/images/mobile/icons/icn-play.png"
-                            alt="play"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-12 col-xl-6 right-block">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                          <h3 className="text-black">
-                            Huawei Sound X - Loa thông minh Hi-Res Audio đầu
-                            tiên, Devialet thiết kế, âm thanh.
-                          </h3>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facere, labore. Lorem ipsum dolor sit amet.
-                          </p>
-                        </a>
-                        {/* Views, date visible on laptop*/}
-                        <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                          <time>December 25, 2019</time>
-                          <div className="view d-flex align-items-center">
-                            <img
-                              src="./assets/images/mobile/icons/icn-eye.png"
-                              alt="views"
-                              className="img-fluid"
-                            />
-                            <span className="text-uppercase">1.2k</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              {/* End item  */}
-              {/* Item mobile */}
-              <div className="col-12 col-md-6 col-lg-6 col-xl-6 d-none d-lg-block">
-                <article className="article-box">
-                  {/* Views, date, comments*/}
-                  <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-                    <time>December 25, 2019</time>
-                    <div className="view d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-eye.png"
-                        alt="views"
-                        className="img-fluid"
-                      />
-                      <span className="text-uppercase">1.2k</span>
-                    </div>
-                    <div className="comments d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-chat.png"
-                        alt="comment"
-                        className="img-fluid"
-                      />
-                      <span>12</span>
-                    </div>
-                    <div className="share d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-share.png"
-                        alt="share"
-                        className="img-fluid"
-                      />
-                      <span>302</span>
-                    </div>
-                  </div>
-                  {/* Feature img, title, description */}
-                  <div className="article-detail secondary-article secondary-article--left">
-                    <div className="row align-items-center">
-                      <div className="col-12 col-xl-6 left-block">
-                        <div className="img-box">
-                          <img
-                            className="img-fluid thumbnail"
-                            src="./assets/images/laptop/article/deer.png"
-                            alt="article"
-                          />
-                          <img
-                            className="play-btn"
-                            src="./assets/images/mobile/icons/icn-play.png"
-                            alt="play"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-12 col-xl-6 right-block">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                          <h3 className="text-black">
-                            Huawei Sound X - Loa thông minh Hi-Res Audio đầu
-                            tiên, Devialet thiết kế, âm thanh.
-                          </h3>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facere, labore. Lorem ipsum dolor sit amet.
-                          </p>
-                        </a>
-                        {/* Views, date visible on laptop*/}
-                        <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                          <time>December 25, 2019</time>
-                          <div className="view d-flex align-items-center">
-                            <img
-                              src="./assets/images/mobile/icons/icn-eye.png"
-                              alt="views"
-                              className="img-fluid"
-                            />
-                            <span className="text-uppercase">1.2k</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              {/* End item  */}
-              {/* Item mobile */}
-              <div className="col-12 col-md-6 col-lg-6 col-xl-6 d-none d-lg-block">
-                <article className="article-box">
-                  {/* Views, date, comments*/}
-                  <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-                    <time>December 25, 2019</time>
-                    <div className="view d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-eye.png"
-                        alt="views"
-                        className="img-fluid"
-                      />
-                      <span className="text-uppercase">1.2k</span>
-                    </div>
-                    <div className="comments d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-chat.png"
-                        alt="comment"
-                        className="img-fluid"
-                      />
-                      <span>12</span>
-                    </div>
-                    <div className="share d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-share.png"
-                        alt="share"
-                        className="img-fluid"
-                      />
-                      <span>302</span>
-                    </div>
-                  </div>
-                  {/* Feature img, title, description */}
-                  <div className="article-detail secondary-article secondary-article--right">
-                    <div className="row align-items-center">
-                      <div className="col-12 col-xl-6 left-block">
-                        <div className="img-box">
-                          <img
-                            className="img-fluid thumbnail"
-                            src="./assets/images/laptop/article/deer.png"
-                            alt="article"
-                          />
-                          <img
-                            className="play-btn"
-                            src="./assets/images/mobile/icons/icn-play.png"
-                            alt="play"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-12 col-xl-6 right-block">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                          <h3 className="text-black">
-                            Huawei Sound X - Loa thông minh Hi-Res Audio đầu
-                            tiên, Devialet thiết kế, âm thanh.
-                          </h3>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facere, labore. Lorem ipsum dolor sit amet.
-                          </p>
-                        </a>
-                        {/* Views, date visible on laptop*/}
-                        <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                          <time>December 25, 2019</time>
-                          <div className="view d-flex align-items-center">
-                            <img
-                              src="./assets/images/mobile/icons/icn-eye.png"
-                              alt="views"
-                              className="img-fluid"
-                            />
-                            <span className="text-uppercase">1.2k</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              {/* End item  */}
+                  </article>
+                </div>
+              ))}
+
               {/* View more - VISIBLE ON MOBILE ALSO */}
               <a
-                href="#"
+                href="/teach-me-series"
                 className="text-uppercase text-center d-block d-lg-none view-more-articles"
               >
                 <span>View all post</span>
@@ -880,7 +496,7 @@ export default function MainPage() {
               </div>
               {/* View more on mobile */}
               <a
-                href="#"
+                href="/iot-hub"
                 className="text-uppercase text-center d-lg-none view-more-articles"
               >
                 <span>View all post</span>
