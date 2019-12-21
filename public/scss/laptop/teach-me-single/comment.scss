@@ -1,0 +1,22 @@
+ 
+@media only screen and (min-width:992px){
+    .comment-box{
+        margin-bottom: 120px;
+        .caption{
+            font-size: 31px;
+            margin-bottom: 20px;
+        }
+        .custom-input, textarea{
+            @include font-Geomanist-Book(21px);
+        }
+        .custom-input{
+            padding: 18px 15px;
+        }
+        .submit-btn{
+            width: 230px;
+            height: 50px;
+            margin-top: 75px;
+            @include font-Geomanist-Medium(21.5px);
+        }
+    }
+}

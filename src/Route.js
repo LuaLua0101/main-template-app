@@ -1,48 +1,28 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import DynamicImport from "./utils/lazyImport";
 
 const MainPage = DynamicImport(() => import("./components/pages/main"));
-const ScheduledPage = DynamicImport(() =>
-  import("./components/pages/scheduled")
-);
-const StudentsPage = DynamicImport(() => import("./components/pages/students"));
-const TeachersPage = DynamicImport(() => import("./components/pages/teachers"));
-const UsersPage = DynamicImport(() => import("./components/pages/users"));
-const ChartPage = DynamicImport(() => import("./components/pages/chart"));
 const LoginPage = DynamicImport(() => import("./components/pages/login"));
 const NotFoundPage = DynamicImport(() => import("./components/pages/404"));
-const NotifyPage = DynamicImport(() => import("./components/pages/notify"));
-const TimekeepingPage = DynamicImport(() =>
-  import("./components/pages/timeKeeping")
+const ApplicationPage = DynamicImport(() =>
+  import("./components/pages/application")
 );
-const TimekeepingStudentPage = DynamicImport(() =>
-  import("./components/pages/timeKeepingStudent")
+const BuildingPage = DynamicImport(() => import("./components/pages/building"));
+const CareerPage = DynamicImport(() => import("./components/pages/career"));
+const IotHubPage = DynamicImport(() => import("./components/pages/iotHub"));
+const ManualPage = DynamicImport(() => import("./components/pages/manual"));
+const PressResourcesPage = DynamicImport(() =>
+  import("./components/pages/pressResources")
 );
-const NotifyManagementPage = DynamicImport(() =>
-  import("./components/pages/notifyManagement")
+const RelatedProductsPage = DynamicImport(() =>
+  import("./components/pages/relatedProducts")
 );
-const StudentDetailPage = DynamicImport(() =>
-  import("./components/pages/studentDetail")
+const TeachMeSeriesPage = DynamicImport(() =>
+  import("./components/pages/teachMeSeries")
 );
-const TeacherDetailPage = DynamicImport(() =>
-  import("./components/pages/teacherDetail")
-);
-const UserDetailPage = DynamicImport(() =>
-  import("./components/pages/userDetail")
-);
-const DailyReportBookPage = DynamicImport(() =>
-  import("./components/pages/dailyReportBook")
-);
-const SkillsPage = DynamicImport(() => import("./components/pages/skills"));
-const SkillGroupsPage = DynamicImport(() =>
-  import("./components/pages/skillGroups")
-);
-const SkillDetailPage = DynamicImport(() =>
-  import("./components/pages/skillDetail")
-);
-const SkillGroupsDetailPage = DynamicImport(() =>
-  import("./components/pages/skillGroupDetail")
+const TeachMeSeriesDetailPage = DynamicImport(() =>
+  import("./components/pages/teachMeSeriesDetail")
 );
 
 const RouteMap = () => {
@@ -50,27 +30,19 @@ const RouteMap = () => {
     <Switch>
       <Route exact path="/" component={MainPage} />
       <Route exact path="/login" component={LoginPage} />
-      <Route exact path="/notify/:type" component={NotifyPage} />
-      <Route exact path="/chart" component={ChartPage} />
-      <Route exact path="/scheduled" component={ScheduledPage} />
-      <Route exact path="/students" component={StudentsPage} />
-      <Route exact path="/teachers" component={TeachersPage} />
-      <Route exact path="/users" component={UsersPage} />
-      <Route exact path="/notifies" component={NotifyManagementPage} />
-      <Route exact path="/time-keeping" component={TimekeepingPage} />
+      <Route exact path="/application" component={ApplicationPage} />
+      <Route exact path="/building" component={BuildingPage} />
+      <Route exact path="/manuals" component={ManualPage} />
+      <Route exact path="/press-resources" component={PressResourcesPage} />
+      <Route exact path="/related-products" component={RelatedProductsPage} />
+      <Route exact path="/teach-me-series" component={TeachMeSeriesPage} />
       <Route
         exact
-        path="/time-keeping-student"
-        component={TimekeepingStudentPage}
+        path="/teach-me-series/:id"
+        component={TeachMeSeriesDetailPage}
       />
-      <Route exact path="/add-report" component={DailyReportBookPage} />
-      <Route exact path="/student/:id" component={StudentDetailPage} />
-      <Route exact path="/teacher/:id" component={TeacherDetailPage} />
-      <Route exact path="/user/:id" component={UserDetailPage} />
-      <Route exact path="/skills" component={SkillsPage} />
-      <Route exact path="/skill-groups" component={SkillGroupsPage} />
-      <Route exact path="/skill/:id" component={SkillDetailPage} />
-      <Route exact path="/skill-group/:id" component={SkillGroupsDetailPage} />
+      <Route exact path="/iot-hub" component={IotHubPage} />
+      <Route exact path="/career" component={CareerPage} />
       <Route component={NotFoundPage} />
     </Switch>
   );

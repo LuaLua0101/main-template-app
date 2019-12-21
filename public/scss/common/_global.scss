@@ -1,0 +1,24 @@
+html,
+body {
+  font-family: "Geomanist Regular", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+.pull-right {
+  float: right;
+  line-height: 30px;
+}
+.clear-float {
+  clear: both;
+}

@@ -1,0 +1,23 @@
+@mixin font-Geomanist-Bold($fs) {
+  font-family: $geomanist-bold;
+  font-size: $fs;
+}
+
+@mixin font-Geomanist-Book($fs) {
+  font-family: $geomanist-book;
+  font-size: $fs;
+}
+@mixin font-Geomanist-Medium($fs) {
+  font-family: $geomanist-medium;
+  font-size: $fs;
+}
+
+@mixin font-Geomanist-Light($fs) {
+  font-family: $geomanist-light;
+  font-size: $fs;
+}
+
+@mixin font-Geomanist-Regular($fs) {
+  font-family: $geomanist-regular;
+  font-size: $fs;
+}

@@ -1,0 +1,73 @@
+.press-resources {
+  .col {
+    flex: 0 0 33.333333%;
+  }
+}
+@media only screen and (min-width: 992px) {
+   .press-list-breadcum{
+       padding-bottom: 45px;
+   }
+  .press-resources {
+    .col {
+      flex: 1 0 0;
+    }
+    .brands{
+        padding: 0 130px 45px 140px;
+    }
+  }
+  .press-resource-line{
+    padding: 15px 0 60px;
+  }
+}
+// article list section
+.press-list {
+  .active-page {
+    border: 1px solid #AFAFAF;
+    
+    border-radius: 5px;
+    padding: 5px 20px;
+    display: inline-block;
+  }
+  .view-more-articles{
+      border: 1px solid $blue-bg-btn;
+      border-radius: 15px; 
+      padding: 7px 15px 5px;
+      margin-bottom: 35px;
+      >span:first-child{
+          margin-right: 10px;
+      }
+      >span:last-child{
+       img{
+         width: 8px;
+        padding-bottom: 2px;
+       }
+      }
+  }
+
+}
+@media only screen and (min-width: 992px) {
+   
+     .press-list{
+        .article-box-2{
+            padding-top: 0;
+            margin-bottom: 0;
+        } 
+        .active-page{
+            padding: 10px 30px;
+        }
+        .view-more-articles{
+          padding: 10px 15px 5px;
+          margin: 55px 0 50px;
+          >span:last-child{
+            img{
+              width: 15px;
+             padding-bottom: 2px;
+            }
+           }
+        }
+     
+     }
+
+    
+
+ }

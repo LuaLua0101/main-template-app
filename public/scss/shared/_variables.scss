@@ -1,0 +1,42 @@
+//== Typography Variable
+$geomanist-bold: 'Geomanist Bold';
+$geomanist-book: 'Geomanist Book';
+$geomanist-regular: 'Geomanist Regular';
+$geomanist-light: 'Geomanist Light';
+$geomanist-medium: 'Geomanist Medium';
+$arial: 'Arial Rounded MT';
+$aria-italic: 'Aria Italic';
+$consolas: 'Consolas';
+//== Mobile background colors
+$white: #FFFFFF;
+$blackBg: #323232;
+$blackBg2 : #181C25;
+$blue-bg-btn: #1261D6;
+$teach-series-blue: #0066F9;
+$pale-grey: #F2F2F2;
+$btn-grey: #ECEFF4;
+$input-grey: #F9F9F9;
+// == Latop background colors
+$teach-series-laptop: #6BBFFD;
+// == Shadow
+$shadow: rgb(207,207,207);
+//== Typography colors
+$blue: #0166F4;
+$black: #000;
+$laptop-black: #383838;
+$article-text: #4C4C4C;
+$sub-grey-text: #4B4F56;
+$active-link: #939393;
+$grey-text: #606060;
+$aqua-link: #78FFF0;
+$breadcum-subtitle: #787878;
+//== Responsive Media Query Variables
+$xlmax-device: 'only screen and (min-width: 1200px) and (max-width: 1599.98px)';
+$xl-device: 'only screen and (min-width: 1200px)';
+$lg-device: 'only screen and (min-width: 992px) and (max-width: 1199.98px)';
+$md-device: 'only screen and (min-width: 768px) and (max-width: 991.98px)';
+$sm-device: 'only screen and (max-width: 767.98px)';
+$xs-device: 'only screen and (max-width: 575.98px)';
+$xxs-device: 'only screen and (max-width: 479.98px)';
+
+$xs-upper: 'only screen and (min-width: 575.98px)';

@@ -1,0 +1,23 @@
+  
+  // section sub articles
+  .teach-series-sub-articles {
+    margin: 30px 0 35px;
+    .article-box {
+      .article-detail {
+        h3 {
+          font-size: 18px;
+        }
+      }
+    }
+    .view-more-articles {
+      border: 1px solid $blue-bg-btn;
+      width: 120px;
+      border-radius: 15px;
+      padding-top: 3px;
+      img {
+        margin-left: 10px;
+        height: 7px;
+      }
+    }
+  }
+

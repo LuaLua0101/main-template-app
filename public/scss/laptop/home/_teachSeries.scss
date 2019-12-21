@@ -1,0 +1,54 @@
+
+// laptop design - Teach series
+@media only screen and (min-width: 992px) {
+    .teach-me{
+        padding: 55px 0 95px 0;
+        // .view-more-articles{
+        //     margin: 7px 0;
+        //     @include font-Geomanist-Regular(16px);
+        //     line-height: 1.6;
+        //     color : $blue-bg-btn;
+        // }
+        h2{
+            margin-bottom: 45px;
+        }
+        // feature 
+        .feature-article-laptop{
+            .left-block{
+                padding-right: 30px;
+            }
+            .right-block{
+                padding-left: 30px;
+            }
+        }
+        // secondary articles
+        .secondary-article{
+            h3{
+                font-size: 18px;
+            }
+
+            &--left{
+                padding-right: 35px;
+                .left-block{
+                    padding-right: 45px;
+                }
+                .right-block{
+                    padding-left: 0;
+                    padding-right: 35px;
+                }
+
+            }
+            &--right{
+                padding-left: 60px;
+                
+                .left-block{
+                    padding-right: 45px;
+                }
+                .right-block{
+                    padding-right: 35px;
+                }
+
+            }
+        }
+    }
+}

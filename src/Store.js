@@ -2,16 +2,7 @@ import { applyMiddleware } from "redux";
 import { createStore } from "react-hooks-global-state";
 import reducer from "./reducers";
 
-const initialState = {
-  transactions: [],
-  notifies: [],
-  students: [],
-  teachers: [],
-  users: [],
-  timekeeping: [],
-  skillGroups: [],
-  skills: []
-};
+const initialState = {};
 
 var logger = function(_a) {
   return function(next) {

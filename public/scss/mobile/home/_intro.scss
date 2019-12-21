@@ -1,0 +1,9 @@
+.intro{
+   padding-top: 80px;
+   p{
+       padding-bottom: 80px;
+       @include font-Geomanist-Light(16px);
+       line-height: 25.6px;
+   }
+}
+

@@ -1,0 +1,72 @@
+.careers{
+    .toggle-mobile{
+        width: 100%;
+        background: transparent;
+        border: 1px solid #D2EAFF;
+        color: $black;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        &:focus{
+            box-shadow: none;
+        }
+      
+        .title{
+            padding: 12px 0;
+            text-transform: uppercase;
+            @include font-Geomanist-Medium(20px);
+        }
+    }
+    .toggle-content {
+        padding: 0 0 35px;
+        .job-desc{
+            h4{
+                @include font-Geomanist-Medium(16px);
+            }
+            .learn-more{
+                @include font-Geomanist-Book(12px)
+            }
+        }
+        .career-img{
+            padding-bottom: 30px;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .careers{
+        margin: 50px 0 90px;
+        .mobile-sub-heading::after{
+            display: none;
+        }
+        .laptop-main-content{
+            .block-item{
+                h3{
+                    margin-bottom: 15px;
+                }
+                h4{
+                    @include font-Geomanist-Medium(27px);
+                    color: $breadcum-subtitle;
+                    margin-bottom: 20px;
+                }
+                p{
+                    font-size: 18px;
+                    color: $breadcum-subtitle;
+                }
+                margin-bottom: 65px;
+                .text-block-left{
+                    padding-right: 65px;
+                }
+                .text-block-right{
+                    padding-left: 40px;
+                    padding-right: 60px;
+                }
+                 
+            }
+        }
+        .mobile-sub-heading{
+            @include font-Geomanist-Medium(35px);
+            color: $blue-bg-btn;
+        }
+    }
+    
+}

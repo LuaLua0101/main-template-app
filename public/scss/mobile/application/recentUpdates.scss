@@ -1,0 +1,75 @@
+.recent-updates{
+    background: $pale-grey;
+    text-align: center;
+    padding: 55px 0 30px;
+    .mobile-sub-heading{
+        font-size: 20px;
+    }
+    h5{
+     @include font-Geomanist-Medium(16px);
+    }
+    .version-container{
+        padding: 30px 0 40px;
+        .box-version{
+            color: $white;
+            width: 90px;
+            height: 90px;
+            background: #A4A4A5;
+            @include font-Geomanist-Medium(33.98px);
+            &.active{
+                background: #00468B;
+                position: relative;
+                &::after{
+                    margin-bottom: 10px;
+                    position: absolute;
+                    bottom: -20px;
+                    left: 0;
+                    width: 100%;
+                    background: $black;
+                    content: "";
+                    height: 3px;   
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 575.98px){
+    .recent-updates{
+        background: transparent;
+        padding: 25px 0 130px;
+        .sub-title{
+            font-size: 30px;
+            line-height: 1.6;
+            margin-top: 20px;
+            margin-bottom: 90px;
+        }
+        .caption{
+            h5{
+                font-size: 29px;
+            }
+            p {
+                font-size: 27px;
+            }
+        }
+        .mobile-sub-heading{
+            margin-top: 45px;
+            @include font-Geomanist-Bold(49.5px);
+            color: $black;
+            text-transform: capitalize;
+            &::after{
+                display: none;
+            }
+            
+        }
+        .version-container{
+            padding: 30px 0 40px;
+            .box-version{ 
+                width: 233px;
+                height: 233px; 
+                @include font-Geomanist-Medium(33.98px);
+                
+            }
+        }
+    }
+}

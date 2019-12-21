@@ -1,0 +1,27 @@
+
+// laptop design - IOT Hub Homepage
+@media only screen and (min-width: 992px) {
+    .iot-page-breadcum{
+        padding: 100px 0 50px;
+    }
+    .iot-hubs-sub-articles{
+        
+    }
+    .iot-hub{
+        padding: 70px 0 75px 0;
+
+        .laptop-row{
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .feature-iot-hub{
+            .img-box{
+                height: 20rem;
+                img:first-child{
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

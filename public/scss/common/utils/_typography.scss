@@ -1,0 +1,41 @@
+.mobile-section-heading{
+    @include font-Geomanist-Medium(30px);
+    line-height: 1.6;
+}
+.mobile-sub-heading{
+    @include font-Geomanist-Medium(16px);
+    line-height: 25.6px;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 32px;
+        background: $blue;
+        height: 3px;
+    }
+}
+.center-sp-heading{
+     
+    &:after{
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -5px;
+    }
+}
+// laptop
+@media only screen and (min-width: 575.98px) {
+    .mobile-sub-heading{
+        font-size: 27px;
+        color: $blue;
+
+        &::after{
+            bottom: -10px;
+            left: 0;
+            width: 78px;
+            background: $blue;
+            height: 5px;
+        }
+    }
+}

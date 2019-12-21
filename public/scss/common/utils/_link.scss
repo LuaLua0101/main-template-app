@@ -1,0 +1,44 @@
+.learn-more {
+  font-size: 18px;
+}
+.view-more-articles {
+  margin: 7px 0;
+  @include font-Geomanist-Regular(14.37px);
+  line-height: 1.6;
+  color: $blue-bg-btn;
+}
+.dash-link {
+  a {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 0;
+      background: $laptop-black;
+      height: 2px;
+      transition: all 0.5s;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+  &.active{
+    > a{
+      color: $black;
+      position: relative;
+      &::after{
+        width: 100%;
+      }
+     
+   
+    }
+  }
+}
+// laptop
+@media only screen and (min-width: 575.98px) {
+  .view-more-articles {
+    font-size: 27px;
+  }
+}

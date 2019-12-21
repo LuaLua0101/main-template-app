@@ -1,0 +1,48 @@
+@import "./shared/variables";
+@import "./shared/mixin";
+@import "./common/global";
+@import "./common/utils/typography";
+@import "./common/utils/btn";
+@import "./common/utils/background";
+@import "./common/utils/link";
+@import "./common/utils/spacing";
+@import "./common/utils/color";
+/****************   Header  ****************/
+@import "./common/sections/header";
+/**********************Components *****************/
+@import "./common/components/articles.scss";
+@import "./common/components/breadcums";
+/****************  Home page  ****************/
+@import "./mobile/home/home";
+@import "./laptop/home/home";
+
+
+/****************  Teach series page  ****************/
+@import "./mobile/teach-me-page/teachSeriesPage";
+@import "./laptop/teach-me-page/teachSeriesPage";
+
+
+/****************  Teach me page (Article detail)  ****************/
+@import "./mobile/teach-me-single/teach-me-article.scss";
+@import "./laptop/teach-me-single/teach-me-article.scss";
+
+/****************  Application page  ****************/
+@import "./mobile/application/applicationPage.scss";
+
+
+/****************  Press resources page  ****************/
+@import "./mobile/press-requests/pressResources";
+
+/****************  Building future page  ****************/
+@import "./mobile/building-future/building-page";
+
+/****************  Related products page ****************/
+@import "./mobile/related-products/related";
+
+/****************  Careers page ****************/
+@import "./mobile/career/career.scss";
+
+/****************  Careers page ****************/
+@import "./mobile/manuals/manual";
+/****************  Footer  ****************/
+@import "./common/sections/footer";

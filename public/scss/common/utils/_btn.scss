@@ -1,0 +1,8 @@
+.submit-btn{
+    background: $blue-bg-btn ;
+    width: 131px;
+    height: 30px;
+    color: $white;
+    border-radius: 15px;
+    @include font-Geomanist-Book(12.12px);
+}

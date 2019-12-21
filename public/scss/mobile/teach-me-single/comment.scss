@@ -1,0 +1,23 @@
+.comment-box{
+    margin-bottom: 35px;
+    .custom-input{
+        background: $input-grey;
+        border: none;
+        border-radius: 0;
+        padding: 12px 8px;
+        box-shadow: 1px 4px 9px -1px $shadow;
+        margin-bottom: 10px;
+    }
+    .form-group > textarea{
+        padding-bottom: 145px;
+    }
+    .submit-btn{
+        margin-top: 25px;
+    }
+    .caption{
+        @include font-Geomanist-Book(17.67px);
+        margin-bottom: 10px;
+    }
+}
+
+ 

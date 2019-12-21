@@ -1,0 +1,15 @@
+.teach-series-articles {
+    background: $teach-series-blue;
+    padding: 30px 0 35px;
+    h3 {
+      @include font-Geomanist-Medium(27px);
+    }
+    .article-detail {
+      text-align: center;
+      .img-box {
+        > img:first-child {
+          padding: 0 5rem 0 4rem;
+        }
+      }
+    }
+  }

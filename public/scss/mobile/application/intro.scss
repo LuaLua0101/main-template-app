@@ -1,0 +1,25 @@
+.application-intro{
+    text-align: center;
+    padding-top: 25px;
+    .application-content{
+        .card{
+            padding-top: 105px;
+            padding-bottom: 30px;
+            margin-bottom: 60px;
+            .card-title{
+                font-size: 30px;
+            }
+
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 557px){
+    .application-intro{
+        padding: 55px 0 70px;
+        .application-content .card p{
+            font-size: 17px;
+        }
+    }
+}

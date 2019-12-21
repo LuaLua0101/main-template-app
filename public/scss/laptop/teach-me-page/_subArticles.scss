@@ -1,0 +1,22 @@
+// laptop design - sub articles series section
+@media only screen and (min-width: 575.98px) {
+    .teach-series-sub-articles {
+      margin: 60px 0 90px;
+      .article-box {
+        margin-bottom: 30px;
+        .img-box{
+          height: 190px;
+          display: inline-flex;
+        }
+      }
+  
+      .view-more-articles {
+        width: 235px;
+        padding-top: 5px;
+        img {
+          margin-left: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }

@@ -1,0 +1,12 @@
+.banner{
+    height: 135px;
+    background-image: url(../images/laptop/career-banner.png);
+    background-size: cover;
+    background-position: center;
+}
+
+@media only screen and (min-width: 992px){
+    .banner{
+        height: 480px;
+    }
+}

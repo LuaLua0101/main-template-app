@@ -1,0 +1,26 @@
+.quote{
+    margin: 20px 0;
+}
+
+@media only screen and (min-width: 992px){
+    .quote{
+        .quote-content{
+            background: #F7F7F7;
+            padding: 85px 135px 55px;
+
+            @include font-Geomanist-Book(18px);
+
+            strong{
+                @include font-Geomanist-Medium(18px);
+            }
+        }
+        .quote-line{
+            width: 78px;
+            height: 4px;
+            margin-bottom: 30px;
+            background: #F9A49E;
+        }
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+}

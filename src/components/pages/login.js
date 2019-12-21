@@ -8,8 +8,6 @@ import DynamicImport from "../../utils/lazyImport";
 import useFormInput from "../../utils/useFormInput";
 import axios from "../../utils/axios";
 
-const TypoGreenH5 = DynamicImport(() => import("../atoms/typoGreenH5"));
-const TypoRedH5 = DynamicImport(() => import("../atoms/typoRedH5"));
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -69,9 +67,6 @@ const Login = props => {
         backgroundSize: "cover"
       }}
     >
-      <TypoRedH5 text="Gia đình siêu nhân" />
-      <TypoGreenH5 text="Đăng nhập" />
-
       <div style={{ padding: "50px 10px" }}>
         <TextField
           label="Số điện thoại"

@@ -1,0 +1,108 @@
+.building-page-breadcum{
+    padding-top: 30px ;
+    padding-bottom: 30px;
+    
+    p{
+        color: $breadcum-subtitle;
+    }
+}
+@media only screen and (min-width: 992px){
+    .building-page-breadcum{
+        padding-top: 70px ;
+        padding-bottom: 60px;
+    }
+}
+
+.info-section{
+    .info-block{
+        text-align: center;
+        h4{
+            font-size: 14px;
+            line-height: 1.6;
+            color: $breadcum-subtitle;
+        }
+    }
+    .img-block{
+        margin: 20px 0 40px;
+    }
+}
+// sections
+.asm, .cqa, .zooer, .crm {
+    h3 { 
+       @include font-Geomanist-Medium(20px) 
+
+    }
+}
+.asm{
+    .img-block{
+        margin: 20px 0 35px;
+    }
+}
+.crm{
+    .img-block{
+        margin: 30px 0 60px;
+    }
+}
+.cqa {
+    .img-block{
+        margin: 40px 0 45px;
+}
+    .breadcum-line{
+        padding: 30px 0 30px;
+    }
+}
+// laptop
+@media only screen and (min-width:992px) {
+    .info-section{
+        .info-block{
+            text-align: left;
+            h3{
+                @include font-Geomanist-Medium(35px);
+                color: $blue-bg-btn;
+            }
+            h4{
+                @include font-Geomanist-Medium(27px);
+            }
+            p{
+                font-size: 18px;
+                color: $breadcum-subtitle;
+            }
+        }
+        .img-block{
+            margin: 20px 0 40px;
+        }
+    }
+    .reverse-laptop{
+        flex-direction: row-reverse;
+    }
+
+    // Section gap
+    .asm {
+        margin: 75px 0 80px;
+        .info-block{
+            padding-right: 65px;
+        }
+        .img-block{
+            padding-left: 45px;
+        }
+    }
+    .crm{
+        margin: 50px  0 65px;
+        
+        .img-block{
+            padding-right: 45px;
+        }
+    }
+    .cqa {
+        margin: 60px 0 70px;
+        .img-block{
+            padding-left: 100px;
+        }
+        .info-block{
+            padding-right: 45px;
+        }
+    }
+    .zooer{
+        margin: 50px 0 120px;
+    }
+}

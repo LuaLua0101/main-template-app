@@ -1,0 +1,92 @@
+.product-menu-collapse{
+    margin: 50px 0 20px;
+    .collapse-btn{
+        
+        width: 225px;
+        padding: 10px 0;
+        
+            background: transparent;
+            color: $laptop-black;
+        
+       @include font-Geomanist-Medium(14.3px);
+        border: 1px solid $laptop-black;
+        border-radius: 0;
+        .pull-right{ 
+            line-height: 25px;
+            padding-top: 5px;
+            margin-right: 10px;
+        }
+        .hidden-on-toggle{
+            display: block;
+        }
+        .visible-on-toggle{
+            display: none;
+        }
+         
+        &[aria-expanded="true"]{
+            background: black;
+            color: $white;
+            
+            .visible-on-toggle{
+                display: block;
+            }
+            .hidden-on-toggle{
+                display: none;
+            }
+        }
+        
+       
+    }   
+    .collapse-sub-menu{
+        font-size: 15px;
+        color: $laptop-black;
+        
+        &[aria-expanded="true"]{
+            font-weight: bold; 
+            @include font-Geomanist-Medium(15px);
+        }
+    }
+    .menu-items{
+        margin: 20px 0 40px;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .product-menu-collapse{
+        margin-top: 130px;
+        .collapse-btn{
+            width: 375px;
+            padding: 15px 0;
+            font-size: 25px;
+            border-radius: 0;
+            .pull-right{ 
+                line-height: 25px;
+                padding-top: 10px;
+            }
+            
+            &[aria-expanded="true"]{
+                background: black;
+                color: $white;
+                
+                .visible-on-toggle{
+                    display: block;
+                }
+                .hidden-on-toggle{
+                    display: none;
+                }
+            }
+        }   
+        .collapse-sub-menu{
+            font-size: 24px;
+    
+            &[aria-expanded="true"]{
+                font-weight: bold;
+                @include font-Geomanist-Medium(24px);
+            }
+        }
+        .menu-items{
+            margin: 20px 0 40px;
+        }
+         
+    }
+}

@@ -1,0 +1,17 @@
+// laptop
+@media only screen and (min-width: 575.98px) {
+    .intro {
+        padding-top: 140px;
+        h2{
+            @include font-Geomanist-Bold(50px);
+            line-height: 1.6;
+        }
+        p{
+           padding-bottom: 125px; 
+           margin-bottom: 0;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}

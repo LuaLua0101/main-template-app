@@ -1,0 +1,15 @@
+// laptop design - tech serries section
+@media only screen and (min-width: 575.98px) {
+    .teach-series-articles {
+      background: transparent;
+      padding: 30px 0 35px;
+      .article-box {
+        background: $teach-series-laptop;
+        border-radius: 15px;
+        padding: 30px 100px;
+      }
+      .article-detail {
+        text-align: left;
+      }
+    }
+  }

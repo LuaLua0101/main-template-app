@@ -1,0 +1,16 @@
+ 
+@media only screen and (min-width: 992px){
+    .sharing{
+        .sharing-box{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .caption{
+                color: #989899;
+                font-size: 18px;
+                margin-right: 30px;
+            }
+        }
+    }
+}
