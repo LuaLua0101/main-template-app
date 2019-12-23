@@ -1200,18 +1200,24 @@ ul li {
 .features-mobile .slider-nav-item-mobile.slick-slide:not(.slick-current) img {
   height: 70px;
 }
+.features-mobile .slider-for {
+  margin-bottom: 40px;
+}
 .features-mobile .slider-for .learn-more {
   font-family: "Geomanist Book";
   font-size: 12px;
 }
+.features-mobile .learn-more span:first-child {
+  margin-right: 5px;
+}
 
 @media only screen and (min-width: 992px) {
   .features {
-    margin: 65px 0 80px;
+    margin: 40px 0 0;
   }
   .features .block-feature {
     padding-right: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
   .features .block-feature figure {
     height: 116px;
@@ -1223,6 +1229,7 @@ ul li {
 
   .related-products-breadcum {
     margin: 90px 0 65px;
+    padding: 0;
   }
 }
 /****************  Careers page ****************/
@@ -1422,10 +1429,25 @@ ul li {
   }
 }
 .product-menu-collapse .press-list .pagination.mobile-pagination {
-  margin: 30px 0 0;
+  margin: 30px 0 30px;
 }
 .product-menu-collapse .press-list .active-page {
   padding: 5px 30px;
+}
+.product-menu-collapse .pagination nav {
+  margin-left: 5px;
+}
+.product-menu-collapse .pagination nav ul {
+  border-radius: 5px;
+  background: #0f73ee;
+}
+.product-menu-collapse .pagination nav .btn-paginate {
+  width: 30px;
+  text-align: center;
+}
+.product-menu-collapse .pagination.mobile-pagination {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 992px) {

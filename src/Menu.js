@@ -42,22 +42,22 @@ const Menu = props => {
                 <div className="d-flex">
                   <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li className={isActive(1)}>
-                      <a className="nav-link px-0" href="">
+                      <a className="nav-link px-0" href="/">
                         Home
                       </a>
                     </li>
                     <li className={isActive(2)}>
-                      <a className="nav-link px-0" href="">
+                      <a className="nav-link px-0" href="/teach-me-series">
                         Teach me series
                       </a>
                     </li>
                     <li className={isActive(3)}>
-                      <a className="nav-link px-0" href="">
+                      <a className="nav-link px-0" href="/building">
                         Building the future
                       </a>
                     </li>
                     <li className={isActive(4)}>
-                      <a className="nav-link px-0" href="">
+                      <a className="nav-link px-0" href="/iot-hub">
                         IOT Hub
                       </a>
                     </li>

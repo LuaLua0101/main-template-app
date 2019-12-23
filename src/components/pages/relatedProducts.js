@@ -1,4 +1,13 @@
 import React from "react";
+import Slider from "react-slick";
+
+const settings = {
+  centerMode: true,
+  infinite: true,
+  centerPadding: "1px",
+  slidesToShow: 3,
+  speed: 500
+};
 
 const RelatedProductsPage = props => {
   return (
@@ -17,48 +26,50 @@ const RelatedProductsPage = props => {
         <section className="d-block d-md-none d-lg-none features-mobile">
           <div className="container">
             <div className="slider-nav">
-              <div className="text-center slider-nav-item-mobile">
-                <img
-                  className="mx-auto"
-                  src="./assets/images/laptop/carousel/carousel-rhino.png"
-                  alt="fox"
-                />
-              </div>
-              <div className="text-center slider-nav-item-mobile">
-                <img
-                  className="mx-auto"
-                  src="./assets/images/laptop/carousel/carousel-fox.png"
-                  alt="fox"
-                />
-              </div>
-              <div className="text-center slider-nav-item-mobile">
-                <img
-                  className="mx-auto"
-                  src="./assets/images/laptop/carousel/carousel-bird.png"
-                  alt="fox"
-                />
-              </div>
-              <div className="text-center slider-nav-item-mobile">
-                <img
-                  className="mx-auto"
-                  src="./assets/images/laptop/carousel/carousel-bird-2.png"
-                  alt="fox"
-                />
-              </div>
-              <div className="text-center slider-nav-item-mobile">
-                <img
-                  className="mx-auto"
-                  src="./assets/images/laptop/carousel/carousel-bird-2-black.png"
-                  alt="fox"
-                />
-              </div>
-              <div className="text-center slider-nav-item-mobile">
-                <img
-                  className="mx-auto"
-                  src="./assets/images/laptop/carousel/carousel-bear.png"
-                  alt="fox"
-                />
-              </div>
+              <Slider {...settings}>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-rhino.png"
+                    alt="fox"
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-fox.png"
+                    alt="fox"
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-bird.png"
+                    alt="fox"
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-bird-2.png"
+                    alt="fox"
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-bird-2-black.png"
+                    alt="fox"
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-bear.png"
+                    alt="fox"
+                  />
+                </div>
+              </Slider>
             </div>
             <div className="slider-for">
               <div className="item-caption text-center">
@@ -75,109 +86,6 @@ const RelatedProductsPage = props => {
                   <span>
                     <img
                       src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a>
-              </div>
-              <div className="item-caption text-center">
-                <h3 className="font-weight-bold">Lorem ipsum dolor sit.</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                  explicabo ducimus maxime asperiores unde! Omnis.
-                </p>
-                <a
-                  href="#"
-                  className="learn-more d-flex align-items-center justify-content-center"
-                >
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a>
-              </div>
-              <div className="item-caption text-center">
-                <h3 className="font-weight-bold">
-                  Lorem ipsum dolor sit amet.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                  explicabo ducimus maxime asperiores unde! Omnis.
-                </p>
-                <a
-                  href="#"
-                  className="learn-more d-flex align-items-center justify-content-center"
-                >
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a>
-              </div>
-              <div className="item-caption text-center">
-                <h3 className="font-weight-bold">
-                  Lorem ipsum dolor sit amet.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                  explicabo ducimus maxime asperiores unde! Omnis.
-                </p>
-                <a
-                  href="#"
-                  className="learn-more d-flex align-items-center justify-content-center"
-                >
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a>
-              </div>
-              <div className="item-caption text-center">
-                <h3 className="font-weight-bold">
-                  Lorem ipsum dolor sit amet.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                  explicabo ducimus maxime asperiores unde! Omnis.
-                </p>
-                <a
-                  href="#"
-                  className="learn-more d-flex align-items-center justify-content-center"
-                >
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a>
-              </div>
-              <div className="item-caption text-center">
-                <h3 className="font-weight-bold">
-                  Lorem ipsum dolor sit amet.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                  explicabo ducimus maxime asperiores unde! Omnis.
-                </p>
-                <a
-                  href="#"
-                  className="learn-more d-flex align-items-center justify-content-center"
-                >
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
                       alt="learn more"
                     />
                   </span>
