@@ -607,6 +607,9 @@ ul li {
   .teach-me h2 {
     margin-bottom: 45px;
   }
+  .teach-me .feature-article-laptop {
+    margin-bottom: 32px;
+  }
   .teach-me .feature-article-laptop .left-block {
     padding-right: 30px;
   }
@@ -624,7 +627,7 @@ ul li {
   }
   .teach-me .secondary-article--left .right-block {
     padding-left: 0;
-    padding-right: 35px;
+    padding-right: 15px;
   }
   .teach-me .secondary-article--right {
     padding-left: 60px;
@@ -633,7 +636,8 @@ ul li {
     padding-right: 45px;
   }
   .teach-me .secondary-article--right .right-block {
-    padding-right: 35px;
+    padding-right: 0px;
+    padding-left: 0;
   }
 }
 @media only screen and (min-width: 992px) {
