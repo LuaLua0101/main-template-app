@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// const API_URL = "http://localhost/api-gdsieunhan/api/";
-const API_URL =
-  "https://iht-cors-server.herokuapp.com/http://139.180.195.15/api-gdsieunhan/api/";
+const API_URL = "http://localhost/api-pitech/api/";
+// const API_URL =
+//   "https://iht-cors-server.herokuapp.com/http://139.180.195.15/api-gdsieunhan/api/";
 
 // axios.defaults.baseURL = "https://iht-cors-server.herokuapp.com/" + API_URL;
 axios.defaults.baseURL = API_URL;

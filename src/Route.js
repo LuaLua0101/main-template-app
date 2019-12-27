@@ -34,12 +34,9 @@ const RouteMap = () => {
       <Route exact path="/press-resources" component={PressResourcesPage} />
       <Route exact path="/related-products" component={RelatedProductsPage} />
       <Route exact path="/teach-me-series" component={TeachMeSeriesPage} />
-      <Route
-        exact
-        path="/teach-me-series/:id"
-        component={TeachMeSeriesDetailPage}
-      />
-      <Route exact path="/iot-hub" component={IotHubPage} />
+      <Route exact path="/teach-me-serie" component={TeachMeSeriesDetailPage} />
+      <Route exact path="/iot-hubs" component={IotHubPage} />
+      <Route exact path="/iot-hub" component={TeachMeSeriesDetailPage} />
       <Route exact path="/career" component={CareerPage} />
       <Route component={NotFoundPage} />
     </Switch>

@@ -1,7 +1,105 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "../../utils/axios";
+import moment from "moment";
+import { SERVER } from "../../utils/constants";
 
 const TeachMeSeriesPage = props => {
-  const [teachMeSeries, setTeachMeSeries] = useState([1]);
+  const [teachMeSeries, setTeachMeSeries] = useState([]);
+  const [teachMePinned, setTeachMePinned] = useState({
+    id: 0
+  });
+
+  useEffect(() => {
+    axios.get("teach-me-series").then(res => {
+      const { teachmepinned, teachme } = res.data;
+      setTeachMeSeries(teachme);
+      setTeachMePinned(teachmepinned);
+    });
+  }, []);
+
+  const renderTeachmeList = () => {
+    return teachMeSeries.map((item, index) => (
+      <div className="col-12 col-md-4 col-lg-6 col-xl-4">
+        <article className="article-box">
+          {/* Views, date, comments*/}
+          <div className="article-brief-info d-flex align-items-center d-block d-md-none">
+            <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
+            <div className="view d-flex align-items-center">
+              <img
+                src="./assets/images/mobile/icons/icn-eye.png"
+                alt="views"
+                className="img-fluid"
+              />
+              <span className="text-uppercase">{item.view_count}</span>
+            </div>
+            <div className="comments d-flex align-items-center">
+              <img
+                src="./assets/images/mobile/icons/icn-chat.png"
+                alt="comment"
+                className="img-fluid"
+              />
+              <span>{item.chat_count}</span>
+            </div>
+            <div className="share d-flex align-items-center">
+              <img
+                src="./assets/images/mobile/icons/icn-share.png"
+                alt="share"
+                className="img-fluid"
+              />
+              <span>{item.share_count}</span>
+            </div>
+          </div>
+          {/* Feature img, title, description */}
+          <div className="article-detail secondary-article secondary-article--left">
+            <div className="row align-items-center">
+              <div className="col-12 col-xl-12 left-block">
+                <div className="img-box">
+                  <img
+                    className="img-fluid thumbnail"
+                    src={
+                      SERVER +
+                      "public/images/teach-me-series/" +
+                      item.id +
+                      "/thumbnail.png"
+                    }
+                    alt="article"
+                  />
+                  {!item.is_image && (
+                    <img
+                      className="play-btn"
+                      src="./assets/images/mobile/icons/icn-play.png"
+                      alt="play"
+                    />
+                  )}
+                </div>
+              </div>
+              <div className="col-12 col-xl-12 right-block">
+                <a
+                  href={"/teach-me-serie?id=" + item.id}
+                  rel="noopener noreferrer"
+                >
+                  <h3 className="text-black">{item.title}</h3>
+                  <p>{item.short_desc}</p>
+                </a>
+                {/* Views, date visible on laptop*/}
+                <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
+                  <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
+                  <div className="view d-flex align-items-center">
+                    <img
+                      src="./assets/images/mobile/icons/icn-eye.png"
+                      alt="views"
+                      className="img-fluid"
+                    />
+                    <span className="text-uppercase">{item.view_count}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    ));
+  };
 
   return (
     <>
@@ -26,13 +124,10 @@ const TeachMeSeriesPage = props => {
               <div className="row article-detail">
                 <div className="col-12 col-xl-6 align-self-center">
                   <h3 className="d-none d-lg-block text-white text-left">
-                    LOREM IPSUM DOLOR
+                    {teachMePinned && teachMePinned.title}
                   </h3>
                   <p className="text-white">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci
+                    {teachMePinned && teachMePinned.short_desc}
                   </p>
                 </div>
                 <div className="col-12 col-xl-6 ">
@@ -40,14 +135,19 @@ const TeachMeSeriesPage = props => {
                     <div className="img-box">
                       <img
                         className="img-fluid"
-                        src="./assets/images/laptop/article/teach-series-article-1.png"
+                        src={
+                          SERVER +
+                          "public/images/teach-me-series/" +
+                          teachMePinned.id +
+                          "/thumbnail.png"
+                        }
                         alt="feature article"
                       />
-                      <img
+                      {/* <img
                         className="play-btn"
                         src="./assets/images/mobile/icons/icn-play.png"
                         alt="play"
-                      />
+                      /> */}
                     </div>
                   </a>
                 </div>
@@ -58,85 +158,7 @@ const TeachMeSeriesPage = props => {
         {/* Sub articles: 5 on mobiles and view more, 12 on laptop (3 articles/row)  */}
         <section className="teach-series-sub-articles">
           <div className="container">
-            <div className="row">
-              {teachMeSeries.map((item, index) => (
-                <div className="col-12 col-md-4 col-lg-6 col-xl-4">
-                  <article className="article-box">
-                    {/* Views, date, comments*/}
-                    <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-                      <time>December 25, 2019</time>
-                      <div className="view d-flex align-items-center">
-                        <img
-                          src="./assets/images/mobile/icons/icn-eye.png"
-                          alt="views"
-                          className="img-fluid"
-                        />
-                        <span className="text-uppercase">1.2k</span>
-                      </div>
-                      <div className="comments d-flex align-items-center">
-                        <img
-                          src="./assets/images/mobile/icons/icn-chat.png"
-                          alt="comment"
-                          className="img-fluid"
-                        />
-                        <span>12</span>
-                      </div>
-                      <div className="share d-flex align-items-center">
-                        <img
-                          src="./assets/images/mobile/icons/icn-share.png"
-                          alt="share"
-                          className="img-fluid"
-                        />
-                        <span>302</span>
-                      </div>
-                    </div>
-                    {/* Feature img, title, description */}
-                    <div className="article-detail secondary-article secondary-article--left">
-                      <div className="row align-items-center">
-                        <div className="col-12 col-xl-12 left-block">
-                          <div className="img-box">
-                            <img
-                              className="img-fluid thumbnail"
-                              src="./assets/images/laptop/article/world-control-clipping.png"
-                              alt="article"
-                            />
-                            <img
-                              className="play-btn"
-                              src="./assets/images/mobile/icons/icn-play.png"
-                              alt="play"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-12 col-xl-12 right-block">
-                          <a href="#" target="_blank" rel="noopener noreferrer">
-                            <h3 className="text-black">
-                              Huawei Sound X - Loa thông minh Hi-Res Audio đầu
-                              tiên, Devialet thiết kế, âm thanh.
-                            </h3>
-                            <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Facere, labore. Lorem ipsum dolor sit amet.
-                            </p>
-                          </a>
-                          {/* Views, date visible on laptop*/}
-                          <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                            <time>December 25, 2019</time>
-                            <div className="view d-flex align-items-center">
-                              <img
-                                src="./assets/images/mobile/icons/icn-eye.png"
-                                alt="views"
-                                className="img-fluid"
-                              />
-                              <span className="text-uppercase">1.2k</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              ))}
-            </div>
+            <div className="row">{renderTeachmeList()}</div>
             {/* View more button */}
             <a
               href="#"

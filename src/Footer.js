@@ -45,7 +45,7 @@ const Footer = props => {
                     </a>
                   </li>
                   <li>
-                    <a href="/iot-hub" className="text-uppercase">
+                    <a href="/iot-hubs" className="text-uppercase">
                       IOT Hub
                     </a>
                   </li>

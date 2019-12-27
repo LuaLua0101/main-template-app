@@ -57,7 +57,7 @@ const Menu = props => {
                       </a>
                     </li>
                     <li className={isActive(4)}>
-                      <a className="nav-link px-0" href="/iot-hub">
+                      <a className="nav-link px-0" href="/iot-hubs">
                         IOT Hub
                       </a>
                     </li>
@@ -118,7 +118,7 @@ const Menu = props => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/iot-hub">
+                <a className="nav-link" href="/iot-hubs">
                   IOT Hub
                 </a>
               </li>
