@@ -37,7 +37,7 @@ const BuildingPage = props => {
                   chữa của zooer team - nhân viên kỹ thuật lắp đặt. Ngoài ra app
                   còn được lập trình trò chơi để tạo hứng thú trong công việc.
                 </p>
-                <a href="#" className="learn-more d-none d-lg-block">
+                {/* <a href="#" className="learn-more d-none d-lg-block">
                   <span>Learn more</span>
                   <span>
                     <img
@@ -45,7 +45,7 @@ const BuildingPage = props => {
                       alt="learn more"
                     />
                   </span>
-                </a>
+                </a> */}
               </div>
               <div className="col-12 col-md-12 col-lg-6 col-xl-6 img-block">
                 <img
