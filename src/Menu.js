@@ -93,6 +93,29 @@ const Menu = props => {
                         </a>
                       </div>
                     </li>
+                    <li className="nav-item dropdown d-flex align-items-center">
+                      <a
+                        className="nav-link dropdown-toggle d-flex"
+                        href="#"
+                        id="exploreLaptop"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Languages
+                      </a>
+                      <div
+                        className="dropdown-menu"
+                        aria-labelledby="exploreLaptop"
+                      >
+                        <a className="dropdown-item" href="/related-products">
+                          Vietnam
+                        </a>
+                        <a className="dropdown-item" href="/application">
+                          English
+                        </a>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -151,6 +174,29 @@ const Menu = props => {
                   </a>
                   <a className="dropdown-item" href="/manuals">
                     Manuals
+                  </a>
+                </div>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle d-flex align-items-center justify-content-center"
+                  href="#"
+                  id="dropdownId"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Languages
+                </a>
+                <div
+                  className="dropdown-menu border-0 text-center"
+                  aria-labelledby="dropdownId"
+                >
+                  <a className="dropdown-item" href="/related-products">
+                    Vietnam
+                  </a>
+                  <a className="dropdown-item" href="/application">
+                    English
                   </a>
                 </div>
               </li>
