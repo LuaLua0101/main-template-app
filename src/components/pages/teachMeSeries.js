@@ -8,15 +8,17 @@ const TeachMeSeriesPage = props => {
   const [teachMeSeries, setTeachMeSeries] = useState([]);
   const [loadButton, setLoadButton] = useState(true);
   const [teachMePinned, setTeachMePinned] = useState(null);
+  const [banner, setBanner] = useState();
 
   const getData = () => {
     setLoadButton(true);
     axios
       .post("teach-me-series", { page: teachMeSeries.length })
       .then(res => {
-        const { teachmepinned, teachme } = res.data;
+        const { teachmepinned, teachme, banner } = res.data;
         setTeachMeSeries([...teachMeSeries, ...teachme]);
         !teachMePinned && setTeachMePinned(teachmepinned);
+        setBanner(banner);
       })
       .finally(setLoadButton(false));
   };
@@ -116,11 +118,9 @@ const TeachMeSeriesPage = props => {
         <section className="breadcum">
           <div className="container text-center">
             <h2 className="breadcum-title">Teach me series</h2>
-            <h3 className="breadcum-subtitle">Loạt phim tài liệu gốc</h3>
+            <h3 className="breadcum-subtitle">{banner && banner.title}</h3>
             <p>
-              Là những câu chuyện đằng sau lý do hình thành các giải pháp của
-              Pitech, nhằm giải quyết các vấn đề của xã hội hoặc nhu cầu đến từ
-              phía người dùng.
+            {banner && banner.content}
             </p>
           </div>
         </section>
@@ -178,20 +178,20 @@ const TeachMeSeriesPage = props => {
                 <Spin size="large" />
               </div>
             ) : (
-              <div
-                onClick={getData}
-                className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
-                style={{ cursor: "pointer" }}
-              >
-                <span>View more</span>
-                <span>
-                  <img
-                    src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"
-                    alt="next"
-                  />
-                </span>
-              </div>
-            )}
+                <div
+                  onClick={getData}
+                  className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
+                  style={{ cursor: "pointer" }}
+                >
+                  <span>View more</span>
+                  <span>
+                    <img
+                      src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"
+                      alt="next"
+                    />
+                  </span>
+                </div>
+              )}
           </div>
         </section>
       </div>

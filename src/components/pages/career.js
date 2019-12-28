@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "../../utils/axios";
+import { SERVER } from "../../utils/constants";
+import { Spin } from "antd";
+import { app } from "firebase";
+
+const BLOCK_LEFT = "col-12 col-lg-6 col-xl-6 text-block-left"
+const BLOCK_RIGHT = "col-12 col-lg-6 col-xl-6 text-block-right"
 
 const CareerPage = props => {
+  const [careers, setCareers] = useState([]);
+  const [loadButton, setLoadButton] = useState(true);
+
+  const getData = () => {
+    setLoadButton(true);
+    axios
+      .get("careers")
+      .then(res => {
+        console.log(res.data)
+        setCareers(res.data.careers);
+      })
+      .finally(setLoadButton(false));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <div>
@@ -25,133 +50,60 @@ const CareerPage = props => {
         <section className="careers ">
           {/* Laptop style  */}
           <div className="container d-none d-lg-block laptop-main-content">
-            <div className="row align-items-center block-item ">
-              <div className="col-12 col-lg-6 col-xl-6 text-block-left">
-                <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
-                  R &amp; D
-                </h3>
-                <h4>
-                  Phần mềm bán hàng do Pitech tự phát triển, giúp quản lý doanh
-                  số của tất cả các đại lý trực thuộc Pistore.
-                </h4>
-                <p className="d-none d-lg-block">
-                  Ứng dụng dùng để theo dõi các hoạt động lắp đặt, bảo hành, sửa
-                  chữa của zooer team - nhân viên kỹ thuật lắp đặt. Ngoài ra app
-                  còn được lập trình trò chơi để tạo hứng thú trong công việc.
-                </p>
-              </div>
-              <div className="col-12 col-lg-6 col-xl-6">
-                <img
-                  src="./assets/images/laptop/career-intro.png"
-                  className="img-fluid"
-                  alt="career"
-                />
-              </div>
-            </div>
-            <div className="row align-items-center block-item">
-              <div className="col-12 col-lg-6 col-xl-6">
-                <img
-                  src="./assets/images/laptop/career-intro.png"
-                  className="img-fluid"
-                  alt="career"
-                />
-              </div>
-              <div className="col-12 col-lg-6 col-xl-6 text-block-right">
-                <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
-                  Sale &amp; CR
-                </h3>
-                <h4>
-                  Phần mềm bán hàng do Pitech tự phát triển, giúp quản lý doanh
-                  số của tất cả các đại lý trực thuộc Pistore.
-                </h4>
-                <p className="d-none d-lg-block">
-                  Ứng dụng dùng để theo dõi các hoạt động lắp đặt, bảo hành, sửa
-                  chữa của zooer team - nhân viên kỹ thuật lắp đặt. Ngoài ra app
-                  còn được lập trình trò chơi để tạo hứng thú trong công việc.
-                </p>
-              </div>
-            </div>
-            <div className="row align-items-center block-item">
-              <div className="col-12 col-lg-6 col-xl-6 text-block-left">
-                <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
-                  Marketing
-                </h3>
-                <h4>
-                  Phần mềm bán hàng do Pitech tự phát triển, giúp quản lý doanh
-                  số của tất cả các đại lý trực thuộc Pistore.
-                </h4>
-                <p className="d-none d-lg-block">
-                  Ứng dụng dùng để theo dõi các hoạt động lắp đặt, bảo hành, sửa
-                  chữa của zooer team - nhân viên kỹ thuật lắp đặt. Ngoài ra app
-                  còn được lập trình trò chơi để tạo hứng thú trong công việc.
-                </p>
-              </div>
-              <div className="col-12 col-lg-6 col-xl-6 ">
-                <img
-                  src="./assets/images/laptop/career-intro.png"
-                  className="img-fluid"
-                  alt="career"
-                />
-              </div>
-            </div>
-            <div className="row align-items-center block-item">
-              <div className="col-12 col-lg-6 col-xl-6">
-                <img
-                  src="./assets/images/laptop/career-intro.png"
-                  className="img-fluid"
-                  alt="career"
-                />
-              </div>
-              <div className="col-12 col-lg-6 col-xl-6 text-block-right">
-                <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
-                  Zooer
-                </h3>
-                <h4>
-                  Phần mềm bán hàng do Pitech tự phát triển, giúp quản lý doanh
-                  số của tất cả các đại lý trực thuộc Pistore.
-                </h4>
-                <p className="d-none d-lg-block ">
-                  Ứng dụng dùng để theo dõi các hoạt động lắp đặt, bảo hành, sửa
-                  chữa của zooer team - nhân viên kỹ thuật lắp đặt. Ngoài ra app
-                  còn được lập trình trò chơi để tạo hứng thú trong công việc.
-                </p>
-              </div>
-            </div>
-            <div className="row align-items-center block-item">
-              <div className="col-12 col-lg-6 col-xl-6 text-block-left">
-                <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
-                  Pistore
-                </h3>
-                <h4>
-                  Phần mềm bán hàng do Pitech tự phát triển, giúp quản lý doanh
-                  số của tất cả các đại lý trực thuộc Pistore.
-                </h4>
-                <p className="d-none d-lg-block">
-                  Ứng dụng dùng để theo dõi các hoạt động lắp đặt, bảo hành, sửa
-                  chữa của zooer team - nhân viên kỹ thuật lắp đặt. Ngoài ra app
-                  còn được lập trình trò chơi để tạo hứng thú trong công việc.
-                </p>
-              </div>
-              <div className="col-12 col-lg-6 col-xl-6 ">
-                <img
-                  src="./assets/images/laptop/career-intro.png"
-                  className="img-fluid"
-                  alt="career"
-                />
-              </div>
-            </div>
+            {careers.map((item, index) => {
+              return index % 2 ? <div className="row align-items-center block-item" key={index}>
+                <div className="col-12 col-lg-6 col-xl-6">
+                  <img
+                    src="./assets/images/laptop/career-intro.png"
+                    className="img-fluid"
+                    alt="career"
+                  />
+                </div>
+                <div className="col-12 col-lg-6 col-xl-6 text-block-right">
+                  <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
+                    {item.dep}
+                  </h3>
+                  <h4>
+                    {item.title}
+                  </h4>
+                  <p className="d-none d-lg-block">
+                    {item.desc}
+                  </p>
+                </div>
+              </div> : <div className="row align-items-center block-item " key={index}>
+                  <div className="col-12 col-lg-6 col-xl-6 text-block-left">
+                    <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
+                      {item.dep}
+                    </h3>
+                    <h4>
+                      {item.title}
+                    </h4>
+                    <p className="d-none d-lg-block">
+                      {item.desc}
+                    </p>
+                  </div>
+                  <div className="col-12 col-lg-6 col-xl-6">
+                    <img
+                      src="./assets/images/laptop/career-intro.png"
+                      className="img-fluid"
+                      alt="career"
+                    />
+                  </div>
+                </div>
+            })}
           </div>
           {/* Mobile style - toggle */}
           <div className="container d-block d-lg-none">
-            <button
+            {careers.map((item,index)=>{
+            return <><button
               className="btn btn-primary toggle-mobile"
               type="button"
               data-toggle="collapse"
-              data-target="#collapseExample"
+              data-target={"#collapse" + index}
               aria-expanded="false"
-              aria-controls="collapseExample"
+              aria-controls={"collapse" + index}
             >
-              <span className="title">R &amp; D</span>
+              <span className="title">{item.dep}</span>
               <span className="pull-right">
                 <img
                   src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
@@ -161,7 +113,7 @@ const CareerPage = props => {
               <div className="clear-float" />
             </button>
             {/* Collapse content  */}
-            <div className="collapse toggle-content" id="collapseExample">
+            <div className="collapse toggle-content" id={"collapse" + index}>
               <div className="content text-center">
                 <div className="career-img">
                   <img
@@ -171,259 +123,14 @@ const CareerPage = props => {
                   />
                 </div>
                 <div className="job-desc">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
+                  <h4>{item.title}</h4>
                   <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nemo blanditiis voluptatibus asperiores delectus. Deleniti!
+                  {item.desc}
                   </p>
-                  <a href="#" className="learn-more">
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        width={7}
-                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
                 </div>
               </div>
             </div>
-            {/* Toggle btn  */}
-            <button
-              className="btn btn-primary toggle-mobile"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseExample2"
-              aria-expanded="false"
-              aria-controls="collapseExample2"
-            >
-              <span className="title">Sale &amp; CR</span>
-              <span className="pull-right">
-                <img
-                  src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                  alt=""
-                />
-              </span>
-              <div className="clear-float" />
-            </button>
-            {/* Collapse content  */}
-            <div className="collapse toggle-content" id="collapseExample2">
-              <div className="content text-center">
-                <div className="career-img">
-                  <img
-                    className="img-fluid"
-                    src="./assets/images/laptop/career-intro.png"
-                    alt="career"
-                  />
-                </div>
-                <div className="job-desc">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nemo blanditiis voluptatibus asperiores delectus. Deleniti!
-                  </p>
-                  <a href="#" className="learn-more">
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        width={7}
-                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* Toggle btn  */}
-            <button
-              className="btn btn-primary toggle-mobile"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseExample3"
-              aria-expanded="false"
-              aria-controls="collapseExample3"
-            >
-              <span className="title">Marketing</span>
-              <span className="pull-right">
-                <img
-                  src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                  alt=""
-                />
-              </span>
-              <div className="clear-float" />
-            </button>
-            {/* Collapse content  */}
-            <div className="collapse toggle-content" id="collapseExample3">
-              <div className="content text-center">
-                <div className="career-img">
-                  <img
-                    className="img-fluid"
-                    src="./assets/images/laptop/career-intro.png"
-                    alt="career"
-                  />
-                </div>
-                <div className="job-desc">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nemo blanditiis voluptatibus asperiores delectus. Deleniti!
-                  </p>
-                  <a href="#" className="learn-more">
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        width={7}
-                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* Toggle btn  */}
-            <button
-              className="btn btn-primary toggle-mobile"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseExample4"
-              aria-expanded="false"
-              aria-controls="collapseExample4"
-            >
-              <span className="title">BMP</span>
-              <span className="pull-right">
-                <img
-                  src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                  alt=""
-                />
-              </span>
-              <div className="clear-float" />
-            </button>
-            {/* Collapse content  */}
-            <div className="collapse toggle-content" id="collapseExample4">
-              <div className="content text-center">
-                <div className="career-img">
-                  <img
-                    className="img-fluid"
-                    src="./assets/images/laptop/career-intro.png"
-                    alt="career"
-                  />
-                </div>
-                <div className="job-desc">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nemo blanditiis voluptatibus asperiores delectus. Deleniti!
-                  </p>
-                  <a href="#" className="learn-more">
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        width={7}
-                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* Toggle btn  */}
-            <button
-              className="btn btn-primary toggle-mobile"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseExample5"
-              aria-expanded="false"
-              aria-controls="collapseExample5"
-            >
-              <span className="title">Zooer</span>
-              <span className="pull-right">
-                <img
-                  src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                  alt=""
-                />
-              </span>
-              <div className="clear-float" />
-            </button>
-            {/* Collapse content  */}
-            <div className="collapse toggle-content" id="collapseExample5">
-              <div className="content text-center">
-                <div className="career-img">
-                  <img
-                    className="img-fluid"
-                    src="./assets/images/laptop/career-intro.png"
-                    alt="career"
-                  />
-                </div>
-                <div className="job-desc">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nemo blanditiis voluptatibus asperiores delectus. Deleniti!
-                  </p>
-                  <a href="#" className="learn-more">
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        width={7}
-                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* Toggle btn  */}
-            <button
-              className="btn btn-primary toggle-mobile"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseExample6"
-              aria-expanded="false"
-              aria-controls="collapseExample6"
-            >
-              <span className="title">Pistore</span>
-              <span className="pull-right">
-                <img
-                  src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                  alt=""
-                />
-              </span>
-              <div className="clear-float" />
-            </button>
-            {/* Collapse content  */}
-            <div className="collapse toggle-content" id="collapseExample6">
-              <div className="content text-center">
-                <div className="career-img">
-                  <img
-                    className="img-fluid"
-                    src="./assets/images/laptop/career-intro.png"
-                    alt="career"
-                  />
-                </div>
-                <div className="job-desc">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nemo blanditiis voluptatibus asperiores delectus. Deleniti!
-                  </p>
-                  <a href="#" className="learn-more">
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        width={7}
-                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
+         </>})}
           </div>
         </section>
         <section className="quote">
