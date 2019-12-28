@@ -176,7 +176,10 @@ export default function MainPage(props) {
           <div className="container text-center">
             <div className="row">
               <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-                <h2 className="text-uppercase font-weight-bold">
+                <h2
+                  className="text-uppercase font-weight-bold"
+                  style={{ color: "white" }}
+                >
                   {banner && banner.title}
                 </h2>
                 <p>{banner && banner.content}</p>

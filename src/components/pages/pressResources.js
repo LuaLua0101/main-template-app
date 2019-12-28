@@ -1,7 +1,85 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "../../utils/axios";
+import moment from "moment";
+import { SERVER } from "../../utils/constants";
+import { Spin } from "antd";
 
 const PressResourcesPage = props => {
-  const [pressResources, setPressResources] = useState([1]);
+  const [pressResources, setPressResources] = useState([]);
+  const [loadButton, setLoadButton] = useState(true);
+
+  const getData = () => {
+    setLoadButton(true);
+    axios
+      .post("press-resources", { page: pressResources.length })
+      .then(res => {
+        const { press_resources } = res.data;
+        setPressResources([...pressResources, ...press_resources]);
+      })
+      .finally(setLoadButton(false));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const renderPressResources = () => {
+    return pressResources.map((item, index) => (
+      <div className="col-12 col-md-12 col-lg-3 col-xl-3 ">
+        <article className="article-box-2 article-box mb-15px ">
+          <a
+            href={"/press-resource?id=" + item.id}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* Title visible on mobile  */}
+            <h3 className="d-block d-md-none">{item.title}</h3>
+            {/* Details  */}
+            <div className="article-detail row mx-0 ">
+              <div className="feature-img col-5 col-md-12 col-lg-12 col-xl-12 pl-0">
+                <div className="img-box">
+                  <img
+                    className="img-fluid thumbnail"
+                    src={
+                      SERVER +
+                      "public/images/press-resources/" +
+                      item.id +
+                      "/thumbnail.png"
+                    }
+                    alt="article"
+                  />
+                  {!item.is_image && (
+                    <img
+                      className="play-btn"
+                      src="./assets/images/mobile/icons/icn-play.png"
+                      alt="play"
+                    />
+                  )}
+                </div>
+              </div>
+              <div className="article-info col-7 col-md-12 col-lg-12 col-xl-12 px-0">
+                {/* Title visible on laptop  */}
+                <h3 className="d-none d-md-block d-lg-block">{item.title}</h3>
+                <p className="mb-0">{item.short_desc}</p>
+                <div className="d-flex time-and-view align-items-center">
+                  <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
+                  <div className="view d-flex align-items-center">
+                    <img
+                      height={16}
+                      src="./assets/images/mobile/icons/icn-eye-15.png"
+                      alt="views"
+                      className="img-fluid"
+                    />
+                    <span className="text-uppercase">{item.view_count}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    ));
+  };
 
   return (
     <>
@@ -95,77 +173,34 @@ const PressResourcesPage = props => {
             {/* List articles  */}
             <div className="row">
               {/* 4 ITEMS/PAGE MOBILE (Last item won't have border bottom), 16/ LAPTOP  */}
-              {pressResources.map((item, index) => (
-                <div className="col-12 col-md-12 col-lg-3 col-xl-3 ">
-                  <article className="article-box-2 article-box mb-15px ">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      {/* Title visible on mobile  */}
-                      <h3 className="d-block d-md-none">
-                        Huawei Sound X - Loa thông minh Hi-Res Audio đầu tiên,
-                        Devialet thiết kế, âm thanh Surround
-                      </h3>
-                      {/* Details  */}
-                      <div className="article-detail row mx-0 ">
-                        <div className="feature-img col-5 col-md-12 col-lg-12 col-xl-12 pl-0">
-                          <div className="img-box">
-                            <img
-                              src="./assets/images/laptop/article/thumbnail-3.png"
-                              className="img-fluid w-100"
-                              alt="article"
-                            />
-                            <img
-                              className="play-btn"
-                              src="./assets/images/mobile/icons/icn-play.png"
-                              alt="play"
-                            />
-                          </div>
-                        </div>
-                        <div className="article-info col-7 col-md-12 col-lg-12 col-xl-12 px-0">
-                          {/* Title visible on laptop  */}
-                          <h3 className="d-none d-md-block d-lg-block">
-                            Huawei Sound X - Loa thông minh Hi-Res Audio đầu
-                            tiên, Devialet thiết kế, âm thanh Surround
-                          </h3>
-                          <p className="mb-0">
-                            Huawei vừa giới thiệu mẫu loa thông minh cao cấp
-                            mang tên Sound X, được...
-                          </p>
-                          <div className="d-flex time-and-view align-items-center">
-                            <time>December 25, 2019</time>
-                            <div className="view d-flex align-items-center">
-                              <img
-                                height={16}
-                                src="./assets/images/mobile/icons/icn-eye-15.png"
-                                alt="views"
-                                className="img-fluid"
-                              />
-                              <span className="text-uppercase">1.2k</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-              ))}
-
+              {renderPressResources()}
               {/* VIEW MORE BUTTON */}
-              <div className="w-100">
-                <a
-                  href="#"
-                  className="text-uppercase mx-auto justify-content-center d-flex align-items-center"
+              {loadButton ? (
+                <div
+                  className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
+                  style={{ cursor: "pointer" }}
                 >
-                  <div className="view-more-articles">
-                    <span>View more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"
-                        alt="next"
-                      />
-                    </span>
+                  <Spin size="large" />
+                </div>
+              ) : (
+                <div className="w-100">
+                  <div
+                    onClick={getData}
+                    className="text-uppercase mx-auto justify-content-center d-flex align-items-center"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <div className="view-more-articles">
+                      <span>View more</span>
+                      <span>
+                        <img
+                          src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"
+                          alt="next"
+                        />
+                      </span>
+                    </div>
                   </div>
-                </a>
-              </div>
+                </div>
+              )}
             </div>
             {/* End List articles  */}
           </div>

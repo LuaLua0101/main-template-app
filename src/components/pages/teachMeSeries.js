@@ -2,24 +2,32 @@ import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
 import moment from "moment";
 import { SERVER } from "../../utils/constants";
+import { Spin } from "antd";
 
 const TeachMeSeriesPage = props => {
   const [teachMeSeries, setTeachMeSeries] = useState([]);
-  const [teachMePinned, setTeachMePinned] = useState({
-    id: 0
-  });
+  const [loadButton, setLoadButton] = useState(true);
+  const [teachMePinned, setTeachMePinned] = useState(null);
+
+  const getData = () => {
+    setLoadButton(true);
+    axios
+      .post("teach-me-series", { page: teachMeSeries.length })
+      .then(res => {
+        const { teachmepinned, teachme } = res.data;
+        setTeachMeSeries([...teachMeSeries, ...teachme]);
+        !teachMePinned && setTeachMePinned(teachmepinned);
+      })
+      .finally(setLoadButton(false));
+  };
 
   useEffect(() => {
-    axios.get("teach-me-series").then(res => {
-      const { teachmepinned, teachme } = res.data;
-      setTeachMeSeries(teachme);
-      setTeachMePinned(teachmepinned);
-    });
+    getData();
   }, []);
 
   const renderTeachmeList = () => {
     return teachMeSeries.map((item, index) => (
-      <div className="col-12 col-md-4 col-lg-6 col-xl-4">
+      <div className="col-12 col-md-4 col-lg-6 col-xl-4" key={index}>
         <article className="article-box">
           {/* Views, date, comments*/}
           <div className="article-brief-info d-flex align-items-center d-block d-md-none">
@@ -133,16 +141,18 @@ const TeachMeSeriesPage = props => {
                 <div className="col-12 col-xl-6 ">
                   <a href="#" target="_blank" rel="noopener noreferrer">
                     <div className="img-box">
-                      <img
-                        className="img-fluid"
-                        src={
-                          SERVER +
-                          "public/images/teach-me-series/" +
-                          teachMePinned.id +
-                          "/thumbnail.png"
-                        }
-                        alt="feature article"
-                      />
+                      {teachMePinned && (
+                        <img
+                          className="img-fluid"
+                          src={
+                            SERVER +
+                            "public/images/teach-me-series/" +
+                            teachMePinned.id +
+                            "/thumbnail.png"
+                          }
+                          alt="feature article"
+                        />
+                      )}
                       {/* <img
                         className="play-btn"
                         src="./assets/images/mobile/icons/icn-play.png"
@@ -160,18 +170,28 @@ const TeachMeSeriesPage = props => {
           <div className="container">
             <div className="row">{renderTeachmeList()}</div>
             {/* View more button */}
-            <a
-              href="#"
-              className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
-            >
-              <span>View more</span>
-              <span>
-                <img
-                  src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"
-                  alt="next"
-                />
-              </span>
-            </a>
+            {loadButton ? (
+              <div
+                className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
+                style={{ cursor: "pointer" }}
+              >
+                <Spin size="large" />
+              </div>
+            ) : (
+              <div
+                onClick={getData}
+                className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
+                style={{ cursor: "pointer" }}
+              >
+                <span>View more</span>
+                <span>
+                  <img
+                    src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"
+                    alt="next"
+                  />
+                </span>
+              </div>
+            )}
           </div>
         </section>
       </div>

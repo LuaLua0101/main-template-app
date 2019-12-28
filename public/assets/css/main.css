@@ -3,71 +3,58 @@ body {
   font-family: "Geomanist Regular", sans-serif;
   font-size: 14px;
   font-weight: normal;
-  line-height: 1.6;
-}
+  line-height: 1.6; }
 
 a,
 a:hover {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 ul {
-  padding: 0;
-}
-ul li {
-  list-style: none;
-}
+  padding: 0; }
+  ul li {
+    list-style: none; }
 
 .pull-right {
   float: right;
-  line-height: 30px;
-}
+  line-height: 30px; }
 
 .clear-float {
-  clear: both;
-}
+  clear: both; }
 
 .mobile-section-heading {
   font-family: "Geomanist Medium";
   font-size: 30px;
-  line-height: 1.6;
-}
+  line-height: 1.6; }
 
 .mobile-sub-heading {
   font-family: "Geomanist Medium";
   font-size: 16px;
   line-height: 25.6px;
-  position: relative;
-}
-.mobile-sub-heading::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  width: 32px;
-  background: #0166F4;
-  height: 3px;
-}
+  position: relative; }
+  .mobile-sub-heading::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    background: #0166F4;
+    height: 3px; }
 
 .center-sp-heading:after {
   left: 50%;
   transform: translateX(-50%);
-  bottom: -5px;
-}
+  bottom: -5px; }
 
 @media only screen and (min-width: 575.98px) {
   .mobile-sub-heading {
     font-size: 27px;
-    color: #0166F4;
-  }
-  .mobile-sub-heading::after {
-    bottom: -10px;
-    left: 0;
-    width: 78px;
-    background: #0166F4;
-    height: 5px;
-  }
-}
+    color: #0166F4; }
+    .mobile-sub-heading::after {
+      bottom: -10px;
+      left: 0;
+      width: 78px;
+      background: #0166F4;
+      height: 5px; } }
 .submit-btn {
   background: #1261D6;
   width: 131px;
@@ -75,8 +62,7 @@ ul li {
   color: #FFFFFF;
   border-radius: 15px;
   font-family: "Geomanist Book";
-  font-size: 12.12px;
-}
+  font-size: 12.12px; }
 
 .gradient-bg {
   background: -moz-linear-gradient(-15.92% 93.12% 46.22deg, #27e6d7 0%, #24dfda 8.79%, #0066f3 34.29%, #0066f3 35.91%, #0066f3 45.8%, #0066f3 100%);
@@ -86,1456 +72,1101 @@ ul li {
   background: -ms-linear-gradient(46.22deg, #27e6d7 0%, #24dfda 8.79%, #0066f3 34.29%, #0066f3 35.91%, #0066f3 45.8%, #0066f3 100%);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#27E6D7', endColorstr='#0066F3' ,GradientType=0)";
   background: linear-gradient(43.78deg, #27e6d7 0%, #24dfda 8.79%, #0066f3 50.29%, #0066f3 35.91%, #0066f3 45.8%, #0066f3 100%);
-  opacity: 0.87;
-}
+  opacity: 0.87; }
 
 .bg-pale-grey {
-  background: #F2F2F2;
-}
+  background: #F2F2F2; }
 
 .learn-more {
-  font-size: 18px;
-}
+  font-size: 18px; }
 
 .view-more-articles {
   margin: 7px 0;
   font-family: "Geomanist Regular";
   font-size: 14.37px;
   line-height: 1.6;
-  color: #1261D6;
-}
+  color: #1261D6; }
 
 .dash-link a {
-  position: relative;
-}
-.dash-link a::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  width: 0;
-  background: #383838;
-  height: 2px;
-  transition: all 0.5s;
-}
-.dash-link a:hover::after {
-  width: 100%;
-}
+  position: relative; }
+  .dash-link a::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background: #383838;
+    height: 2px;
+    transition: all 0.5s; }
+  .dash-link a:hover::after {
+    width: 100%; }
 .dash-link.active > a {
   color: #000;
-  position: relative;
-}
-.dash-link.active > a::after {
-  width: 100%;
-}
+  position: relative; }
+  .dash-link.active > a::after {
+    width: 100%; }
 
 @media only screen and (min-width: 575.98px) {
   .view-more-articles {
-    font-size: 27px;
-  }
-}
+    font-size: 27px; } }
 .mb-15px {
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; }
 
 .grey-shadow {
-  box-shadow: 1px 1px 1px 1px #cfcfcf;
-}
+  box-shadow: 1px 1px 1px 1px #cfcfcf; }
 
 /****************   Header  ****************/
 .header .nav-head {
-  box-shadow: 1px 1px 1px 1px #cfcfcf;
-}
-.header .nav-head .navbar-toggler-icon {
-  background: none;
-}
+  box-shadow: 1px 1px 1px 1px #cfcfcf; }
+  .header .nav-head .navbar-toggler-icon {
+    background: none; }
 .header .navbar {
   font-family: "Geomanist Book";
-  font-size: 25px;
-}
-.header .navbar .nav-item a {
-  color: #000;
-}
-.header .navbar .nav-item.active a {
-  color: #939393;
-}
-.header .navbar .nav-item .dropdown-toggle::after {
-  background-image: url(../images/mobile/icons/icn-arrow-down.png);
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-}
-.header .navbar .dropdown-menu {
-  font-family: "Geomanist Medium";
-  font-size: 16px;
-  text-transform: uppercase;
-}
+  font-size: 25px; }
+  .header .navbar .nav-item a {
+    color: #000; }
+  .header .navbar .nav-item.active a {
+    color: #939393; }
+  .header .navbar .nav-item .dropdown-toggle::after {
+    background-image: url(../images/mobile/icons/icn-arrow-down.png);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none; }
+  .header .navbar .dropdown-menu {
+    font-family: "Geomanist Medium";
+    font-size: 16px;
+    text-transform: uppercase; }
 .header .search-mobile {
-  position: relative;
-}
-.header .search-mobile > input {
-  border: none;
-  border-radius: 0;
-  width: 80%;
-  margin: 0 auto;
-  border-bottom: 1px solid #939393;
-}
-.header .search-mobile button {
-  position: absolute;
-  right: 10px;
-  top: -5px;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-}
+  position: relative; }
+  .header .search-mobile > input {
+    border: none;
+    border-radius: 0;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #939393; }
+  .header .search-mobile button {
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    background: transparent;
+    padding: 0;
+    margin: 0; }
 
 @media only screen and (min-width: 992px) {
   .header .nav-head {
-    box-shadow: none;
-  }
-  .header .nav-head .navbar-toggler-icon {
-    background: none;
-  }
+    box-shadow: none; }
+    .header .nav-head .navbar-toggler-icon {
+      background: none; }
   .header .navbar {
     font-family: "Geomanist Medium";
     font-size: 16.48px;
-    line-height: 1.6;
-  }
-  .header .navbar .nav-item a {
-    color: #000;
-  }
-  .header .navbar .nav-item.active a {
-    color: #000;
-  }
-  .header .navbar .dropdown-item:hover {
-    color: #0066F9;
-  }
-  .header .navbar .dropdown-item:active {
-    background: transparent;
-    color: #0066F9;
-  }
+    line-height: 1.6; }
+    .header .navbar .nav-item a {
+      color: #000; }
+    .header .navbar .nav-item.active a {
+      color: #000; }
+    .header .navbar .dropdown-item:hover {
+      color: #0066F9; }
+    .header .navbar .dropdown-item:active {
+      background: transparent;
+      color: #0066F9; }
   .header .search-mobile {
-    display: none;
-  }
+    display: none; }
   .header .navbar-laptop {
     font-family: "Geomanist Medium";
     font-size: 16.48px;
     line-height: 1.6;
-    text-transform: uppercase;
-  }
-  .header .navbar-laptop .nav-item {
-    margin-right: 45px;
-  }
-  .header .navbar-laptop .nav-item:nth-child(2) {
-    margin-right: 35px;
-  }
-  .header .navbar-laptop .nav-item::nth-child(3) {
-    margin-right: 30px;
-  }
-}
+    text-transform: uppercase; }
+    .header .navbar-laptop .nav-item {
+      margin-right: 45px; }
+      .header .navbar-laptop .nav-item:nth-child(2) {
+        margin-right: 35px; }
+      .header .navbar-laptop .nav-item::nth-child(3) {
+        margin-right: 30px; } }
 .fixed-header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 99;
-}
+  z-index: 99; }
 
 /**********************Components *****************/
 .article-box {
   color: #000;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 23px;
-}
-.article-box .article-brief-info {
-  margin-bottom: 10px;
-}
-.article-box .article-brief-info time {
-  font-size: 11px;
-  margin-right: 15px;
-}
-.article-box .article-brief-info .view, .article-box .article-brief-info .comments,
-.article-box .article-brief-info .share {
-  font-size: 9.5px;
-  margin-right: 10px;
-  border-radius: 15px;
-  background: #ECEFF4;
-  padding: 3px 10px;
-}
-.article-box .article-brief-info .view img, .article-box .article-brief-info .comments img,
-.article-box .article-brief-info .share img {
-  margin-right: 5px;
-}
-.article-box .article-brief-info .comments,
-.article-box .article-brief-info .share {
-  margin-right: 5px;
-}
-.article-box .article-detail h3 {
-  font-weight: bold;
-  color: #000;
-  font-family: "Geomanist Medium";
-  font-size: 16px;
-  line-height: 1.6;
-}
-.article-box .article-detail .img-box {
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-.article-box .article-detail .img-box .play-btn {
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  opacity: 0;
-  transition: all 0.5s;
-}
-.article-box .article-detail .img-box img:first-child {
-  width: 100%;
-  transition: all 0.5s;
-  display: block;
-  z-index: 3;
-  position: relative;
-}
-.article-box .article-detail .img-box img:first-child:hover {
-  transform: scale(1.1);
-}
-.article-box .article-detail .img-box img:first-child:hover ~ .play-btn {
-  opacity: 1;
-  z-index: 8;
-}
-.article-box .article-detail p {
-  font-family: "Geomanist Regular";
-  font-size: 14px;
-  letter-spacing: -0.021em;
-  line-height: 1.6;
-  color: #606060;
-  margin-bottom: 23px;
-}
+  margin-bottom: 23px; }
+  .article-box .article-brief-info {
+    margin-bottom: 10px; }
+    .article-box .article-brief-info time {
+      font-size: 11px;
+      margin-right: 15px; }
+    .article-box .article-brief-info .view, .article-box .article-brief-info .comments,
+    .article-box .article-brief-info .share {
+      font-size: 9.5px;
+      margin-right: 10px;
+      border-radius: 15px;
+      background: #ECEFF4;
+      padding: 3px 10px; }
+      .article-box .article-brief-info .view img, .article-box .article-brief-info .comments img,
+      .article-box .article-brief-info .share img {
+        margin-right: 5px; }
+    .article-box .article-brief-info .comments,
+    .article-box .article-brief-info .share {
+      margin-right: 5px; }
+  .article-box .article-detail h3 {
+    font-weight: bold;
+    color: #000;
+    font-family: "Geomanist Medium";
+    font-size: 16px;
+    line-height: 1.6; }
+  .article-box .article-detail .img-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 15px; }
+    .article-box .article-detail .img-box .play-btn {
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      opacity: 0;
+      transition: all 0.5s; }
+    .article-box .article-detail .img-box img:first-child {
+      width: 100%;
+      transition: all 0.5s;
+      display: block;
+      z-index: 3;
+      position: relative; }
+      .article-box .article-detail .img-box img:first-child:hover {
+        transform: scale(1.1); }
+        .article-box .article-detail .img-box img:first-child:hover ~ .play-btn {
+          opacity: 1;
+          z-index: 8; }
+  .article-box .article-detail p {
+    font-family: "Geomanist Regular";
+    font-size: 14px;
+    letter-spacing: -0.021em;
+    line-height: 1.6;
+    color: #606060;
+    margin-bottom: 23px; }
 
 @media only screen and (min-width: 575.98px) {
   .article-box {
-    border: none;
-  }
-  .article-box .article-brief-info time {
-    font-size: 14px;
-  }
-  .article-box .article-brief-info .view, .article-box .article-brief-info .comments,
-  .article-box .article-brief-info .share {
-    font-size: 14px;
-  }
-  .article-box .article-detail h3 {
-    font-family: "Geomanist Medium";
-    font-size: 27px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    margin-bottom: 0;
-  }
-  .article-box .article-detail p {
-    font-family: "Geomanist Regular";
-    font-size: 18px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    margin-bottom: 0;
-  }
-}
+    border: none; }
+    .article-box .article-brief-info time {
+      font-size: 14px; }
+    .article-box .article-brief-info .view, .article-box .article-brief-info .comments,
+    .article-box .article-brief-info .share {
+      font-size: 14px; }
+    .article-box .article-detail h3 {
+      font-family: "Geomanist Medium";
+      font-size: 27px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin-bottom: 0; }
+    .article-box .article-detail p {
+      font-family: "Geomanist Regular";
+      font-size: 18px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-bottom: 0; } }
 .article-box-2 {
   padding: 15px 0 25px 0;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
-}
-.article-box-2 h3 {
-  font-weight: bold;
-  color: #000;
-  font-family: "Geomanist Medium";
-  font-size: 16px;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-  margin-bottom: 15px;
-}
-.article-box-2 .feature-img {
-  border-radius: 10px;
-}
-.article-box-2 .feature-img img:first-child {
-  object-fit: cover;
-  height: 100%;
-  max-width: 100%;
-  display: block;
-  transition: all 0.5s;
-}
-.article-box-2 .feature-img img:first-child:hover {
-  transform: scale(1.1);
-}
-.article-box-2 .article-info {
-  padding: 10px 0;
-}
-.article-box-2 .article-info p {
-  font-family: "Geomanist Regular";
-  font-size: 14px;
-  letter-spacing: -0.021em;
-  line-height: 1.6;
-  color: #606060;
-  margin-bottom: 23px;
-}
-.article-box-2 .article-info .time-and-view {
-  font-family: "Geomanist Regular";
-  font-size: 10px;
-  line-height: 1.6;
-  color: #606060;
-}
-.article-box-2 .article-info .time-and-view .view > img, .article-box-2 .article-info .time-and-view .article-box .article-brief-info .comments > img, .article-box .article-brief-info .article-box-2 .article-info .time-and-view .comments > img,
-.article-box-2 .article-info .time-and-view .article-box .article-brief-info .share > img,
-.article-box .article-brief-info .article-box-2 .article-info .time-and-view .share > img {
-  margin: 0 10px;
-}
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2); }
+  .article-box-2 h3 {
+    font-weight: bold;
+    color: #000;
+    font-family: "Geomanist Medium";
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    margin-bottom: 15px; }
+  .article-box-2 .feature-img {
+    border-radius: 10px; }
+    .article-box-2 .feature-img img:first-child {
+      object-fit: cover;
+      height: 100%;
+      max-width: 100%;
+      display: block;
+      transition: all 0.5s; }
+      .article-box-2 .feature-img img:first-child:hover {
+        transform: scale(1.1); }
+  .article-box-2 .article-info {
+    padding: 10px 0; }
+    .article-box-2 .article-info p {
+      font-family: "Geomanist Regular";
+      font-size: 14px;
+      letter-spacing: -0.021em;
+      line-height: 1.6;
+      color: #606060;
+      margin-bottom: 23px; }
+    .article-box-2 .article-info .time-and-view {
+      font-family: "Geomanist Regular";
+      font-size: 10px;
+      line-height: 1.6;
+      color: #606060; }
+      .article-box-2 .article-info .time-and-view .view > img, .article-box-2 .article-info .time-and-view .article-box .article-brief-info .comments > img, .article-box .article-brief-info .article-box-2 .article-info .time-and-view .comments > img,
+      .article-box-2 .article-info .time-and-view .article-box .article-brief-info .share > img,
+      .article-box .article-brief-info .article-box-2 .article-info .time-and-view .share > img {
+        margin: 0 10px; }
 
 @media only screen and (min-width: 575.98px) {
   .article-box-2 {
     border: none;
-    padding-bottom: 35px;
-  }
-  .article-box-2 .article-detail h3 {
-    font-family: "Geomanist Medium";
-    font-size: 18px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    margin-bottom: 0;
-  }
-  .article-box-2 .article-detail p {
-    font-size: 17px;
-  }
-  .article-box-2 .article-detail .time-and-view {
-    font-size: 14px;
-  }
-}
+    padding-bottom: 35px; }
+    .article-box-2 .article-detail h3 {
+      font-family: "Geomanist Medium";
+      font-size: 18px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin-bottom: 0; }
+    .article-box-2 .article-detail p {
+      font-size: 17px; }
+    .article-box-2 .article-detail .time-and-view {
+      font-size: 14px; } }
 .breadcum {
-  padding: 30px 0 40px 0;
-}
-.breadcum-title {
-  font-family: "Geomanist Medium";
-  font-size: 30px;
-}
-.breadcum-subtitle {
-  font-size: 16px;
-  color: #787878;
-}
-.breadcum p {
-  font-size: 14px;
-  letter-spacing: -0.007em;
-}
-.breadcum-line {
-  width: 155px;
-  padding: 15px 0 15px;
-  height: 1px;
-  margin-bottom: 0;
-  margin-top: 0;
-}
+  padding: 30px 0 40px 0; }
+  .breadcum-title {
+    font-family: "Geomanist Medium";
+    font-size: 30px; }
+  .breadcum-subtitle {
+    font-size: 16px;
+    color: #787878; }
+  .breadcum p {
+    font-size: 14px;
+    letter-spacing: -0.007em; }
+  .breadcum-line {
+    width: 155px;
+    padding: 15px 0 15px;
+    height: 1px;
+    margin-bottom: 0;
+    margin-top: 0; }
 
 @media only screen and (min-width: 992px) {
   .breadcum {
-    padding: 95px 0 65px 0;
-  }
-  .breadcum-title {
-    font-family: "Geomanist Book";
-    font-size: 53px;
-  }
-  .breadcum-subtitle {
-    font-size: 24px;
-  }
-  .breadcum p {
-    font-size: 18px;
-    color: #606060;
-  }
-  .breadcum-line {
-    width: 100%;
-    padding: 15px 0 15px;
-  }
-}
+    padding: 95px 0 65px 0; }
+    .breadcum-title {
+      font-family: "Geomanist Book";
+      font-size: 53px; }
+    .breadcum-subtitle {
+      font-size: 24px; }
+    .breadcum p {
+      font-size: 18px;
+      color: #606060; }
+    .breadcum-line {
+      width: 100%;
+      padding: 15px 0 15px; } }
 /*********Breadcum for article page ********/
 .article-breadcum {
   background-image: url(../images/laptop/article/feature-article-laptop.png);
   position: relative;
   padding: 0;
-  z-index: 1;
-}
-.article-breadcum .overlay-bg {
-  position: absolute;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.7);
-  width: 100%;
-  height: 100%;
-}
-.article-breadcum-text {
-  position: relative;
-  z-index: 3;
-  padding: 25px 0 30px;
-}
-.article-breadcum .article-desc {
-  padding: 0 15px;
-}
+  z-index: 1; }
+  .article-breadcum .overlay-bg {
+    position: absolute;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%; }
+  .article-breadcum-text {
+    position: relative;
+    z-index: 3;
+    padding: 25px 0 30px; }
+  .article-breadcum .article-desc {
+    padding: 0 15px; }
 
 @media only screen and (min-width: 992px) {
   .article-breadcum {
     background-image: none;
-    background-color: #6BBFFD;
-  }
-  .article-breadcum .overlay-bg {
-    display: none;
-  }
-  .article-breadcum .breadcum-title {
-    font-family: "Geomanist Medium";
-    font-size: 28px;
-    color: #FFFFFF;
-    padding: 80px 135px 105px 120px;
-  }
-}
+    background-color: #6BBFFD; }
+    .article-breadcum .overlay-bg {
+      display: none; }
+    .article-breadcum .breadcum-title {
+      font-family: "Geomanist Medium";
+      font-size: 28px;
+      color: #FFFFFF;
+      padding: 80px 135px 105px 120px; } }
 /****************  Home page  ****************/
 .intro {
-  padding-top: 80px;
-}
-.intro p {
-  padding-bottom: 80px;
-  font-family: "Geomanist Light";
-  font-size: 16px;
-  line-height: 25.6px;
-}
+  padding-top: 80px; }
+  .intro p {
+    padding-bottom: 80px;
+    font-family: "Geomanist Light";
+    font-size: 16px;
+    line-height: 25.6px; }
 
 .application {
-  padding-top: 55px;
-}
-.application .application-content {
-  position: relative;
-}
-.application .application-content img {
-  padding: 0 16%;
-  position: relative;
-  z-index: 88;
-  margin-bottom: -85px;
-}
-.application .application-content .card {
-  box-shadow: 0px 6px 10px -1px #cfcfcf;
-  padding-top: 90px;
-  border-radius: 20px;
-  padding-bottom: 55px;
-  margin-bottom: 40px;
-}
-.application .application-content .card .card-title {
-  font-family: "Geomanist Medium";
-  font-size: 20px;
-  line-height: 1.6;
-}
+  padding-top: 55px; }
+  .application .application-content {
+    position: relative; }
+    .application .application-content img {
+      padding: 0 16%;
+      position: relative;
+      z-index: 88;
+      margin-bottom: -85px; }
+    .application .application-content .card {
+      box-shadow: 0px 6px 10px -1px #cfcfcf;
+      padding-top: 90px;
+      border-radius: 20px;
+      padding-bottom: 55px;
+      margin-bottom: 40px; }
+      .application .application-content .card .card-title {
+        font-family: "Geomanist Medium";
+        font-size: 20px;
+        line-height: 1.6; }
 
 .teach-me {
-  padding: 20px 0 25px 0;
-}
-.teach-me h2 {
-  margin-bottom: 20px;
-}
+  padding: 20px 0 25px 0; }
+  .teach-me h2 {
+    margin-bottom: 20px; }
 
 .iot-hub {
-  padding: 40px 0 35px 0;
-}
-.iot-hub h2 {
-  margin-bottom: 20px;
-}
-.iot-hub .article-box-2.pb-20px {
-  padding-bottom: 20px;
-}
-.iot-hub .view-more-articles {
-  margin-top: 50px;
-}
+  padding: 40px 0 35px 0; }
+  .iot-hub h2 {
+    margin-bottom: 20px; }
+  .iot-hub .article-box-2.pb-20px {
+    padding-bottom: 20px; }
+  .iot-hub .view-more-articles {
+    margin-top: 50px; }
 
 @media only screen and (min-width: 575.98px) {
   .intro {
-    padding-top: 140px;
-  }
-  .intro h2 {
-    font-family: "Geomanist Book";
-    font-size: 50px;
-    line-height: 1.6;
-  }
-  .intro p {
-    padding-bottom: 125px;
-    margin-bottom: 0;
-  }
-  .intro img {
-    width: 100%;
-  }
-}
+    padding-top: 140px; }
+    .intro h2 {
+      font-family: "Geomanist Book";
+      font-size: 50px;
+      line-height: 1.6; }
+    .intro p {
+      padding-bottom: 125px;
+      margin-bottom: 0; }
+    .intro img {
+      width: 100%; } }
 @media only screen and (min-width: 575.98px) {
   .application {
-    padding-top: 30px;
-  }
-  .application .application-content {
-    position: relative;
-  }
-  .application .application-content img {
-    padding: 0 16%;
-    margin-bottom: 0;
-  }
-  .application .application-content .card {
-    box-shadow: none;
-    border: none;
-    padding-top: 90px;
-    border-radius: 20px;
-    padding-bottom: 55px;
-    margin-bottom: 40px;
-  }
-  .application .application-content .card .card-title {
-    font-family: "Geomanist Medium";
-    font-size: 27px;
-    line-height: 1.6;
-  }
-  .application .application-content .card p {
-    font-family: "Geomanist Regular";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-  }
-}
+    padding-top: 30px; }
+    .application .application-content {
+      position: relative; }
+      .application .application-content img {
+        padding: 0 16%;
+        margin-bottom: 0; }
+      .application .application-content .card {
+        box-shadow: none;
+        border: none;
+        padding-top: 90px;
+        border-radius: 20px;
+        padding-bottom: 55px;
+        margin-bottom: 40px; }
+        .application .application-content .card .card-title {
+          font-family: "Geomanist Medium";
+          font-size: 27px;
+          line-height: 1.6; }
+        .application .application-content .card p {
+          font-family: "Geomanist Regular";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.6; } }
 @media only screen and (min-width: 992px) {
   .teach-me {
-    padding: 55px 0 95px 0;
-  }
-  .teach-me h2 {
-    margin-bottom: 45px;
-  }
-  .teach-me .feature-article-laptop {
-    margin-bottom: 32px;
-  }
-  .teach-me .feature-article-laptop .left-block {
-    padding-right: 30px;
-  }
-  .teach-me .feature-article-laptop .right-block {
-    padding-left: 30px;
-  }
-  .teach-me .secondary-article h3 {
-    font-size: 18px;
-  }
-  .teach-me .secondary-article--left {
-    padding-right: 35px;
-  }
-  .teach-me .secondary-article--left .left-block {
-    padding-right: 45px;
-  }
-  .teach-me .secondary-article--left .right-block {
-    padding-left: 0;
-    padding-right: 15px;
-  }
-  .teach-me .secondary-article--right {
-    padding-left: 60px;
-  }
-  .teach-me .secondary-article--right .left-block {
-    padding-right: 45px;
-  }
-  .teach-me .secondary-article--right .right-block {
-    padding-right: 0px;
-    padding-left: 0;
-  }
-}
+    padding: 55px 0 95px 0; }
+    .teach-me h2 {
+      margin-bottom: 45px; }
+    .teach-me .feature-article-laptop {
+      margin-bottom: 32px; }
+      .teach-me .feature-article-laptop .left-block {
+        padding-right: 30px; }
+      .teach-me .feature-article-laptop .right-block {
+        padding-left: 30px; }
+    .teach-me .secondary-article h3 {
+      font-size: 18px; }
+    .teach-me .secondary-article--left {
+      padding-right: 35px; }
+      .teach-me .secondary-article--left .left-block {
+        padding-right: 45px; }
+      .teach-me .secondary-article--left .right-block {
+        padding-left: 0;
+        padding-right: 15px; }
+    .teach-me .secondary-article--right {
+      padding-left: 60px; }
+      .teach-me .secondary-article--right .left-block {
+        padding-right: 45px; }
+      .teach-me .secondary-article--right .right-block {
+        padding-right: 0px;
+        padding-left: 0; } }
 @media only screen and (min-width: 992px) {
   .iot-page-breadcum {
-    padding: 100px 0 50px;
-  }
+    padding: 100px 0 50px; }
 
   .iot-hub {
-    padding: 70px 0 75px 0;
-  }
-  .iot-hub .laptop-row {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  .iot-hub .feature-iot-hub .img-box {
-    height: 20rem;
-  }
-  .iot-hub .feature-iot-hub .img-box img:first-child {
-    height: 100%;
-    object-fit: cover;
-  }
-}
+    padding: 70px 0 75px 0; }
+    .iot-hub .laptop-row {
+      padding-top: 40px;
+      padding-bottom: 40px; }
+    .iot-hub .feature-iot-hub .img-box {
+      height: 20rem; }
+      .iot-hub .feature-iot-hub .img-box img:first-child {
+        height: 100%;
+        object-fit: cover; } }
 /****************  Teach series page  ****************/
 .teach-series-articles {
   background: #0066F9;
-  padding: 30px 0 35px;
-}
-.teach-series-articles h3 {
-  font-family: "Geomanist Medium";
-  font-size: 27px;
-}
-.teach-series-articles .article-detail {
-  text-align: center;
-}
-.teach-series-articles .article-detail .img-box > img:first-child {
-  padding: 0 5rem 0 4rem;
-}
+  padding: 30px 0 35px; }
+  .teach-series-articles h3 {
+    font-family: "Geomanist Medium";
+    font-size: 27px; }
+  .teach-series-articles .article-detail {
+    text-align: center; }
+    .teach-series-articles .article-detail .img-box > img:first-child {
+      padding: 0 5rem 0 4rem; }
 
 .teach-series-sub-articles {
-  margin: 30px 0 35px;
-}
-.teach-series-sub-articles .article-box .article-detail h3 {
-  font-size: 18px;
-}
-.teach-series-sub-articles .view-more-articles {
-  border: 1px solid #1261D6;
-  width: 120px;
-  border-radius: 15px;
-  padding-top: 3px;
-}
-.teach-series-sub-articles .view-more-articles img {
-  margin-left: 10px;
-  height: 7px;
-}
+  margin: 30px 0 35px; }
+  .teach-series-sub-articles .article-box .article-detail h3 {
+    font-size: 18px; }
+  .teach-series-sub-articles .view-more-articles {
+    border: 1px solid #1261D6;
+    width: 120px;
+    border-radius: 15px;
+    padding-top: 3px; }
+    .teach-series-sub-articles .view-more-articles img {
+      margin-left: 10px;
+      height: 7px; }
 
 @media only screen and (min-width: 575.98px) {
   .teach-series-articles {
     background: transparent;
-    padding: 30px 0 35px;
-  }
-  .teach-series-articles .article-box {
-    background: #6BBFFD;
-    border-radius: 15px;
-    padding: 30px 100px;
-  }
-  .teach-series-articles .article-detail {
-    text-align: left;
-  }
-}
+    padding: 30px 0 35px; }
+    .teach-series-articles .article-box {
+      background: #6BBFFD;
+      border-radius: 15px;
+      padding: 30px 100px; }
+    .teach-series-articles .article-detail {
+      text-align: left; } }
 @media only screen and (min-width: 575.98px) {
   .teach-series-sub-articles {
-    margin: 60px 0 90px;
-  }
-  .teach-series-sub-articles .article-box {
-    margin-bottom: 30px;
-  }
-  .teach-series-sub-articles .article-box .img-box {
-    height: 190px;
-    display: inline-flex;
-  }
-  .teach-series-sub-articles .view-more-articles {
-    width: 235px;
-    padding-top: 5px;
-  }
-  .teach-series-sub-articles .view-more-articles img {
-    margin-left: 15px;
-    height: 15px;
-  }
-}
+    margin: 60px 0 90px; }
+    .teach-series-sub-articles .article-box {
+      margin-bottom: 30px; }
+      .teach-series-sub-articles .article-box .img-box {
+        height: 190px;
+        display: inline-flex; }
+    .teach-series-sub-articles .view-more-articles {
+      width: 235px;
+      padding-top: 5px; }
+      .teach-series-sub-articles .view-more-articles img {
+        margin-left: 15px;
+        height: 15px; } }
 /****************  Teach me page (Article detail)  ****************/
 .main-article {
-  margin: 15px 0 40px;
-}
+  margin: 15px 0 40px; }
 
 .sharing {
   margin-top: 20px;
-  text-align: left;
-}
+  text-align: left; }
 
 .comment-box {
-  margin-bottom: 35px;
-}
-.comment-box .custom-input {
-  background: #F9F9F9;
-  border: none;
-  border-radius: 0;
-  padding: 12px 8px;
-  box-shadow: 1px 4px 9px -1px #cfcfcf;
-  margin-bottom: 10px;
-}
-.comment-box .form-group > textarea {
-  padding-bottom: 145px;
-}
-.comment-box .submit-btn {
-  margin-top: 25px;
-}
-.comment-box .caption {
-  font-family: "Geomanist Book";
-  font-size: 17.67px;
-  margin-bottom: 10px;
-}
+  margin-bottom: 35px; }
+  .comment-box .custom-input {
+    background: #F9F9F9;
+    border: none;
+    border-radius: 0;
+    padding: 12px 8px;
+    box-shadow: 1px 4px 9px -1px #cfcfcf;
+    margin-bottom: 10px; }
+  .comment-box .form-group > textarea {
+    padding-bottom: 145px; }
+  .comment-box .submit-btn {
+    margin-top: 25px; }
+  .comment-box .caption {
+    font-family: "Geomanist Book";
+    font-size: 17.67px;
+    margin-bottom: 10px; }
 
 @media only screen and (min-width: 992px) {
   .main-article {
-    margin: 55px 0 60px;
-  }
-  .main-article .article-box .article-brief-info {
-    margin-bottom: 15px;
-  }
-  .main-article .article-box .article-brief-info time, .main-article .article-box .article-brief-info .view, .main-article .article-box .article-brief-info .comments,
-  .main-article .article-box .article-brief-info .share, .main-article .article-box .article-brief-info .comments, .main-article .article-box .article-brief-info .share {
-    font-size: 19px;
-    color: #4B4F56;
-  }
-  .main-article .article-box .article-brief-info time {
-    color: #000;
-  }
-  .main-article .article-box .article-detail p {
-    font-size: 19px;
-    color: #4C4C4C;
-  }
-  .main-article .article-box .article-detail .img-box {
-    margin: 40px 0 35px;
-  }
-}
+    margin: 55px 0 60px; }
+    .main-article .article-box .article-brief-info {
+      margin-bottom: 15px; }
+      .main-article .article-box .article-brief-info time, .main-article .article-box .article-brief-info .view, .main-article .article-box .article-brief-info .comments,
+      .main-article .article-box .article-brief-info .share, .main-article .article-box .article-brief-info .comments, .main-article .article-box .article-brief-info .share {
+        font-size: 19px;
+        color: #4B4F56; }
+      .main-article .article-box .article-brief-info time {
+        color: #000; }
+    .main-article .article-box .article-detail p {
+      font-size: 19px;
+      color: #4C4C4C; }
+    .main-article .article-box .article-detail .img-box {
+      margin: 40px 0 35px; } }
 @media only screen and (min-width: 992px) {
   .sharing .sharing-box {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-  }
-  .sharing .sharing-box .caption {
-    color: #989899;
-    font-size: 18px;
-    margin-right: 30px;
-  }
-}
+    align-items: center; }
+    .sharing .sharing-box .caption {
+      color: #989899;
+      font-size: 18px;
+      margin-right: 30px; } }
 @media only screen and (min-width: 992px) {
   .comment-box {
-    margin-bottom: 120px;
-  }
-  .comment-box .caption {
-    font-size: 31px;
-    margin-bottom: 20px;
-  }
-  .comment-box .custom-input, .comment-box textarea {
-    font-family: "Geomanist Book";
-    font-size: 21px;
-  }
-  .comment-box .custom-input {
-    padding: 18px 15px;
-  }
-  .comment-box .submit-btn {
-    width: 230px;
-    height: 50px;
-    margin-top: 75px;
-    font-family: "Geomanist Medium";
-    font-size: 21.5px;
-  }
-}
+    margin-bottom: 120px; }
+    .comment-box .caption {
+      font-size: 31px;
+      margin-bottom: 20px; }
+    .comment-box .custom-input, .comment-box textarea {
+      font-family: "Geomanist Book";
+      font-size: 21px; }
+    .comment-box .custom-input {
+      padding: 18px 15px; }
+    .comment-box .submit-btn {
+      width: 230px;
+      height: 50px;
+      margin-top: 75px;
+      font-family: "Geomanist Medium";
+      font-size: 21.5px; } }
 /****************  Application page  ****************/
 .application-intro {
   text-align: center;
-  padding-top: 25px;
-}
-.application-intro .application-content .card {
-  padding-top: 105px;
-  padding-bottom: 30px;
-  margin-bottom: 60px;
-}
-.application-intro .application-content .card .card-title {
-  font-size: 30px;
-}
+  padding-top: 25px; }
+  .application-intro .application-content .card {
+    padding-top: 105px;
+    padding-bottom: 30px;
+    margin-bottom: 60px; }
+    .application-intro .application-content .card .card-title {
+      font-size: 30px; }
 
 @media only screen and (min-width: 557px) {
   .application-intro {
-    padding: 55px 0 70px;
-  }
-  .application-intro .application-content .card p {
-    font-size: 17px;
-  }
-}
+    padding: 55px 0 70px; }
+    .application-intro .application-content .card p {
+      font-size: 17px; } }
 .application-latest-updates {
-  text-align: center;
-}
-.application-latest-updates .update-block {
-  margin-bottom: 20px;
-}
-.application-latest-updates .update-block .icn-summarize {
-  width: 60px;
-  margin-bottom: 15px;
-}
-.application-latest-updates .update-block p {
-  font-size: 13.16px;
-  color: #515151;
-}
-.application-latest-updates .update-block h3 {
-  font-family: "Geomanist Medium";
-  font-size: 16px;
-  color: #333333;
-}
-.application-latest-updates .update-block .learn-more {
-  font-size: 11.97px;
-}
-.application-latest-updates .update-block .learn-more img {
-  width: 7px;
-}
-.application-latest-updates .update-block .sub-text {
-  padding: 0 35px;
-}
-.application-latest-updates .mobile-sub-heading {
-  font-size: 20px;
-  text-transform: uppercase;
-}
+  text-align: center; }
+  .application-latest-updates .update-block {
+    margin-bottom: 20px; }
+    .application-latest-updates .update-block .icn-summarize {
+      width: 60px;
+      margin-bottom: 15px; }
+    .application-latest-updates .update-block p {
+      font-size: 13.16px;
+      color: #515151; }
+    .application-latest-updates .update-block h3 {
+      font-family: "Geomanist Medium";
+      font-size: 16px;
+      color: #333333; }
+    .application-latest-updates .update-block .learn-more {
+      font-size: 11.97px; }
+      .application-latest-updates .update-block .learn-more img {
+        width: 7px; }
+    .application-latest-updates .update-block .sub-text {
+      padding: 0 35px; }
+  .application-latest-updates .mobile-sub-heading {
+    font-size: 20px;
+    text-transform: uppercase; }
 
 @media only screen and (min-width: 575.98px) {
   .application-latest-updates {
-    text-align: left;
-  }
-  .application-latest-updates .sub-title {
-    font-size: 30px;
-    line-height: 1.6;
-    margin-top: 20px;
-    margin-bottom: 90px;
-  }
-  .application-latest-updates .update-block {
-    margin-bottom: 45px;
-    align-items: center;
-    display: flex;
-  }
-  .application-latest-updates .update-block .icn-summarize {
-    width: 100%;
-  }
-  .application-latest-updates .update-block p {
-    font-size: 18px;
-  }
-  .application-latest-updates .update-block h3 {
-    font-size: 30px;
-  }
-  .application-latest-updates .update-block .learn-more {
-    font-size: 21px;
-  }
-  .application-latest-updates .update-block .learn-more img {
-    width: 10px;
-  }
-  .application-latest-updates .update-block .sub-text {
-    padding: 0 35px;
-  }
-  .application-latest-updates .mobile-sub-heading {
-    margin-top: 45px;
-    font-family: "Geomanist Book";
-    font-size: 49.5px;
-    color: #000;
-    text-transform: capitalize;
-  }
-  .application-latest-updates .mobile-sub-heading::after {
-    display: none;
-  }
-}
+    text-align: left; }
+    .application-latest-updates .sub-title {
+      font-size: 30px;
+      line-height: 1.6;
+      margin-top: 20px;
+      margin-bottom: 90px; }
+    .application-latest-updates .update-block {
+      margin-bottom: 45px;
+      align-items: center;
+      display: flex; }
+      .application-latest-updates .update-block .icn-summarize {
+        width: 100%; }
+      .application-latest-updates .update-block p {
+        font-size: 18px; }
+      .application-latest-updates .update-block h3 {
+        font-size: 30px; }
+      .application-latest-updates .update-block .learn-more {
+        font-size: 21px; }
+        .application-latest-updates .update-block .learn-more img {
+          width: 10px; }
+      .application-latest-updates .update-block .sub-text {
+        padding: 0 35px; }
+    .application-latest-updates .mobile-sub-heading {
+      margin-top: 45px;
+      font-family: "Geomanist Book";
+      font-size: 49.5px;
+      color: #000;
+      text-transform: capitalize; }
+      .application-latest-updates .mobile-sub-heading::after {
+        display: none; } }
 .recent-updates {
   background: #F2F2F2;
   text-align: center;
-  padding: 55px 0 30px;
-}
-.recent-updates .mobile-sub-heading {
-  font-size: 20px;
-}
-.recent-updates h5 {
-  font-family: "Geomanist Medium";
-  font-size: 16px;
-}
-.recent-updates .version-container {
-  padding: 30px 0 40px;
-}
-.recent-updates .version-container .box-version {
-  color: #FFFFFF;
-  width: 90px;
-  height: 90px;
-  background: #A4A4A5;
-  font-family: "Geomanist Medium";
-  font-size: 33.98px;
-}
-.recent-updates .version-container .box-version.active {
-  background: #00468B;
-  position: relative;
-}
-.recent-updates .version-container .box-version.active::after {
-  margin-bottom: 10px;
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  width: 100%;
-  background: #000;
-  content: "";
-  height: 3px;
-}
+  padding: 55px 0 30px; }
+  .recent-updates .mobile-sub-heading {
+    font-size: 20px; }
+  .recent-updates h5 {
+    font-family: "Geomanist Medium";
+    font-size: 16px; }
+  .recent-updates .version-container {
+    padding: 30px 0 40px; }
+    .recent-updates .version-container .box-version {
+      color: #FFFFFF;
+      width: 90px;
+      height: 90px;
+      background: #A4A4A5;
+      font-family: "Geomanist Medium";
+      font-size: 33.98px; }
+      .recent-updates .version-container .box-version.active {
+        background: #00468B;
+        position: relative; }
+        .recent-updates .version-container .box-version.active::after {
+          margin-bottom: 10px;
+          position: absolute;
+          bottom: -20px;
+          left: 0;
+          width: 100%;
+          background: #000;
+          content: "";
+          height: 3px; }
 
 @media only screen and (min-width: 575.98px) {
   .recent-updates {
     background: transparent;
-    padding: 25px 0 130px;
-  }
-  .recent-updates .sub-title {
-    font-size: 30px;
-    line-height: 1.6;
-    margin-top: 20px;
-    margin-bottom: 90px;
-  }
-  .recent-updates .caption h5 {
-    font-size: 29px;
-  }
-  .recent-updates .caption p {
-    font-size: 27px;
-  }
-  .recent-updates .mobile-sub-heading {
-    margin-top: 45px;
-    font-family: "Geomanist Book";
-    font-size: 49.5px;
-    color: #000;
-    text-transform: capitalize;
-  }
-  .recent-updates .mobile-sub-heading::after {
-    display: none;
-  }
-  .recent-updates .version-container {
-    padding: 30px 0 40px;
-  }
-  .recent-updates .version-container .box-version {
-    width: 233px;
-    height: 233px;
-    font-family: "Geomanist Medium";
-    font-size: 33.98px;
-  }
-}
+    padding: 25px 0 130px; }
+    .recent-updates .sub-title {
+      font-size: 30px;
+      line-height: 1.6;
+      margin-top: 20px;
+      margin-bottom: 90px; }
+    .recent-updates .caption h5 {
+      font-size: 29px; }
+    .recent-updates .caption p {
+      font-size: 27px; }
+    .recent-updates .mobile-sub-heading {
+      margin-top: 45px;
+      font-family: "Geomanist Book";
+      font-size: 49.5px;
+      color: #000;
+      text-transform: capitalize; }
+      .recent-updates .mobile-sub-heading::after {
+        display: none; }
+    .recent-updates .version-container {
+      padding: 30px 0 40px; }
+      .recent-updates .version-container .box-version {
+        width: 233px;
+        height: 233px;
+        font-family: "Geomanist Medium";
+        font-size: 33.98px; } }
 /****************  Press resources page  ****************/
 .press-resources .col {
-  flex: 0 0 33.333333%;
-}
+  flex: 0 0 33.333333%; }
 
 @media only screen and (min-width: 992px) {
   .press-list-breadcum {
-    padding-bottom: 45px;
-  }
+    padding-bottom: 45px; }
 
   .press-resources .col {
-    flex: 1 0 0;
-  }
+    flex: 1 0 0; }
   .press-resources .brands {
-    padding: 0 130px 45px 140px;
-  }
+    padding: 0 130px 45px 140px; }
 
   .press-resource-line {
-    padding: 15px 0 60px;
-  }
-}
+    padding: 15px 0 60px; } }
 .press-list .active-page {
   border: 1px solid #AFAFAF;
   border-radius: 5px;
   padding: 5px 20px;
-  display: inline-block;
-}
+  display: inline-block; }
 .press-list .view-more-articles {
   border: 1px solid #1261D6;
   border-radius: 15px;
   padding: 7px 15px 5px;
-  margin-bottom: 35px;
-}
-.press-list .view-more-articles > span:first-child {
-  margin-right: 10px;
-}
-.press-list .view-more-articles > span:last-child img {
-  width: 8px;
-  padding-bottom: 2px;
-}
+  margin-bottom: 35px; }
+  .press-list .view-more-articles > span:first-child {
+    margin-right: 10px; }
+  .press-list .view-more-articles > span:last-child img {
+    width: 8px;
+    padding-bottom: 2px; }
 
 @media only screen and (min-width: 992px) {
   .press-list .article-box-2 {
     padding-top: 0;
-    margin-bottom: 0;
-  }
+    margin-bottom: 0; }
+    .press-list .article-box-2 .feature-img .img-box {
+      height: 135px; }
   .press-list .active-page {
-    padding: 10px 30px;
-  }
+    padding: 10px 30px; }
   .press-list .view-more-articles {
     padding: 10px 15px 5px;
-    margin: 55px 0 50px;
-  }
-  .press-list .view-more-articles > span:last-child img {
-    width: 15px;
-    padding-bottom: 2px;
-  }
-}
+    margin: 55px 0 50px; }
+    .press-list .view-more-articles > span:last-child img {
+      width: 15px;
+      padding-bottom: 2px; } }
 /****************  Building future page  ****************/
 .building-page-breadcum {
   padding-top: 30px;
-  padding-bottom: 30px;
-}
-.building-page-breadcum p {
-  color: #787878;
-}
+  padding-bottom: 30px; }
+  .building-page-breadcum p {
+    color: #787878; }
 
 @media only screen and (min-width: 992px) {
   .building-page-breadcum {
     padding-top: 70px;
-    padding-bottom: 60px;
-  }
-}
+    padding-bottom: 60px; } }
 .info-section .info-block {
-  text-align: center;
-}
-.info-section .info-block h4 {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #787878;
-}
+  text-align: center; }
+  .info-section .info-block h4 {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #787878; }
 .info-section .img-block {
-  margin: 20px 0 40px;
-}
+  margin: 20px 0 40px; }
 
 .asm h3, .cqa h3, .zooer h3, .crm h3 {
   font-family: "Geomanist Medium";
-  font-size: 20px;
-}
+  font-size: 20px; }
 
 .asm .img-block {
-  margin: 20px 0 35px;
-}
+  margin: 20px 0 35px; }
 
 .crm .img-block {
-  margin: 30px 0 60px;
-}
+  margin: 30px 0 60px; }
 
 .cqa .img-block {
-  margin: 40px 0 45px;
-}
+  margin: 40px 0 45px; }
 .cqa .breadcum-line {
-  padding: 30px 0 30px;
-}
+  padding: 30px 0 30px; }
 
 @media only screen and (min-width: 992px) {
   .info-section .info-block {
-    text-align: left;
-  }
-  .info-section .info-block h3 {
-    font-family: "Geomanist Medium";
-    font-size: 35px;
-    color: #1261D6;
-  }
-  .info-section .info-block h4 {
-    font-family: "Geomanist Medium";
-    font-size: 27px;
-  }
-  .info-section .info-block p {
-    font-size: 18px;
-    color: #787878;
-  }
+    text-align: left; }
+    .info-section .info-block h3 {
+      font-family: "Geomanist Medium";
+      font-size: 35px;
+      color: #1261D6; }
+    .info-section .info-block h4 {
+      font-family: "Geomanist Medium";
+      font-size: 27px; }
+    .info-section .info-block p {
+      font-size: 18px;
+      color: #787878; }
   .info-section .img-block {
-    margin: 20px 0 40px;
-  }
+    margin: 20px 0 40px; }
 
   .reverse-laptop {
-    flex-direction: row-reverse;
-  }
+    flex-direction: row-reverse; }
 
   .asm {
-    margin: 75px 0 80px;
-  }
-  .asm .info-block {
-    padding-right: 65px;
-  }
-  .asm .img-block {
-    padding-left: 45px;
-  }
+    margin: 75px 0 80px; }
+    .asm .info-block {
+      padding-right: 65px; }
+    .asm .img-block {
+      padding-left: 45px; }
 
   .crm {
-    margin: 50px  0 65px;
-  }
-  .crm .img-block {
-    padding-right: 45px;
-  }
+    margin: 50px  0 65px; }
+    .crm .img-block {
+      padding-right: 45px; }
 
   .cqa {
-    margin: 60px 0 70px;
-  }
-  .cqa .img-block {
-    padding-left: 100px;
-  }
-  .cqa .info-block {
-    padding-right: 45px;
-  }
+    margin: 60px 0 70px; }
+    .cqa .img-block {
+      padding-left: 100px; }
+    .cqa .info-block {
+      padding-right: 45px; }
 
   .zooer {
-    margin: 50px 0 120px;
-  }
-}
+    margin: 50px 0 120px; } }
 /****************  Related products page ****************/
 .features-mobile .slick-active.slick-center {
-  position: relative;
-}
-.features-mobile .slick-active.slick-center img {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-}
-.features-mobile .slick-active.slick-center::after {
-  position: absolute;
-  content: "";
-  width: 32px;
-  background: #0166F4;
-  bottom: 20px;
-  height: 3px;
-  margin: 0 auto;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  position: relative; }
+  .features-mobile .slick-active.slick-center img {
+    margin-bottom: 20px;
+    padding-bottom: 10px; }
+  .features-mobile .slick-active.slick-center::after {
+    position: absolute;
+    content: "";
+    width: 32px;
+    background: #0166F4;
+    bottom: 20px;
+    height: 3px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%); }
 .features-mobile .slick-track {
   display: flex;
-  align-items: center;
-}
+  align-items: center; }
 .features-mobile .slick-prev {
   background-image: url(../images/laptop/icn/carousel-left.png);
   width: 15px;
   height: 15px;
   background-size: contain;
   background-repeat: no-repeat;
-  left: 0;
-}
-.features-mobile .slick-prev::before {
-  content: "";
-}
+  left: 0; }
+  .features-mobile .slick-prev::before {
+    content: ""; }
 .features-mobile .slick-next {
   background-image: url(../images/laptop/icn/carousel-next.png);
   right: 0;
   width: 15px;
   height: 15px;
   background-size: contain;
-  background-repeat: no-repeat;
-}
-.features-mobile .slick-next::before {
-  content: "";
-}
+  background-repeat: no-repeat; }
+  .features-mobile .slick-next::before {
+    content: ""; }
 .features-mobile .slider-nav-item-mobile {
-  padding: 0 20px;
-}
-.features-mobile .slider-nav-item-mobile.slick-slide:not(.slick-current) img {
-  height: 70px;
-}
+  padding: 0 20px; }
+  .features-mobile .slider-nav-item-mobile.slick-slide:not(.slick-current) img {
+    height: 70px; }
 .features-mobile .slider-for {
-  margin-bottom: 40px;
-}
-.features-mobile .slider-for .learn-more {
-  font-family: "Geomanist Book";
-  font-size: 12px;
-}
+  margin-bottom: 40px; }
+  .features-mobile .slider-for .learn-more {
+    font-family: "Geomanist Book";
+    font-size: 12px; }
 .features-mobile .learn-more span:first-child {
-  margin-right: 5px;
-}
+  margin-right: 5px; }
 
 @media only screen and (min-width: 992px) {
   .features {
-    margin: 40px 0 0;
-  }
-  .features .block-feature {
-    padding-right: 50px;
-    margin-bottom: 70px;
-  }
-  .features .block-feature figure {
-    height: 116px;
-    overflow: hidden;
-  }
-  .features .learn-more span:first-child {
-    margin-right: 5px;
-  }
+    margin: 40px 0 0; }
+    .features .block-feature {
+      padding-right: 50px;
+      margin-bottom: 70px; }
+      .features .block-feature figure {
+        height: 116px;
+        overflow: hidden; }
+    .features .learn-more span:first-child {
+      margin-right: 5px; }
 
   .related-products-breadcum {
     margin: 90px 0 65px;
-    padding: 0;
-  }
-}
+    padding: 0; } }
 /****************  Careers page ****************/
 .banner {
   height: 135px;
   background-image: url(../images/laptop/career-banner.png);
   background-size: cover;
-  background-position: center;
-}
+  background-position: center; }
 
 @media only screen and (min-width: 992px) {
   .banner {
-    height: 480px;
-  }
-}
+    height: 480px; } }
 @media only screen and (min-width: 992px) {
   .career-breadcum {
-    padding: 75px 0 50px;
-  }
-}
+    padding: 75px 0 50px; } }
 .careers .toggle-mobile {
   width: 100%;
   background: transparent;
   border: 1px solid #D2EAFF;
   color: #000;
   margin-bottom: 15px;
-  border-radius: 10px;
-}
-.careers .toggle-mobile:focus {
-  box-shadow: none;
-}
-.careers .toggle-mobile .title {
-  padding: 12px 0;
-  text-transform: uppercase;
-  font-family: "Geomanist Medium";
-  font-size: 20px;
-}
+  border-radius: 10px; }
+  .careers .toggle-mobile:focus {
+    box-shadow: none; }
+  .careers .toggle-mobile .title {
+    padding: 12px 0;
+    text-transform: uppercase;
+    font-family: "Geomanist Medium";
+    font-size: 20px; }
 .careers .toggle-content {
-  padding: 0 0 35px;
-}
-.careers .toggle-content .job-desc h4 {
-  font-family: "Geomanist Medium";
-  font-size: 16px;
-}
-.careers .toggle-content .job-desc .learn-more {
-  font-family: "Geomanist Book";
-  font-size: 12px;
-}
-.careers .toggle-content .career-img {
-  padding-bottom: 30px;
-}
+  padding: 0 0 35px; }
+  .careers .toggle-content .job-desc h4 {
+    font-family: "Geomanist Medium";
+    font-size: 16px; }
+  .careers .toggle-content .job-desc .learn-more {
+    font-family: "Geomanist Book";
+    font-size: 12px; }
+  .careers .toggle-content .career-img {
+    padding-bottom: 30px; }
 
 @media only screen and (min-width: 992px) {
   .careers {
-    margin: 50px 0 90px;
-  }
-  .careers .mobile-sub-heading::after {
-    display: none;
-  }
-  .careers .laptop-main-content .block-item {
-    margin-bottom: 65px;
-  }
-  .careers .laptop-main-content .block-item h3 {
-    margin-bottom: 15px;
-  }
-  .careers .laptop-main-content .block-item h4 {
-    font-family: "Geomanist Medium";
-    font-size: 27px;
-    color: #787878;
-    margin-bottom: 20px;
-  }
-  .careers .laptop-main-content .block-item p {
-    font-size: 18px;
-    color: #787878;
-  }
-  .careers .laptop-main-content .block-item .text-block-left {
-    padding-right: 65px;
-  }
-  .careers .laptop-main-content .block-item .text-block-right {
-    padding-left: 40px;
-    padding-right: 60px;
-  }
-  .careers .mobile-sub-heading {
-    font-family: "Geomanist Medium";
-    font-size: 35px;
-    color: #1261D6;
-  }
-}
+    margin: 50px 0 90px; }
+    .careers .mobile-sub-heading::after {
+      display: none; }
+    .careers .laptop-main-content .block-item {
+      margin-bottom: 65px; }
+      .careers .laptop-main-content .block-item h3 {
+        margin-bottom: 15px; }
+      .careers .laptop-main-content .block-item h4 {
+        font-family: "Geomanist Medium";
+        font-size: 27px;
+        color: #787878;
+        margin-bottom: 20px; }
+      .careers .laptop-main-content .block-item p {
+        font-size: 18px;
+        color: #787878; }
+      .careers .laptop-main-content .block-item .text-block-left {
+        padding-right: 65px; }
+      .careers .laptop-main-content .block-item .text-block-right {
+        padding-left: 40px;
+        padding-right: 60px; }
+    .careers .mobile-sub-heading {
+      font-family: "Geomanist Medium";
+      font-size: 35px;
+      color: #1261D6; } }
 .quote {
-  margin: 20px 0;
-}
+  margin: 20px 0; }
 
 @media only screen and (min-width: 992px) {
   .quote {
     margin-top: 0;
-    margin-bottom: 50px;
-  }
-  .quote .quote-content {
-    background: #F7F7F7;
-    padding: 85px 135px 55px;
-    font-family: "Geomanist Book";
-    font-size: 18px;
-  }
-  .quote .quote-content strong {
-    font-family: "Geomanist Medium";
-    font-size: 18px;
-  }
-  .quote .quote-line {
-    width: 78px;
-    height: 4px;
-    margin-bottom: 30px;
-    background: #F9A49E;
-  }
-}
+    margin-bottom: 50px; }
+    .quote .quote-content {
+      background: #F7F7F7;
+      padding: 85px 135px 55px;
+      font-family: "Geomanist Book";
+      font-size: 18px; }
+      .quote .quote-content strong {
+        font-family: "Geomanist Medium";
+        font-size: 18px; }
+    .quote .quote-line {
+      width: 78px;
+      height: 4px;
+      margin-bottom: 30px;
+      background: #F9A49E; } }
 /****************  Careers page ****************/
 .product-menu-collapse {
-  margin: 50px 0 20px;
-}
-.product-menu-collapse .collapse-btn {
-  width: 225px;
-  padding: 10px 0;
-  background: transparent;
-  color: #383838;
-  font-family: "Geomanist Medium";
-  font-size: 14.3px;
-  border: 1px solid #383838;
-  border-radius: 0;
-}
-.product-menu-collapse .collapse-btn .pull-right {
-  line-height: 25px;
-  padding-top: 5px;
-  margin-right: 10px;
-}
-.product-menu-collapse .collapse-btn .hidden-on-toggle {
-  display: block;
-}
-.product-menu-collapse .collapse-btn .visible-on-toggle {
-  display: none;
-}
-.product-menu-collapse .collapse-btn[aria-expanded="true"] {
-  background: black;
-  color: #FFFFFF;
-}
-.product-menu-collapse .collapse-btn[aria-expanded="true"] .visible-on-toggle {
-  display: block;
-}
-.product-menu-collapse .collapse-btn[aria-expanded="true"] .hidden-on-toggle {
-  display: none;
-}
-.product-menu-collapse .collapse-sub-menu {
-  font-size: 15px;
-  color: #383838;
-}
-.product-menu-collapse .collapse-sub-menu[aria-expanded="true"] {
-  font-weight: bold;
-  font-family: "Geomanist Medium";
-  font-size: 15px;
-}
-.product-menu-collapse .menu-items {
-  margin: 20px 0 40px;
-}
+  margin: 50px 0 20px; }
+  .product-menu-collapse .collapse-btn {
+    width: 225px;
+    padding: 10px 0;
+    background: transparent;
+    color: #383838;
+    font-family: "Geomanist Medium";
+    font-size: 14.3px;
+    border: 1px solid #383838;
+    border-radius: 0; }
+    .product-menu-collapse .collapse-btn .pull-right {
+      line-height: 25px;
+      padding-top: 5px;
+      margin-right: 10px; }
+    .product-menu-collapse .collapse-btn .hidden-on-toggle {
+      display: block; }
+    .product-menu-collapse .collapse-btn .visible-on-toggle {
+      display: none; }
+    .product-menu-collapse .collapse-btn[aria-expanded="true"] {
+      background: black;
+      color: #FFFFFF; }
+      .product-menu-collapse .collapse-btn[aria-expanded="true"] .visible-on-toggle {
+        display: block; }
+      .product-menu-collapse .collapse-btn[aria-expanded="true"] .hidden-on-toggle {
+        display: none; }
+  .product-menu-collapse .collapse-sub-menu {
+    font-size: 15px;
+    color: #383838; }
+    .product-menu-collapse .collapse-sub-menu[aria-expanded="true"] {
+      font-weight: bold;
+      font-family: "Geomanist Medium";
+      font-size: 15px; }
+  .product-menu-collapse .menu-items {
+    margin: 20px 0 40px; }
 
 @media only screen and (min-width: 992px) {
   .product-menu-collapse {
-    margin-top: 130px;
-  }
-  .product-menu-collapse .collapse-btn {
-    width: 375px;
-    padding: 15px 0;
-    font-size: 25px;
-    border-radius: 0;
-  }
-  .product-menu-collapse .collapse-btn .pull-right {
-    line-height: 25px;
-    padding-top: 10px;
-  }
-  .product-menu-collapse .collapse-btn[aria-expanded="true"] {
-    background: black;
-    color: #FFFFFF;
-  }
-  .product-menu-collapse .collapse-btn[aria-expanded="true"] .visible-on-toggle {
-    display: block;
-  }
-  .product-menu-collapse .collapse-btn[aria-expanded="true"] .hidden-on-toggle {
-    display: none;
-  }
-  .product-menu-collapse .collapse-sub-menu {
-    font-size: 24px;
-  }
-  .product-menu-collapse .collapse-sub-menu[aria-expanded="true"] {
-    font-weight: bold;
-    font-family: "Geomanist Medium";
-    font-size: 24px;
-  }
-  .product-menu-collapse .menu-items {
-    margin: 20px 0 40px;
-  }
-}
+    margin-top: 130px; }
+    .product-menu-collapse .collapse-btn {
+      width: 375px;
+      padding: 15px 0;
+      font-size: 25px;
+      border-radius: 0; }
+      .product-menu-collapse .collapse-btn .pull-right {
+        line-height: 25px;
+        padding-top: 10px; }
+      .product-menu-collapse .collapse-btn[aria-expanded="true"] {
+        background: black;
+        color: #FFFFFF; }
+        .product-menu-collapse .collapse-btn[aria-expanded="true"] .visible-on-toggle {
+          display: block; }
+        .product-menu-collapse .collapse-btn[aria-expanded="true"] .hidden-on-toggle {
+          display: none; }
+    .product-menu-collapse .collapse-sub-menu {
+      font-size: 24px; }
+      .product-menu-collapse .collapse-sub-menu[aria-expanded="true"] {
+        font-weight: bold;
+        font-family: "Geomanist Medium";
+        font-size: 24px; }
+    .product-menu-collapse .menu-items {
+      margin: 20px 0 40px; } }
 .product-menu-collapse .press-list .pagination.mobile-pagination {
-  margin: 30px 0 30px;
-}
+  margin: 30px 0 30px; }
 .product-menu-collapse .press-list .active-page {
-  padding: 5px 30px;
-}
+  padding: 5px 30px; }
 .product-menu-collapse .pagination nav {
-  margin-left: 5px;
-}
-.product-menu-collapse .pagination nav ul {
-  border-radius: 5px;
-  background: #0f73ee;
-}
-.product-menu-collapse .pagination nav .btn-paginate {
-  width: 30px;
-  text-align: center;
-}
+  margin-left: 5px; }
+  .product-menu-collapse .pagination nav ul {
+    border-radius: 5px;
+    background: #0f73ee; }
+  .product-menu-collapse .pagination nav .btn-paginate {
+    width: 30px;
+    text-align: center; }
 .product-menu-collapse .pagination.mobile-pagination {
   margin-top: 10px;
-  margin-bottom: 30px;
-}
+  margin-bottom: 30px; }
 
 @media only screen and (min-width: 992px) {
   .product-menu-collapse .press-list .pagination.mobile-pagination {
-    margin: 50px 0 140px;
-  }
-}
+    margin: 50px 0 140px; } }
 @media only screen and (min-width: 992px) {
   .manual-breadcum {
-    background: #C1DAF2;
-  }
-}
+    background: #C1DAF2; } }
 /****************  Footer  ****************/
 .footer {
   background: #323232;
-  padding: 35px 0 25px 30px;
-}
-.footer .logo {
-  margin-bottom: 25px;
-}
-.footer .logo img {
-  width: 130px;
-}
-.footer .contact .address, .footer .contact .phone {
-  margin-bottom: 20px;
-}
-.footer .contact .contact-icn {
-  width: 15px;
-  margin: 0 15px;
-}
-.footer .social-network a:first-child {
-  margin-right: 25px;
-}
+  padding: 35px 0 25px 30px; }
+  .footer .logo {
+    margin-bottom: 25px; }
+    .footer .logo img {
+      width: 130px; }
+  .footer .contact .address, .footer .contact .phone {
+    margin-bottom: 20px; }
+  .footer .contact .contact-icn {
+    width: 15px;
+    margin: 0 15px; }
+  .footer .social-network a:first-child {
+    margin-right: 25px; }
 
 .copyright {
   background: #FFFFFF;
-  padding-top: 20px;
-}
+  padding-top: 20px; }
 
 @media only screen and (min-width: 575.98px) {
   .footer {
-    background: #181C25;
-  }
-  .footer ul li {
-    list-style: none;
-  }
-  .footer h4 {
-    font-family: "Geomanist Medium";
-    font-size: 25px;
-    line-height: 1.6;
-  }
-  .footer .menu {
-    font-family: "Geomanist Light";
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .footer .menu ul li a {
-    color: #FFFFFF;
-    transition: all 0.5s;
-  }
-  .footer .menu ul li a:hover {
-    color: #78FFF0;
-  }
-  .footer .logo img {
-    width: auto;
-  }
-  .footer .contact {
-    font-family: "Geomanist Light";
-    font-size: 20px;
-  }
-  .footer .contact .contact-icn {
-    display: none;
-  }
+    background: #181C25; }
+    .footer ul li {
+      list-style: none; }
+    .footer h4 {
+      font-family: "Geomanist Medium";
+      font-size: 25px;
+      line-height: 1.6; }
+    .footer .menu {
+      font-family: "Geomanist Light";
+      font-size: 20px;
+      line-height: 1.6; }
+      .footer .menu ul li a {
+        color: #FFFFFF;
+        transition: all 0.5s; }
+        .footer .menu ul li a:hover {
+          color: #78FFF0; }
+    .footer .logo img {
+      width: auto; }
+    .footer .contact {
+      font-family: "Geomanist Light";
+      font-size: 20px; }
+      .footer .contact .contact-icn {
+        display: none; }
 
   .copyright {
     background: #000;
     color: #FFFFFF;
     font-family: "Geomanist Light";
     font-size: 20px;
-    padding: 20px 0;
-  }
-  .copyright p {
-    margin-bottom: 0;
-  }
-}
+    padding: 20px 0; }
+    .copyright p {
+      margin-bottom: 0; } }
 
 /*# sourceMappingURL=main.css.map */

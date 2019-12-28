@@ -4,6 +4,7 @@ import { GlobalStateProvider } from "./Store";
 import RouteMap from "./Route";
 import { BrowserRouter as Router } from "react-router-dom";
 import DynamicImport from "./utils/lazyImport";
+import "antd/dist/antd.css";
 
 const Menu = DynamicImport(() => import("./Menu"));
 const Footer = DynamicImport(() => import("./Footer"));
