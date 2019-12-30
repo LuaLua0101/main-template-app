@@ -3,7 +3,7 @@ import { Form, Icon, Input, Button } from "antd";
 import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import useFormInput from "../../../utils/useFormInput";
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
 
 const formItemLayout = {
   labelCol: {
@@ -29,18 +29,18 @@ const tailFormItemLayout = {
   }
 };
 
-ClassicEditor
-    .create( document.querySelector( '#editor' ), {
-        plugins: [ CKFinder, ... ],
+// ClassicEditor
+//     .create( document.querySelector( '#editor' ), {
+//         plugins: [ CKFinder, ... ],
 
-        // Enable the "Insert image" button in the toolbar.
-        toolbar: [ 'imageUpload', ... ],
+//         // Enable the "Insert image" button in the toolbar.
+//         toolbar: [ 'imageUpload', ... ],
 
-        ckfinder: {
-            // Upload the images to the server using the CKFinder QuickUpload command.
-            uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
-        }
-    } )
+//         ckfinder: {
+//             // Upload the images to the server using the CKFinder QuickUpload command.
+//             uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
+//         }
+//     } )
 
 const Detail = props => {
   const content = useFormInput();
