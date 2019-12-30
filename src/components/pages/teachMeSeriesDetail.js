@@ -1,16 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FacebookShareButton,
   EmailShareButton,
   FacebookIcon,
   EmailIcon
 } from "react-share";
+import axios from "../../utils/axios";
+import moment from "moment";
+import renderHTML from "react-render-html";
 
 const TeachMeSeriesDetailPage = props => {
+  const [loadButton, setLoadButton] = useState(true);
+  const [data, setData] = useState();
+
   useEffect(() => {
     let search = new URLSearchParams(props.location.search);
-    let name = search.get("id");
-    console.log(name);
+    let id = search.get("id");
+    setLoadButton(true);
+    axios
+      .post("teach-me-series/detail", {
+        id
+      })
+      .then(res => {
+        setData(res.data);
+      })
+      .finally(setLoadButton(false));
   }, []);
 
   return (
@@ -25,18 +39,13 @@ const TeachMeSeriesDetailPage = props => {
                 <div className="col-12 col-lg-12 col-xl-12">
                   {/* As number of words in laptop & mobile is different so 2 tags of h2 here  */}
                   <h2 className="breadcum-title d-lg-none">
-                    Lorem ipsum dolor sit amet consectetur.
+                    {data && data.title}
                   </h2>
                   <h2 className="breadcum-title d-none d-lg-block">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                    odit aut velit illo, repellendus magni reprehenderit
-                    consequatur, molestiae, assumenda quia culpa quidem enim
-                    nesciunt delectus!
+                    {data && data.title}
                   </h2>
                   <p className="article-desc d-lg-none">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consequuntur, nostrum perspiciatis. Totam saepe asperiores
-                    necessitatibus!
+                    {data && data.short_desc}
                   </p>
                 </div>
               </div>
@@ -51,14 +60,18 @@ const TeachMeSeriesDetailPage = props => {
                 <article className="article-box border-bottom-0">
                   {/* Views, date, comments VISIBLE ON MOBILE */}
                   <div className="article-brief-info d-flex align-items-center">
-                    <time>December 25, 2019</time>
+                    <time>
+                      {data && moment(data.created_at).format("MMMM D, YYYY")}
+                    </time>
                     <div className="view d-flex align-items-center">
                       <img
                         src="./assets/images/mobile/icons/icn-eye.png"
                         alt="views"
                         className="img-fluid"
                       />
-                      <span className="text-uppercase">1.2k</span>
+                      <span className="text-uppercase">
+                        {data && data.view_count}
+                      </span>
                     </div>
                     <div className="comments d-flex align-items-center">
                       <img
@@ -74,68 +87,12 @@ const TeachMeSeriesDetailPage = props => {
                         alt="share"
                         className="img-fluid"
                       />
-                      <span>302</span>
+                      <span>{data && data.share_count}</span>
                     </div>
                   </div>
                   {/* Feature img, title, description */}
                   <div className="article-detail">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      <div className="img-box">
-                        <img
-                          className="img-fluid thumbnail"
-                          src="./assets/images/laptop/article/tech.png"
-                          alt="article"
-                        />
-                        <img
-                          className="play-btn"
-                          src="./assets/images/mobile/icons/icn-play.png"
-                          alt="play"
-                        />
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut wisi enim ad
-                        minim veniam, quis nostrud exerci tation ullamcorper
-                        suscipit lobortis nisl ut aliquip ex ea commodo
-                        consequat. Duis autem vel eum iriure dolor in hendrerit
-                        in vulputate velit esse molestie consequat, vel illum
-                        dolore eu feugiat nulla facilisis at vero eros et
-                        accumsan et iusto odio dignissim qui blandit praesent
-                        luptatum zzril delenit augue duis dolore te feugait
-                        nulla facilisi. Lorem ipsum dolor sit amet, cons
-                        ectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                        Ut wisi enim ad minim veniam, quis nostrud exerci tation
-                        ullamcorper suscipit lobortis nisl ut aliquip ex ea
-                        commodo consequat.
-                      </p>
-                      <div className="img-box">
-                        <img
-                          className="img-fluid thumbnail"
-                          src="./assets/images/laptop/article/world-control-clipping.png"
-                          alt="article"
-                        />
-                        <img
-                          className="play-btn"
-                          src="./assets/images/mobile/icons/icn-play.png"
-                          alt="play"
-                        />
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, cons ectetuer adipisc ing
-                        elit, sed dia nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut wisi enim ad
-                        minim veniam, quis nostrud exerci tation ullamcorper
-                        suscipit lobortis nisl ut aliquip ex veea commodo
-                        consequat.
-                      </p>
-                    </a>
+                    {data && data.content && renderHTML(data.content)}
                   </div>
                 </article>
                 {/* Sharing  */}
@@ -145,19 +102,24 @@ const TeachMeSeriesDetailPage = props => {
                     <div className="d-none d-lg-block caption">
                       Share this...
                     </div>
-                    <FacebookShareButton
-                      url={"goole.com"}
-                      className="Demo__some-network__share-button"
-                    >
-                      <FacebookIcon size={44} round />
-                    </FacebookShareButton>
-                    <EmailShareButton
-                      url={"goole.com"}
-                      body="body"
-                      className="Demo__some-network__share-button"
-                    >
-                      <EmailIcon size={44} round />
-                    </EmailShareButton>
+                    <ul>
+                      <li style={{ display: "inline-block" }}>
+                        <FacebookShareButton
+                          url={"goole.com"}
+                          className="Demo__some-network__share-button"
+                        >
+                          <FacebookIcon size={44} round />
+                        </FacebookShareButton>
+                      </li>
+                      <li style={{ display: "inline-block" }}>
+                        <EmailShareButton
+                          url={"goole.com"}
+                          className="Demo__some-network__share-button"
+                        >
+                          <EmailIcon size={44} round />
+                        </EmailShareButton>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 {/* // Sharing  */}

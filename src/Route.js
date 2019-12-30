@@ -10,7 +10,7 @@ const ApplicationPage = DynamicImport(() =>
 const BuildingPage = DynamicImport(() => import("./components/pages/building"));
 const CareerPage = DynamicImport(() => import("./components/pages/career"));
 const IotHubPage = DynamicImport(() => import("./components/pages/iotHub"));
-const ManualPage = DynamicImport(() => import("./components/pages/manual"));
+const ManualPage = DynamicImport(() => import("./components/pages/manuals"));
 const PressResourcesPage = DynamicImport(() =>
   import("./components/pages/pressResources")
 );
@@ -23,6 +23,13 @@ const TeachMeSeriesPage = DynamicImport(() =>
 const TeachMeSeriesDetailPage = DynamicImport(() =>
   import("./components/pages/teachMeSeriesDetail")
 );
+//===================================================================================
+const LoginPage = DynamicImport(() => import("./components/pages/login"));
+const Auth = props => {
+  return localStorage.hasOwnProperty("@pitech_token")
+    ? props.child
+    : (window.location.href = "/login");
+};
 
 const RouteMap = () => {
   return (
@@ -38,6 +45,11 @@ const RouteMap = () => {
       <Route exact path="/iot-hubs" component={IotHubPage} />
       <Route exact path="/iot-hub" component={TeachMeSeriesDetailPage} />
       <Route exact path="/career" component={CareerPage} />
+      <Route exact path="/login" component={LoginPage} />
+
+      <Route exact path="/admin">
+        <Auth child={<LoginPage />} />
+      </Route>
       <Route component={NotFoundPage} />
     </Switch>
   );
