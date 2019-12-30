@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import DynamicImport from "./utils/lazyImport";
 
+import TeachmeDetail from "./admin_components/pages/teach-me-series/detail";
+
 const MainPage = DynamicImport(() => import("./components/pages/main"));
 const NotFoundPage = DynamicImport(() => import("./components/pages/404"));
 const ApplicationPage = DynamicImport(() =>
@@ -23,13 +25,15 @@ const TeachMeSeriesPage = DynamicImport(() =>
 const TeachMeSeriesDetailPage = DynamicImport(() =>
   import("./components/pages/teachMeSeriesDetail")
 );
-//===================================================================================
+//===================ADMIN======================================================
 const LoginPage = DynamicImport(() => import("./components/pages/login"));
-const Auth = props => {
-  return localStorage.hasOwnProperty("@pitech_token")
-    ? props.child
-    : (window.location.href = "/login");
-};
+const AdminTemplate = DynamicImport(() =>
+  import("./admin_components/pages/main")
+);
+
+const TeachmeList = DynamicImport(() =>
+  import("./admin_components/pages/teach-me-series/list")
+);
 
 const RouteMap = () => {
   return (
@@ -47,8 +51,14 @@ const RouteMap = () => {
       <Route exact path="/career" component={CareerPage} />
       <Route exact path="/login" component={LoginPage} />
 
-      <Route exact path="/admin">
-        <Auth child={<LoginPage />} />
+      <Route exact path="/teachme-list">
+        <AdminTemplate child={<TeachmeList />} />
+      </Route>
+      <Route exact path="/teachme-add">
+        <AdminTemplate child={<TeachmeDetail add />} />
+      </Route>
+      <Route exact path="/teachme-update">
+        <AdminTemplate child={<TeachmeDetail update />} />
       </Route>
       <Route component={NotFoundPage} />
     </Switch>

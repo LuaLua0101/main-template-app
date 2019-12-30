@@ -3,12 +3,13 @@ import { Form, Icon, Input, Button, Checkbox } from "antd";
 
 const LoginPage = props => {
   useEffect(() => {
-    localStorage.hasOwnProperty("@pitech_token") &&
-      (window.location.href = "/");
+    if (localStorage.hasOwnProperty("@pitech_token"))
+      window.location.href = "/admin-teachme-list";
   }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
+    localStorage.setItem("@pitech_token", 123);
   };
 
   return (
