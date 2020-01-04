@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Form, Icon, Input, Button } from "antd";
-import CKEditor from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import "jodit";
+import "jodit/build/jodit.min.css";
+import JoditEditor from "jodit-react";
 import useFormInput from "../../../utils/useFormInput";
-import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
 
 const formItemLayout = {
   labelCol: {
@@ -28,20 +28,6 @@ const tailFormItemLayout = {
     }
   }
 };
-
-// ClassicEditor
-//     .create( document.querySelector( '#editor' ), {
-//         plugins: [ CKFinder, ... ],
-
-//         // Enable the "Insert image" button in the toolbar.
-//         toolbar: [ 'imageUpload', ... ],
-
-//         ckfinder: {
-//             // Upload the images to the server using the CKFinder QuickUpload command.
-//             uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
-//         }
-//     } )
-
 const Detail = props => {
   const content = useFormInput();
   const handleSubmit = e => {
@@ -58,22 +44,11 @@ const Detail = props => {
         <Input placeholder="Username" />
       </Form.Item>
       <Form.Item label="Tiêu đề">
-        <CKEditor
-          editor={ClassicEditor}
-          data={content.value}
-          onInit={editor => {
-            console.log("Editor is ready to use!", editor);
+        <JoditEditor
+          config={{
+            readonly: false
           }}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            content.setValue(data);
-          }}
-          onBlur={(event, editor) => {
-            console.log("Blur.", editor);
-          }}
-          onFocus={(event, editor) => {
-            console.log("Focus.", editor);
-          }}
+          {...content}
         />
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
