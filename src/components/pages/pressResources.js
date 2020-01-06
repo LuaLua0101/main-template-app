@@ -36,12 +36,7 @@ const PressResourcesPage = props => {
                 <div className="img-box">
                   <img
                     className="img-fluid thumbnail"
-                    src={
-                      SERVER +
-                      "public/images/press-resources/" +
-                      item.id +
-                      "/thumbnail.png"
-                    }
+                    src={SERVER + "public/img/press-resource/" + item.cover}
                     alt="article"
                   />
                   {!item.is_image && (
@@ -163,14 +158,10 @@ const PressResourcesPage = props => {
         <div className="container">
           <hr className="breadcum-line w-100 press-resource-line" />
         </div>
-        {/* List articles with pagination  */}
         <section className="press-list">
           <div className="container">
-            {/* List articles  */}
             <div className="row">
-              {/* 4 ITEMS/PAGE MOBILE (Last item won't have border bottom), 16/ LAPTOP  */}
               {renderPressResources()}
-              {/* VIEW MORE BUTTON */}
               {loadButton ? (
                 <div
                   className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"

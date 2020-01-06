@@ -30,13 +30,6 @@ const RelatedProductsPage = props => {
                 <div className="text-center slider-nav-item-mobile">
                   <img
                     className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-rhino.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
                     src="./assets/images/laptop/carousel/carousel-fox.png"
                     alt="fox"
                   />
@@ -44,7 +37,14 @@ const RelatedProductsPage = props => {
                 <div className="text-center slider-nav-item-mobile">
                   <img
                     className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bird.png"
+                    src="./assets/images/laptop/carousel/carousel-rhino.png"
+                    alt="fox"
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-ox.png"
                     alt="fox"
                   />
                 </div>
@@ -52,20 +52,6 @@ const RelatedProductsPage = props => {
                   <img
                     className="mx-auto"
                     src="./assets/images/laptop/carousel/carousel-bird-2.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bird-2-black.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bear.png"
                     alt="fox"
                   />
                 </div>
@@ -106,42 +92,29 @@ const RelatedProductsPage = props => {
                 <div className="text-center slider-nav-item-mobile">
                   <img
                     className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bird-2-black.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-ox.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-1.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bird-2.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bird-2-black.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
                     src="./assets/images/laptop/carousel/carousel-bear.png"
+                    alt="fox"
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/DEER-12.png"
+                    alt="fox"
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-peacock.png"
+                    alt="fox"
+                    style={{ height: "61px" }}
+                  />
+                </div>
+                <div className="text-center slider-nav-item-mobile">
+                  <img
+                    className="mx-auto"
+                    src="./assets/images/laptop/carousel/carousel-bird.png"
                     alt="fox"
                   />
                 </div>
@@ -314,7 +287,8 @@ const RelatedProductsPage = props => {
               <div className="col-xl-3 text-center block-feature">
                 <figure>
                   <img
-                    src="./assets/images/laptop/carousel/carousel-bird-2-black.png"
+                    style={{ height: "111px" }}
+                    src="./assets/images/laptop/carousel/DEER-12.png"
                     alt=""
                   />
                 </figure>

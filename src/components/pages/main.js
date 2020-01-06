@@ -65,12 +65,7 @@ export default function MainPage(props) {
                   <div className="img-box">
                     <img
                       className="img-fluid thumbnail"
-                      src={
-                        SERVER +
-                        "public/images/teach-me-series/" +
-                        item.id +
-                        "/thumbnail.png"
-                      }
+                      src={SERVER + "public/img/post/" + item.cover}
                       alt="article"
                     />
                     {!item.is_image && (
@@ -126,12 +121,7 @@ export default function MainPage(props) {
                 <div className="feature-img col-5 col-md-4 col-lg-4 col-xl-4 pl-0 img-box">
                   <div className="img-box">
                     <img
-                      src={
-                        SERVER +
-                        "public/images/iot-hubs/" +
-                        item.id +
-                        "/thumbnail.png"
-                      }
+                      src={SERVER + "public/img/iothub/" + item.cover}
                       className="img-fluid w-100"
                       alt="article"
                     />
@@ -275,10 +265,7 @@ export default function MainPage(props) {
                         <div className="img-box">
                           <img
                             src={
-                              SERVER +
-                              "public/images/teach-me-series/" +
-                              teachMePinned.id +
-                              "/thumbnail.png"
+                              SERVER + "public/img/post/" + teachMePinned.cover
                             }
                             alt="feature article"
                           />
@@ -415,12 +402,7 @@ export default function MainPage(props) {
                       <div className="img-box">
                         <img
                           className="img-fluid thumbnail"
-                          src={
-                            SERVER +
-                            "public/images/iot-hubs/" +
-                            iotPinned.id +
-                            "/thumbnail.png"
-                          }
+                          src={SERVER + "public/img/iothub/" + iotPinned.cover}
                           alt="article"
                         />
                         {!iotPinned.is_image && (

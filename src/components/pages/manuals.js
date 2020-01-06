@@ -139,9 +139,8 @@ const ManualPage = props => {
                                   <img
                                     src={
                                       SERVER +
-                                      "public/images/manuals/" +
-                                      item.list[subCurrent].id +
-                                      ".png"
+                                      "public/img/Manual/" +
+                                      item.list[subCurrent].cover
                                     }
                                     alt="manual"
                                     className="img-fluid"
@@ -208,9 +207,8 @@ const ManualPage = props => {
                     <img
                       src={
                         SERVER +
-                        "public/images/manuals/" +
-                        manuals[current].list[subCurrent].id +
-                        ".png"
+                        "public/img/Manual/" +
+                        manuals[current].list[subCurrent].cover
                       }
                       alt="manual"
                       className="img-fluid"

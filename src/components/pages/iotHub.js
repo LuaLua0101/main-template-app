@@ -38,12 +38,7 @@ const IotHubPage = props => {
                 <div className="img-box">
                   <img
                     className="img-fluid thumbnail"
-                    src={
-                      SERVER +
-                      "public/images/teach-me-series/" +
-                      item.id +
-                      "/thumbnail.png"
-                    }
+                    src={SERVER + "public/img/iothub/" + item.cover}
                     alt="article"
                   />
                   {!item.is_image && (
@@ -114,10 +109,7 @@ const IotHubPage = props => {
                       {iotHubPinned && (
                         <img
                           src={
-                            SERVER +
-                            "public/images/iot-hubs/" +
-                            iotHubPinned.id +
-                            "/thumbnail.png"
+                            SERVER + "public/img/iothub/" + iotHubPinned.cover
                           }
                           className="img-fluid w-100"
                           alt="article"
