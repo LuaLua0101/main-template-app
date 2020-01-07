@@ -3,6 +3,8 @@ import axios from "../../utils/axios";
 import moment from "moment";
 import { SERVER } from "../../utils/constants";
 import { Spin } from "antd";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const IotHubPage = props => {
   const [iotHub, setIotHub] = useState([]);
@@ -143,7 +145,7 @@ const IotHubPage = props => {
                 className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
                 style={{ cursor: "pointer" }}
               >
-                <span>View more</span>
+                <span>{lang.viewmore}</span>
                 <span>
                   <img
                     src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"

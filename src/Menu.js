@@ -108,10 +108,24 @@ const Menu = props => {
                         className="dropdown-menu"
                         aria-labelledby="exploreLaptop"
                       >
-                        <a className="dropdown-item" href="/related-products">
+                        <a
+                          className="dropdown-item"
+                          href=""
+                          onClick={() => {
+                            localStorage.setItem("@lang", "vi");
+                            window.location.reload();
+                          }}
+                        >
                           Vietnam
                         </a>
-                        <a className="dropdown-item" href="/application">
+                        <a
+                          className="dropdown-item"
+                          href=""
+                          onClick={() => {
+                            localStorage.setItem("@lang", "en");
+                            window.location.reload();
+                          }}
+                        >
                           English
                         </a>
                       </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
 import moment from "moment";
 import { SERVER } from "../../utils/constants";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 export default function MainPage(props) {
   const [teachMeSeries, setTeachMeSeries] = useState([]);
@@ -219,7 +221,7 @@ export default function MainPage(props) {
                         href="/application"
                         className="text-capitalize d-none d-sm-block learn-more"
                       >
-                        LEARN MORE
+                        {lang.learnmore}
                       </a>
                     </div>
                   </div>
@@ -243,7 +245,7 @@ export default function MainPage(props) {
                   href="/teach-me-series"
                   className="text-center view-more-articles"
                 >
-                  <span>View all post</span>
+                  <span>{lang.viewall}</span>
                   <span>
                     <img
                       src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
@@ -309,7 +311,7 @@ export default function MainPage(props) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Learn more
+                        {lang.learnmore}
                       </a>
                     </div>
                   </div>
@@ -325,7 +327,7 @@ export default function MainPage(props) {
                 href="/teach-me-series"
                 className="text-uppercase text-center d-block d-lg-none view-more-articles"
               >
-                <span>View all post</span>
+                <span>{lang.viewall}</span>
                 <span>
                   <img
                     src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
@@ -348,7 +350,7 @@ export default function MainPage(props) {
               </div>
               <div className="col-6 d-none d-lg-block text-right">
                 <a href="/iot-hubs" className="text-center view-more-articles">
-                  <span>View all post</span>
+                  <span>{lang.viewall}</span>
                   <span>
                     <img
                       src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
@@ -443,7 +445,7 @@ export default function MainPage(props) {
                 href="/iot-hubs"
                 className="text-uppercase text-center d-lg-none view-more-articles"
               >
-                <span>View all post</span>
+                <span>{lang.viewall}</span>
                 <span>
                   <img
                     src="./assets/images/mobile/icons/icn-arrow-next-blue.png"

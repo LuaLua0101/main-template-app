@@ -3,6 +3,8 @@ import axios from "../../utils/axios";
 import moment from "moment";
 import { SERVER } from "../../utils/constants";
 import { Spin } from "antd";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const TeachMeSeriesPage = props => {
   const [teachMeSeries, setTeachMeSeries] = useState([]);
@@ -156,11 +158,11 @@ const TeachMeSeriesPage = props => {
             </article>
           </div>
         </section>
-        {/* Sub articles: 5 on mobiles and view more, 12 on laptop (3 articles/row)  */}
+        {/* Sub articles: 5 on mobiles and {lang.viewmore}, 12 on laptop (3 articles/row)  */}
         <section className="teach-series-sub-articles">
           <div className="container">
             <div className="row">{renderTeachmeList()}</div>
-            {/* View more button */}
+            {/* {lang.viewmore} button */}
             {loadButton ? (
               <div
                 className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
@@ -174,7 +176,7 @@ const TeachMeSeriesPage = props => {
                 className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
                 style={{ cursor: "pointer" }}
               >
-                <span>View more</span>
+                <span>{lang.viewmore}</span>
                 <span>
                   <img
                     src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"

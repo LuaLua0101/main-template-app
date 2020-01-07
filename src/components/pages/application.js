@@ -3,6 +3,8 @@ import axios from "../../utils/axios";
 import { SERVER } from "../../utils/constants";
 import { Spin, Icon } from "antd";
 import renderHTML from "react-render-html";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const CLASSNAME_ACTIVE =
   "box-version active d-flex align-items-center justify-content-center";
@@ -71,7 +73,7 @@ const ApplicationPage = props => {
         <section className="application-latest-updates">
           <div className="container">
             <h2 className="font-weight-bold text-center center-sp-heading mobile-sub-heading">
-              Latest update
+              {lang.latest}
             </h2>
             <p className="d-none d-lg-block text-center sub-title">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -172,7 +174,7 @@ const ApplicationPage = props => {
               style={{ cursor: "pointer" }}
               onClick={() => setMore(!more)}
             >
-              <span>View more</span>
+              <span>{lang.viewmore}</span>
               <Icon type={more ? "up" : "down"} />
             </div>
             <br />
@@ -200,7 +202,7 @@ const ApplicationPage = props => {
         <section className="recent-updates">
           <div className="container">
             <h2 className="font-weight-bold text-center center-sp-heading mobile-sub-heading">
-              Recent update
+              {lang.recent}
             </h2>
             <p className="text-center sub-title">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.

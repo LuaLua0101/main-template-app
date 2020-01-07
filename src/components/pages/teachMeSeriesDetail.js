@@ -8,6 +8,8 @@ import {
 import axios from "../../utils/axios";
 import moment from "moment";
 import renderHTML from "react-render-html";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const TeachMeSeriesDetailPage = props => {
   const [loadButton, setLoadButton] = useState(true);
@@ -100,7 +102,7 @@ const TeachMeSeriesDetailPage = props => {
                   {/* Backend implement here  */}
                   <div className="sharing-box">
                     <div className="d-none d-lg-block caption">
-                      Share this...
+                      {lang.share}...
                     </div>
                     <ul>
                       <li style={{ display: "inline-block" }}>
@@ -129,23 +131,19 @@ const TeachMeSeriesDetailPage = props => {
         </section>
         <section className="comment-box">
           <div className="container">
-            <div className="caption">Leave a reply</div>
+            <div className="caption">{lang.reply}</div>
             <form action="#">
               <div className="form-group">
                 <input
                   type="text"
-                  name="name"
-                  id="name"
                   className=" custom-input form-control"
-                  placeholder="Name"
+                  placeholder={lang.name}
                   aria-describedby="helpId"
                 />
               </div>
               <div className="form-group">
                 <input
                   type="text"
-                  name="email"
-                  id="email"
                   className=" custom-input form-control"
                   placeholder="Email"
                   aria-describedby="helpId"
@@ -154,15 +152,13 @@ const TeachMeSeriesDetailPage = props => {
               <div className="form-group">
                 <textarea
                   className="form-control custom-input "
-                  placeholder="Message"
-                  name="message"
-                  id="msg"
+                  placeholder={lang.message}
                   rows={3}
                   defaultValue={""}
                 />
               </div>
               <button type="submit" className="btn submit-btn text-capitalize">
-                Send message
+                {lang.send}
               </button>
             </form>
           </div>

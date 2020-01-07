@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
 import { SERVER } from "../../utils/constants";
-import { Spin } from "antd";
-import { app } from "firebase";
-
-const BLOCK_LEFT = "col-12 col-lg-6 col-xl-6 text-block-left";
-const BLOCK_RIGHT = "col-12 col-lg-6 col-xl-6 text-block-right";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const CareerPage = props => {
   const [careers, setCareers] = useState([]);
@@ -141,10 +138,7 @@ const CareerPage = props => {
           <div className="container quote-content">
             <div className="quote-line mx-auto" />
             <div className="quote-contain text-center">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Asperiores, veniam aut tenetur officia animi modi ratione
-              similique harum facere obcaecati dolores fugit, corporis sapiente
-              nostrum nihil maiores maxime atque esse!
+              {lang.quote}
               <br />
               <strong>sample@pitech.gmail.com</strong>
             </div>

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import axios from "../../utils/axios";
-import { SERVER } from "../../utils/constants";
-import { Spin } from "antd";
-import { app } from "firebase";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const settings = {
   centerMode: true,
@@ -116,11 +115,11 @@ const RelatedProductsPage = props => {
                   href="#"
                   className="learn-more d-flex align-items-center justify-content-center"
                 >
-                  <span>Learn more</span>
+                  <span>{lang.learnmore}</span>
                   <span>
                     <img
                       src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                      alt="learn more"
+                      alt="{lang.learnmore}"
                     />
                   </span>
                 </a>
@@ -181,11 +180,11 @@ const RelatedProductsPage = props => {
                   href="#"
                   className="learn-more d-flex align-items-center justify-content-center"
                 >
-                  <span>Learn more</span>
+                  <span>{lang.learnmore}</span>
                   <span>
                     <img
                       src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
+                      alt="{lang.learnmore}"
                     />
                   </span>
                 </a>
@@ -220,11 +219,11 @@ const RelatedProductsPage = props => {
                           href={item.url}
                           className="learn-more d-flex align-items-center justify-content-center"
                         >
-                          <span>Learn more</span>
+                          <span>{lang.learnmore}</span>
                           <span>
                             <img
                               src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                              alt="learn more"
+                              alt="{lang.learnmore}"
                             />
                           </span>
                         </a>
