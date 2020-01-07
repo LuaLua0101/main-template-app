@@ -4,8 +4,8 @@ import { SERVER } from "../../utils/constants";
 import { Spin } from "antd";
 import { app } from "firebase";
 
-const BLOCK_LEFT = "col-12 col-lg-6 col-xl-6 text-block-left"
-const BLOCK_RIGHT = "col-12 col-lg-6 col-xl-6 text-block-right"
+const BLOCK_LEFT = "col-12 col-lg-6 col-xl-6 text-block-left";
+const BLOCK_RIGHT = "col-12 col-lg-6 col-xl-6 text-block-right";
 
 const CareerPage = props => {
   const [careers, setCareers] = useState([]);
@@ -13,10 +13,13 @@ const CareerPage = props => {
 
   const getData = () => {
     setLoadButton(true);
+    const lang = localStorage.getItem("@lang")
+      ? localStorage.getItem("@lang")
+      : "vi";
     axios
-      .get("careers")
+      .get("careers/" + lang)
       .then(res => {
-        console.log(res.data)
+        console.log(res.data);
         setCareers(res.data.careers);
       })
       .finally(setLoadButton(false));
@@ -51,86 +54,87 @@ const CareerPage = props => {
           {/* Laptop style  */}
           <div className="container d-none d-lg-block laptop-main-content">
             {careers.map((item, index) => {
-              return index % 2 ? <div className="row align-items-center block-item" key={index}>
-                <div className="col-12 col-lg-6 col-xl-6">
-                  <img
-                    src="./assets/images/laptop/career-intro.png"
-                    className="img-fluid"
-                    alt="career"
-                  />
+              return index % 2 ? (
+                <div className="row align-items-center block-item" key={index}>
+                  <div className="col-12 col-lg-6 col-xl-6">
+                    <img
+                      src={SERVER + "public/img/Career/" + item.cover}
+                      className="img-fluid"
+                      alt="career"
+                    />
+                  </div>
+                  <div className="col-12 col-lg-6 col-xl-6 text-block-right">
+                    <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
+                      {item.dep}
+                    </h3>
+                    <h4>{item.title}</h4>
+                    <p className="d-none d-lg-block">{item.desc}</p>
+                  </div>
                 </div>
-                <div className="col-12 col-lg-6 col-xl-6 text-block-right">
-                  <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
-                    {item.dep}
-                  </h3>
-                  <h4>
-                    {item.title}
-                  </h4>
-                  <p className="d-none d-lg-block">
-                    {item.desc}
-                  </p>
-                </div>
-              </div> : <div className="row align-items-center block-item " key={index}>
+              ) : (
+                <div className="row align-items-center block-item " key={index}>
                   <div className="col-12 col-lg-6 col-xl-6 text-block-left">
                     <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
                       {item.dep}
                     </h3>
-                    <h4>
-                      {item.title}
-                    </h4>
-                    <p className="d-none d-lg-block">
-                      {item.desc}
-                    </p>
+                    <h4>{item.title}</h4>
+                    <p className="d-none d-lg-block">{item.desc}</p>
                   </div>
                   <div className="col-12 col-lg-6 col-xl-6">
                     <img
-                      src="./assets/images/laptop/career-intro.png"
+                      src={SERVER + "public/img/Career/" + item.cover}
                       className="img-fluid"
                       alt="career"
                     />
                   </div>
                 </div>
+              );
             })}
           </div>
           {/* Mobile style - toggle */}
           <div className="container d-block d-lg-none">
-            {careers.map((item,index)=>{
-            return <><button
-              className="btn btn-primary toggle-mobile"
-              type="button"
-              data-toggle="collapse"
-              data-target={"#collapse" + index}
-              aria-expanded="false"
-              aria-controls={"collapse" + index}
-            >
-              <span className="title">{item.dep}</span>
-              <span className="pull-right">
-                <img
-                  src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                  alt=""
-                />
-              </span>
-              <div className="clear-float" />
-            </button>
-            {/* Collapse content  */}
-            <div className="collapse toggle-content" id={"collapse" + index}>
-              <div className="content text-center">
-                <div className="career-img">
-                  <img
-                    className="img-fluid"
-                    src="./assets/images/laptop/career-intro.png"
-                    alt="career"
-                  />
-                </div>
-                <div className="job-desc">
-                  <h4>{item.title}</h4>
-                  <p>
-                  {item.desc}
-                  </p>
-                </div>
-              </div>
-            </div>
-         </>})}
+            {careers.map((item, index) => {
+              return (
+                <>
+                  <button
+                    className="btn btn-primary toggle-mobile"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target={"#collapse" + index}
+                    aria-expanded="false"
+                    aria-controls={"collapse" + index}
+                  >
+                    <span className="title">{item.dep}</span>
+                    <span className="pull-right">
+                      <img
+                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
+                        alt=""
+                      />
+                    </span>
+                    <div className="clear-float" />
+                  </button>
+                  {/* Collapse content  */}
+                  <div
+                    className="collapse toggle-content"
+                    id={"collapse" + index}
+                  >
+                    <div className="content text-center">
+                      <div className="career-img">
+                        <img
+                          className="img-fluid"
+                          src={SERVER + "public/img/Career/" + item.cover}
+                          alt="career"
+                        />
+                      </div>
+                      <div className="job-desc">
+                        <h4>{item.title}</h4>
+                        <p>{item.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
           </div>
         </section>
         <section className="quote">

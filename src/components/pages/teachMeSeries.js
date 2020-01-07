@@ -15,6 +15,7 @@ const TeachMeSeriesPage = props => {
     axios
       .post("teach-me-series", { page: teachMeSeries.length })
       .then(res => {
+        console.log(res.data);
         const { teachmepinned, teachme, banner } = res.data;
         setTeachMeSeries([...teachMeSeries, ...teachme]);
         !teachMePinned && setTeachMePinned(teachmepinned);

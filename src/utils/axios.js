@@ -1,9 +1,8 @@
 import axios from "axios";
-const API_URL = "http://localhost:8080/api-pitech/api/";
+const API_URL = "http://localhost:8080/api-pitech-new/api/";
 // const API_URL =
 //   "https://iht-cors-server.herokuapp.com/http://139.180.195.15/api-pitech/api/";
 
-// axios.defaults.baseURL = "https://iht-cors-server.herokuapp.com/" + API_URL;
 axios.defaults.baseURL = API_URL;
 axios.defaults.headers.common.Accept = "application/x-www-form-urlencoded";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";

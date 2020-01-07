@@ -1,194 +1,146 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "../../utils/axios";
+import { SERVER } from "../../utils/constants";
+import { Spin } from "antd";
+import { app } from "firebase";
+
+const BLOCK_LEFT = "col-12 col-lg-6 col-xl-6 text-block-left";
+const BLOCK_RIGHT = "col-12 col-lg-6 col-xl-6 text-block-right";
 
 const BuildingPage = props => {
+  const [careers, setCareers] = useState([]);
+  const [loadButton, setLoadButton] = useState(true);
+
+  const getData = () => {
+    setLoadButton(true);
+    const lang = localStorage.getItem("@lang")
+      ? localStorage.getItem("@lang")
+      : "vi";
+    axios
+      .get("buildings/" + lang)
+      .then(res => {
+        console.log(res.data);
+        setCareers(res.data.buildings);
+      })
+      .finally(setLoadButton(false));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <div>
-        <section className="breadcum building-page-breadcum">
+        {/* End banner  */}
+        {/* Bread cum  */}
+        <section className="breadcum building-page-breadcum career-breadcum">
           <div className="container text-center">
             <h2 className="breadcum-title">Building The Future</h2>
             <p>
-              Chúng tôi muốn xây dựng các công cụ nền tảng với mục đích hỗ trợ
-              nhân viên, giúp họ có thể quản lý và gia tăng hiệu quả trong công
-              việc.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+              dolores, eveniet eius quae maxime, aliquid, nisi voluptate
+              repellat impedit cumque sapiente. Non ut nobis officiis!
             </p>
           </div>
         </section>
-        <div className="container">
+        <div className="container d-none d-lg-block">
           <hr className="breadcum-line" />
         </div>
         {/* // Bread cum  */}
-        {/* Section ASM */}
-        <section className="asm info-section">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 col-md-12 col-lg-6 col-xl-6 info-block">
-                <h3 className="d-none d-lg-block text-left">
-                  Lorem ipsum dolor sit.(ASM)
-                </h3>
-                <h3 className="d-lg-none">ASM</h3>
-                <h4>
-                  Phần mềm bán hàng do Pitech tự phát triển, giúp quản lý doanh
-                  số của tất cả các đại lý trực thuộc Pistore.
-                </h4>
-                <br />
-                <p className="d-none d-lg-block">
-                  Ứng dụng dùng để theo dõi các hoạt động lắp đặt, bảo hành, sửa
-                  chữa của zooer team - nhân viên kỹ thuật lắp đặt. Ngoài ra app
-                  còn được lập trình trò chơi để tạo hứng thú trong công việc.
-                </p>
-                {/* <a href="#" className="learn-more d-none d-lg-block">
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a> */}
-              </div>
-              <div className="col-12 col-md-12 col-lg-6 col-xl-6 img-block">
-                <img
-                  className="img-fluid w-100"
-                  src="./assets/images/laptop/building/CMS.png"
-                  alt="cms"
-                />
-              </div>
-            </div>
+        {/* Careers opened  */}
+        <section className="careers ">
+          {/* Laptop style  */}
+          <div className="container d-none d-lg-block laptop-main-content">
+            {careers &&
+              careers.map((item, index) => {
+                return index % 2 ? (
+                  <div
+                    className="row align-items-center block-item"
+                    key={index}
+                  >
+                    <div className="col-12 col-lg-6 col-xl-6">
+                      <img
+                        src={SERVER + "public/img/Building/" + item.cover}
+                        className="img-fluid"
+                        alt="career"
+                      />
+                    </div>
+                    <div className="col-12 col-lg-6 col-xl-6 text-block-right">
+                      <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
+                        {item.dep}
+                      </h3>
+                      <h4>{item.title}</h4>
+                      <p className="d-none d-lg-block">{item.desc}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className="row align-items-center block-item "
+                    key={index}
+                  >
+                    <div className="col-12 col-lg-6 col-xl-6 text-block-left">
+                      <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
+                        {item.dep}
+                      </h3>
+                      <h4>{item.title}</h4>
+                      <p className="d-none d-lg-block">{item.desc}</p>
+                    </div>
+                    <div className="col-12 col-lg-6 col-xl-6">
+                      <img
+                        src={SERVER + "public/img/Building/" + item.cover}
+                        className="img-fluid"
+                        alt="career"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
           </div>
-        </section>
-        <div className="container">
-          <hr className="breadcum-line w-100" />
-        </div>
-        {/* Section CMS */}
-        <section className="crm info-section">
-          <div className="container">
-            <div className="row reverse-laptop">
-              <div className="col-12 col-md-12 col-lg-5 col-xl-5 info-block">
-                <h3 className="d-none d-lg-block">
-                  Lorem ipsum dolor sit.(CRM)
-                </h3>
-                <h3 className="d-block d-lg-none">CRM</h3>
-                <h4>
-                  Hệ thống quản lý &amp; chăm sóc khách hàng tự động. Tất cả các
-                  thông tin của khách hàng sẽ được lưu trữ để hỗ trợ cho các
-                  dịch vụ sau bán hàng
-                </h4>
-                <br />
-                <p className="d-none d-lg-block">
-                  Không bỏ sót comment/inbox hay khách hàng nào với hệ thống
-                  quản lý toàn bộ tương tác của khách hàng trên Fan-page. Kết
-                  hợp với hệ thống quản lý đơn hàng chuyên nghiệp, lưu trữ thông
-                  tn khách hàng thông minh. Bạn có thể khai thác toàn diện hiệu
-                  quả kinh doanh online và tối ưu chi phí tốt nhất.
-                </p>
-                {/* <a href="#" className="learn-more d-none d-lg-block">
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a> */}
-              </div>
-              <div className="col-12 col-md-12 col-lg-7 col-xl-7 img-block">
-                <img
-                  className="img-fluid w-100"
-                  src="./assets/images/laptop/building/dashboard.png"
-                  alt="cms"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* End  */}
-        <div className="container">
-          <hr className="breadcum-line w-100" />
-        </div>
-        {/* Section Zoooer */}
-        <section className="cqa info-section">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 col-md-12 col-lg-7 col-xl-7 info-block">
-                <h3 className="d-none d-lg-block">
-                  Lorem ipsum dolor sit.(CQA)
-                </h3>
-                <h3 className="d-block d-lg-none ">CQA</h3>
-                <h4>
-                  Công cụ theo dõi công việc của các bộ phận, giúp tăng hiệu quả
-                  làm viêc nhóm
-                </h4>
-                <br />
-                <p className="d-none d-lg-block">
-                  Không bỏ sót comment/inbox hay khách hàng nào với hệ thống
-                  quản lý toàn bộ tương tác của khách hàng trên Fan-page. Kết
-                  hợp với hệ thống quản lý đơn hàng chuyên nghiệp, lưu trữ thông
-                  tn khách hàng thông minh. Bạn có thể khai thác toàn diện hiệu
-                  quả kinh doanh online và tối ưu chi phí tốt nhất.
-                </p>
-                {/* <a href="#" className="learn-more d-none d-lg-block">
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a> */}
-              </div>
-              <div className="col-12 col-md-12 col-lg-5 col-xl-5 img-block">
-                <img
-                  className="img-fluid w-100"
-                  src="./assets/images/laptop/building/library.png"
-                  alt="cms"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* End  */}
-        <div className="container">
-          <hr className="breadcum-line w-100" />
-        </div>
-        {/* Section Zooer */}
-        <section className="zooer info-section">
-          <div className="container">
-            <div className="row reverse-laptop">
-              <div className="col-12 col-md-12 col-lg-6 col-xl-6 info-block">
-                <h3 className="d-none d-lg-block">Zooer app</h3>
-                <h3 className="d-block d-lg-none text-uppercase">Zooer app</h3>
-                <h4>
-                  Ứng dụng dùng để theo dõi các hoạt động lắp đặt, bảo hành, sửa
-                  chữa của Zooer team – nhân viên kỹ thuật lắp đặt. Ngoài ra app
-                  còn được lập trình trò chơi để tạo hứng thú trong công việc.
-                </h4>
-                <br />
-                <p className="d-none d-lg-block">
-                  Không bỏ sót comment/inbox hay khách hàng nào với hệ thống
-                  quản lý toàn bộ tương tác của khách hàng trên Fan-page. Kết
-                  hợp với hệ thống quản lý đơn hàng chuyên nghiệp, lưu trữ thông
-                  tn khách hàng thông minh. Bạn có thể khai thác toàn diện hiệu
-                  quả kinh doanh online và tối ưu chi phí tốt nhất.
-                </p>
-                {/* <a href="#" className="learn-more d-none d-lg-block">
-                  <span>Learn more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="learn more"
-                    />
-                  </span>
-                </a> */}
-              </div>
-              <div className="col-12 col-md-12 col-lg-6 col-xl-6 img-block">
-                <img
-                  className="img-fluid w-100"
-                  src="./assets/images/laptop/building/zooer-transparent.png"
-                  alt="cms"
-                />
-              </div>
-            </div>
+          {/* Mobile style - toggle */}
+          <div className="container d-block d-lg-none">
+            {careers.map((item, index) => {
+              return (
+                <>
+                  <button
+                    className="btn btn-primary toggle-mobile"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target={"#collapse" + index}
+                    aria-expanded="false"
+                    aria-controls={"collapse" + index}
+                  >
+                    <span className="title">{item.dep}</span>
+                    <span className="pull-right">
+                      <img
+                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
+                        alt=""
+                      />
+                    </span>
+                    <div className="clear-float" />
+                  </button>
+                  {/* Collapse content  */}
+                  <div
+                    className="collapse toggle-content"
+                    id={"collapse" + index}
+                  >
+                    <div className="content text-center">
+                      <div className="career-img">
+                        <img
+                          className="img-fluid"
+                          src={SERVER + "public/img/Building/" + item.cover}
+                          alt="career"
+                        />
+                      </div>
+                      <div className="job-desc">
+                        <h4>{item.title}</h4>
+                        <p>{item.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
           </div>
         </section>
       </div>

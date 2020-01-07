@@ -213,19 +213,19 @@ const ApplicationPage = props => {
                     className={current === 1 ? CLASSNAME_ACTIVE : CLASSNAME}
                     onClick={() => setCurrent(1)}
                   >
-                    v3
+                    {appRelated[1].version}
                   </div>
                   <div
                     className={current === 2 ? CLASSNAME_ACTIVE : CLASSNAME}
                     onClick={() => setCurrent(2)}
                   >
-                    v2
+                    {appRelated[2].version}
                   </div>
                   <div
                     className={current === 3 ? CLASSNAME_ACTIVE : CLASSNAME}
                     onClick={() => setCurrent(3)}
                   >
-                    v1
+                    {appRelated[3].version}
                   </div>
                 </div>
                 <div className="caption text-left">

@@ -25,6 +25,12 @@ const TeachMeSeriesPage = DynamicImport(() =>
 const TeachMeSeriesDetailPage = DynamicImport(() =>
   import("./components/pages/teachMeSeriesDetail")
 );
+const PressResourcesDetailPage = DynamicImport(() =>
+  import("./components/pages/pressResourcesDetail")
+);
+const IotHubDetailPage = DynamicImport(() =>
+  import("./components/pages/iotHubDetail")
+);
 //===================ADMIN======================================================
 const LoginPage = DynamicImport(() => import("./components/pages/login"));
 const AdminTemplate = DynamicImport(() =>
@@ -43,11 +49,16 @@ const RouteMap = () => {
       <Route exact path="/building" component={BuildingPage} />
       <Route exact path="/manuals" component={ManualPage} />
       <Route exact path="/press-resources" component={PressResourcesPage} />
+      <Route
+        exact
+        path="/press-resource"
+        component={PressResourcesDetailPage}
+      />
       <Route exact path="/related-products" component={RelatedProductsPage} />
       <Route exact path="/teach-me-series" component={TeachMeSeriesPage} />
       <Route exact path="/teach-me-serie" component={TeachMeSeriesDetailPage} />
       <Route exact path="/iot-hubs" component={IotHubPage} />
-      <Route exact path="/iot-hub" component={TeachMeSeriesDetailPage} />
+      <Route exact path="/iot-hub" component={IotHubDetailPage} />
       <Route exact path="/career" component={CareerPage} />
       <Route exact path="/login" component={LoginPage} />
 

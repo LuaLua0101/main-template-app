@@ -13,15 +13,18 @@ export default function MainPage(props) {
   const [iotPinned, setIotPinned] = useState({
     id: 0
   });
+  const [appPinned, setAppPinned] = useState();
 
   useEffect(() => {
     axios.get("home").then(res => {
+      console.log(res.data);
       const { banner, teachmepinned, teachme, iothub, iotpinned } = res.data;
       setBanner(banner);
       setTeachMeSeries(teachme);
       setTeachMePinned(teachmepinned);
       setIotHub(iothub);
       setIotPinned(iotpinned);
+      setAppPinned(res.data.app_pinned);
     });
   }, []);
 
@@ -208,12 +211,10 @@ export default function MainPage(props) {
                 <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                   <div className="card">
                     <div className="card-body">
-                      <h4 className="card-title">NEW UPDATE PACH V4.3</h4>
-                      <p className="card-text">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat.
-                      </p>
+                      <h4 className="card-title">
+                        {appPinned && appPinned.title}
+                      </h4>
+                      <p className="card-text">{appPinned && appPinned.desc}</p>
                       <a
                         href="/application"
                         className="text-capitalize d-none d-sm-block learn-more"

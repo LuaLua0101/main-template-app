@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import axios from "../../utils/axios";
+import { SERVER } from "../../utils/constants";
+import { Spin } from "antd";
+import { app } from "firebase";
 
 const settings = {
   centerMode: true,
@@ -10,6 +14,50 @@ const settings = {
 };
 
 const RelatedProductsPage = props => {
+  const [products, setProducts] = useState([]);
+  const [loadButton, setLoadButton] = useState(true);
+
+  const getData = () => {
+    setLoadButton(true);
+    const lang = localStorage.getItem("@lang")
+      ? localStorage.getItem("@lang")
+      : "vi";
+    axios
+      .get("related-products/" + lang)
+      .then(res => {
+        console.log(res.data);
+        setProducts(res.data.products);
+      })
+      .finally(setLoadButton(false));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getImageName = name => {
+    switch (name) {
+      case "Fox":
+        return "carousel-fox.png";
+      case "Rhino":
+        return "carousel-rhino.png";
+      case "Bull":
+        return "carousel-ox.png";
+      case "Red Owl":
+        return "carousel-bird-2.png";
+      case "Bear":
+        return "carousel-bear.png";
+      case "Deer":
+        return "DEER-12.png";
+      case "Peacock":
+        return "carousel-peacock.png";
+      case "Parrot":
+        return "carousel-bird.png";
+      default:
+        return "carousel-fox.png";
+    }
+  };
+
   return (
     <>
       <div>
@@ -149,223 +197,41 @@ const RelatedProductsPage = props => {
         <section className="d-none d-lg-block features">
           <div className="container">
             <div className="row">
-              <div className="col-xl-3 text-center block-feature">
-                <figure>
-                  <img
-                    src="./assets/images/laptop/carousel/carousel-fox.png"
-                    alt=""
-                  />
-                </figure>
-                <div className="caption">
-                  <h3 className="font-weight-bold">Rhino.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi explicabo ducimus maxime asperiores unde! Omnis.
-                  </p>
-                  <a
-                    href="#"
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div className="col-xl-3 text-center block-feature">
-                <figure>
-                  <img
-                    src="./assets/images/laptop/carousel/carousel-rhino.png"
-                    alt=""
-                  />
-                </figure>
-                <div className="caption">
-                  <h3 className="font-weight-bold">Rhino.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi explicabo ducimus maxime asperiores unde! Omnis.
-                  </p>
-                  <a
-                    href="#"
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div className="col-xl-3 text-center block-feature">
-                <figure>
-                  <img
-                    src="./assets/images/laptop/carousel/carousel-ox.png"
-                    alt=""
-                  />
-                </figure>
-                <div className="caption">
-                  <h3 className="font-weight-bold">Rhino.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi explicabo ducimus maxime asperiores unde! Omnis.
-                  </p>
-                  <a
-                    href="#"
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div className="col-xl-3 text-center block-feature">
-                <figure>
-                  <img
-                    src="./assets/images/laptop/carousel/carousel-bird-2.png"
-                    alt=""
-                  />
-                </figure>
-                <div className="caption">
-                  <h3 className="font-weight-bold">Rhino.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi explicabo ducimus maxime asperiores unde! Omnis.
-                  </p>
-                  <a
-                    href="#"
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div className="col-xl-3 text-center block-feature">
-                <figure>
-                  <img
-                    src="./assets/images/laptop/carousel/carousel-bear.png"
-                    alt=""
-                  />
-                </figure>
-                <div className="caption">
-                  <h3 className="font-weight-bold">Rhino.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi explicabo ducimus maxime asperiores unde! Omnis.
-                  </p>
-                  <a
-                    href="#"
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div className="col-xl-3 text-center block-feature">
-                <figure>
-                  <img
-                    style={{ height: "111px" }}
-                    src="./assets/images/laptop/carousel/DEER-12.png"
-                    alt=""
-                  />
-                </figure>
-                <div className="caption">
-                  <h3 className="font-weight-bold">Rhino.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi explicabo ducimus maxime asperiores unde! Omnis.
-                  </p>
-                  <a
-                    href="#"
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div className="col-xl-3 text-center block-feature">
-                <figure>
-                  <img
-                    src="./assets/images/laptop/carousel/carousel-peacock.png"
-                    alt=""
-                  />
-                </figure>
-                <div className="caption">
-                  <h3 className="font-weight-bold">Rhino.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi explicabo ducimus maxime asperiores unde! Omnis.
-                  </p>
-                  <a
-                    href="#"
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div className="col-xl-3 text-center block-feature">
-                <figure>
-                  <img
-                    src="./assets/images/laptop/carousel/carousel-bird.png"
-                    alt=""
-                  />
-                </figure>
-                <div className="caption">
-                  <h3 className="font-weight-bold">Rhino.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi explicabo ducimus maxime asperiores unde! Omnis.
-                  </p>
-                  <a
-                    href="#"
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>Learn more</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="learn more"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
+              {products &&
+                products.map((item, index) => {
+                  return (
+                    <div
+                      className="col-xl-3 text-center block-feature"
+                      key={index}
+                    >
+                      <figure>
+                        <img
+                          src={
+                            "./assets/images/laptop/carousel/" +
+                            getImageName(item.name)
+                          }
+                          alt=""
+                        />
+                      </figure>
+                      <div className="caption">
+                        <h3 className="font-weight-bold">{item.name}</h3>
+                        <p>{item.desc}</p>
+                        <a
+                          href={item.url}
+                          className="learn-more d-flex align-items-center justify-content-center"
+                        >
+                          <span>Learn more</span>
+                          <span>
+                            <img
+                              src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
+                              alt="learn more"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </section>
