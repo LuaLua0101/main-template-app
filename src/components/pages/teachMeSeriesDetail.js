@@ -9,6 +9,10 @@ import axios from "../../utils/axios";
 import moment from "moment";
 import renderHTML from "react-render-html";
 
+const replaceAll = (str, find, replace) => {
+  return str.replace(new RegExp(find, "g"), replace);
+};
+
 const TeachMeSeriesDetailPage = props => {
   const [loadButton, setLoadButton] = useState(true);
   const [data, setData] = useState();

@@ -4,6 +4,7 @@ import "jodit";
 import "jodit/build/jodit.min.css";
 import JoditEditor from "jodit-react";
 import useFormInput from "../../../utils/useFormInput";
+import { SERVER } from "../../../utils/constants";
 
 const formItemLayout = {
   labelCol: {
@@ -46,7 +47,9 @@ const Detail = props => {
       <Form.Item label="Tiêu đề">
         <JoditEditor
           config={{
-            readonly: false
+            readonly: false,
+            enableDragAndDropFileToEditor: true,
+            uploader: { url: SERVER + "api/upload-img" }
           }}
           {...content}
         />

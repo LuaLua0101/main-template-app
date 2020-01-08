@@ -16,6 +16,7 @@ export default function MainPage(props) {
 
   useEffect(() => {
     axios.get("home").then(res => {
+      console.log(res.data);
       const { banner, teachmepinned, teachme, iothub, iotpinned } = res.data;
       setBanner(banner);
       setTeachMeSeries(teachme);
@@ -26,147 +27,157 @@ export default function MainPage(props) {
   }, []);
 
   const renderTeachMeList = () => {
-    return teachMeSeries.map((item, index) => {
-      return (
-        <div className="col-12 col-md-6 col-lg-6 col-xl-6">
-          <article className="article-box">
-            {/* Views, date, comments*/}
-            <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-              <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
-              <div className="view d-flex align-items-center">
-                <img
-                  src="./assets/images/mobile/icons/icn-eye.png"
-                  alt="views"
-                  className="img-fluid"
-                />
-                <span className="text-uppercase">{item.view_count}</span>
+    return (
+      teachMeSeries &&
+      teachMeSeries.map((item, index) => {
+        return (
+          <div className="col-12 col-md-6 col-lg-6 col-xl-6">
+            <article className="article-box">
+              {/* Views, date, comments*/}
+              <div className="article-brief-info d-flex align-items-center d-block d-md-none">
+                <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
+                <div className="view d-flex align-items-center">
+                  <img
+                    src="./assets/images/mobile/icons/icn-eye.png"
+                    alt="views"
+                    className="img-fluid"
+                  />
+                  <span className="text-uppercase">{item.view_count}</span>
+                </div>
+                <div className="comments d-flex align-items-center">
+                  <img
+                    src="./assets/images/mobile/icons/icn-chat.png"
+                    alt="comment"
+                    className="img-fluid"
+                  />
+                  <span>{item.chat_count}</span>
+                </div>
+                <div className="share d-flex align-items-center">
+                  <img
+                    src="./assets/images/mobile/icons/icn-share.png"
+                    alt="share"
+                    className="img-fluid"
+                  />
+                  <span>{item.share_count}</span>
+                </div>
               </div>
-              <div className="comments d-flex align-items-center">
-                <img
-                  src="./assets/images/mobile/icons/icn-chat.png"
-                  alt="comment"
-                  className="img-fluid"
-                />
-                <span>{item.chat_count}</span>
+              {/* Feature img, title, description */}
+              <div className="article-detail secondary-article secondary-article--left">
+                <div className="row">
+                  <div className="col-12 col-xl-7 left-block">
+                    <div className="img-box">
+                      <img
+                        className="img-fluid thumbnail"
+                        src={
+                          SERVER +
+                          "public/images/teach-me-series/" +
+                          item.id +
+                          "/thumbnail.png"
+                        }
+                        alt="article"
+                      />
+                      {!item.is_image && (
+                        <img
+                          className="play-btn"
+                          src="./assets/images/mobile/icons/icn-play.png"
+                          alt="play"
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <div className="col-12 col-xl-5 right-block">
+                    <a
+                      href={"/teach-me-serie?id=" + item.id}
+                      rel="noopener noreferrer"
+                    >
+                      <h3 className="text-black">{item.title}</h3>
+                      <p>{item.short_desc}</p>
+                    </a>
+                    {/* Views, date visible on laptop*/}
+                    <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
+                      <time>
+                        {moment(item.created_at).format("MMMM D, YYYY")}
+                      </time>
+                      <div className="view d-flex align-items-center">
+                        <img
+                          src="./assets/images/mobile/icons/icn-eye.png"
+                          alt="views"
+                          className="img-fluid"
+                        />
+                        <span className="text-uppercase">
+                          {item.view_count}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="share d-flex align-items-center">
-                <img
-                  src="./assets/images/mobile/icons/icn-share.png"
-                  alt="share"
-                  className="img-fluid"
-                />
-                <span>{item.share_count}</span>
-              </div>
-            </div>
-            {/* Feature img, title, description */}
-            <div className="article-detail secondary-article secondary-article--left">
-              <div className="row">
-                <div className="col-12 col-xl-7 left-block">
-                  <div className="img-box">
-                    <img
-                      className="img-fluid thumbnail"
-                      src={
-                        SERVER +
-                        "public/images/teach-me-series/" +
-                        item.id +
-                        "/thumbnail.png"
-                      }
-                      alt="article"
-                    />
-                    {!item.is_image && (
+            </article>
+          </div>
+        );
+      })
+    );
+  };
+
+  const renderIotHub = () => {
+    return (
+      iotHub &&
+      iotHub.map((item, index) => {
+        return (
+          <div className="col-12 col-md-12 col-lg-12 col-xl-12 ">
+            <article className="article-box-2 article-box mb-0 pt-0">
+              <a href={"/iot-hub?id=" + item.id} rel="noopener noreferrer">
+                {/* Title visible on mobile  */}
+                <h3 className="d-block d-md-none">{item.title}</h3>
+                {/* Details  */}
+                <div className="article-detail row mx-0 ">
+                  <div className="feature-img col-5 col-md-4 col-lg-4 col-xl-4 pl-0 img-box">
+                    <div className="img-box">
+                      <img
+                        src={
+                          SERVER +
+                          "public/images/iot-hubs/" +
+                          item.id +
+                          "/thumbnail.png"
+                        }
+                        className="img-fluid w-100"
+                        alt="article"
+                      />
                       <img
                         className="play-btn"
                         src="./assets/images/mobile/icons/icn-play.png"
                         alt="play"
                       />
-                    )}
+                    </div>
                   </div>
-                </div>
-                <div className="col-12 col-xl-5 right-block">
-                  <a
-                    href={"/teach-me-serie?id=" + item.id}
-                    rel="noopener noreferrer"
-                  >
-                    <h3 className="text-black">{item.title}</h3>
-                    <p>{item.short_desc}</p>
-                  </a>
-                  {/* Views, date visible on laptop*/}
-                  <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                    <time>
-                      {moment(item.created_at).format("MMMM D, YYYY")}
-                    </time>
-                    <div className="view d-flex align-items-center">
-                      <img
-                        src="./assets/images/mobile/icons/icn-eye.png"
-                        alt="views"
-                        className="img-fluid"
-                      />
-                      <span className="text-uppercase">{item.view_count}</span>
+                  <div className="article-info col-7 col-md-8 col-lg-8 col-xl-8 px-0">
+                    {/* Title visible on laptop  */}
+                    <h3 className="d-none d-lg-block">{item.title}</h3>
+                    <p className="mb-0">{item.short_desc}</p>
+                    <div className="d-flex time-and-view align-items-center">
+                      <time>
+                        {moment(item.created_at).format("MMMM D, YYYY")}
+                      </time>
+                      <div className="view d-flex align-items-center">
+                        <img
+                          height={16}
+                          src="./assets/images/mobile/icons/icn-eye-15.png"
+                          alt="views"
+                          className="img-fluid"
+                        />
+                        <span className="text-uppercase">
+                          {item.view_count}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      );
-    });
-  };
-
-  const renderIotHub = () => {
-    return iotHub.map((item, index) => {
-      return (
-        <div className="col-12 col-md-12 col-lg-12 col-xl-12 ">
-          <article className="article-box-2 article-box mb-0 pt-0">
-            <a href={"/iot-hub?id=" + item.id} rel="noopener noreferrer">
-              {/* Title visible on mobile  */}
-              <h3 className="d-block d-md-none">{item.title}</h3>
-              {/* Details  */}
-              <div className="article-detail row mx-0 ">
-                <div className="feature-img col-5 col-md-4 col-lg-4 col-xl-4 pl-0 img-box">
-                  <div className="img-box">
-                    <img
-                      src={
-                        SERVER +
-                        "public/images/iot-hubs/" +
-                        item.id +
-                        "/thumbnail.png"
-                      }
-                      className="img-fluid w-100"
-                      alt="article"
-                    />
-                    <img
-                      className="play-btn"
-                      src="./assets/images/mobile/icons/icn-play.png"
-                      alt="play"
-                    />
-                  </div>
-                </div>
-                <div className="article-info col-7 col-md-8 col-lg-8 col-xl-8 px-0">
-                  {/* Title visible on laptop  */}
-                  <h3 className="d-none d-lg-block">{item.title}</h3>
-                  <p className="mb-0">{item.short_desc}</p>
-                  <div className="d-flex time-and-view align-items-center">
-                    <time>
-                      {moment(item.created_at).format("MMMM D, YYYY")}
-                    </time>
-                    <div className="view d-flex align-items-center">
-                      <img
-                        height={16}
-                        src="./assets/images/mobile/icons/icn-eye-15.png"
-                        alt="views"
-                        className="img-fluid"
-                      />
-                      <span className="text-uppercase">{item.view_count}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-        </div>
-      );
-    });
+              </a>
+            </article>
+          </div>
+        );
+      })
+    );
   };
   return (
     <>
@@ -269,20 +280,25 @@ export default function MainPage(props) {
                   <div className="row mx-0 article-detail align-items-center ">
                     <div className="col-md-6 col-xl-6 left-block pl-0">
                       <a
-                        href={"/teach-me-serie?id=" + teachMePinned.id}
+                        href={
+                          teachMePinned &&
+                          "/teach-me-serie?id=" + teachMePinned.id
+                        }
                         rel="noopener noreferrer"
                       >
                         <div className="img-box">
-                          <img
-                            src={
-                              SERVER +
-                              "public/images/teach-me-series/" +
-                              teachMePinned.id +
-                              "/thumbnail.png"
-                            }
-                            alt="feature article"
-                          />
-                          {!teachMePinned.is_image && (
+                          {teachMePinned && (
+                            <img
+                              src={
+                                SERVER +
+                                "public/images/teach-me-series/" +
+                                teachMePinned.id +
+                                "/thumbnail.png"
+                              }
+                              alt="feature article"
+                            />
+                          )}
+                          {teachMePinned && !teachMePinned.is_image && (
                             <img
                               className="play-btn"
                               src="./assets/images/mobile/icons/icn-play.png"
@@ -315,14 +331,16 @@ export default function MainPage(props) {
                         {teachMePinned && teachMePinned.title}
                       </h3>
                       <p>{teachMePinned && teachMePinned.short_desc}</p>
-                      <a
-                        href={"/teach-me-serie?id=" + teachMePinned.id}
-                        className="text-capitalize d-none d-sm-block learn-more"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Learn more
-                      </a>
+                      {teachMePinned && (
+                        <a
+                          href={"/teach-me-serie?id=" + teachMePinned.id}
+                          className="text-capitalize d-none d-sm-block learn-more"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn more
+                        </a>
+                      )}
                     </div>
                   </div>
                 </article>
@@ -376,9 +394,11 @@ export default function MainPage(props) {
                 <article className="article-box">
                   {/* Views, date, comments VISIBLE ON MOBILE */}
                   <div className="article-brief-info d-flex align-items-center d-sm-flex d-md-none">
-                    <time>
-                      {moment(iotPinned.created_at).format("MMMM D, YYYY")}
-                    </time>
+                    {iotPinned && (
+                      <time>
+                        {moment(iotPinned.created_at).format("MMMM D, YYYY")}
+                      </time>
+                    )}
                     <div className="view d-flex align-items-center">
                       <img
                         src="./assets/images/mobile/icons/icn-eye.png"
@@ -386,7 +406,7 @@ export default function MainPage(props) {
                         className="img-fluid"
                       />
                       <span className="text-uppercase">
-                        {iotPinned.view_count}
+                        {iotPinned && iotPinned.view_count}
                       </span>
                     </div>
                     <div className="comments d-flex align-items-center">
@@ -395,7 +415,7 @@ export default function MainPage(props) {
                         alt="comment"
                         className="img-fluid"
                       />
-                      <span>{iotPinned.chat_count}</span>
+                      <span>{iotPinned && iotPinned.chat_count}</span>
                     </div>
                     <div className="share d-flex align-items-center">
                       <img
@@ -403,41 +423,45 @@ export default function MainPage(props) {
                         alt="share"
                         className="img-fluid"
                       />
-                      <span>{iotPinned.share_count}</span>
+                      <span>{iotPinned && iotPinned.share_count}</span>
                     </div>
                   </div>
                   {/* Feature img, title, description */}
                   <div className="article-detail">
-                    <a
-                      href={"/iot-hub?id=" + iotPinned.id}
-                      rel="noopener noreferrer"
-                    >
-                      <div className="img-box">
-                        <img
-                          className="img-fluid thumbnail"
-                          src={
-                            SERVER +
-                            "public/images/iot-hubs/" +
-                            iotPinned.id +
-                            "/thumbnail.png"
-                          }
-                          alt="article"
-                        />
-                        {!iotPinned.is_image && (
+                    {iotPinned && (
+                      <a
+                        href={"/iot-hub?id=" + iotPinned.id}
+                        rel="noopener noreferrer"
+                      >
+                        <div className="img-box">
                           <img
-                            className="play-btn"
-                            src="./assets/images/mobile/icons/icn-play.png"
-                            alt="play"
+                            className="img-fluid thumbnail"
+                            src={
+                              SERVER +
+                              "public/images/iot-hubs/" +
+                              iotPinned.id +
+                              "/thumbnail.png"
+                            }
+                            alt="article"
                           />
-                        )}
-                      </div>
-                      <h3 className="text-black">{iotPinned.title}</h3>
-                      <p>{iotPinned.short_desc}</p>
-                    </a>
+                          {!iotPinned.is_image && (
+                            <img
+                              className="play-btn"
+                              src="./assets/images/mobile/icons/icn-play.png"
+                              alt="play"
+                            />
+                          )}
+                        </div>
+                        <h3 className="text-black">{iotPinned.title}</h3>
+                        <p>{iotPinned.short_desc}</p>
+                      </a>
+                    )}
                     <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                      <time>
-                        {moment(iotPinned.created_at).format("MMMM D, YYYY")}
-                      </time>
+                      {iotPinned && (
+                        <time>
+                          {moment(iotPinned.created_at).format("MMMM D, YYYY")}
+                        </time>
+                      )}
                       <div className="view d-flex align-items-center">
                         <img
                           src="./assets/images/mobile/icons/icn-eye.png"
@@ -445,7 +469,7 @@ export default function MainPage(props) {
                           className="img-fluid"
                         />
                         <span className="text-uppercase">
-                          {iotPinned.view_count}
+                          {iotPinned && iotPinned.view_count}
                         </span>
                       </div>
                     </div>
