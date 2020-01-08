@@ -4,17 +4,28 @@ import axios from "../../utils/axios";
 import languages from "../../utils/languages";
 const lang = languages("index");
 
-const settings = {
-  centerMode: true,
-  infinite: true,
-  centerPadding: "1px",
-  slidesToShow: 3,
-  speed: 500
-};
-
 const RelatedProductsPage = props => {
   const [products, setProducts] = useState([]);
+  const [currentSlide1, setCurrentSlide1] = useState(1);
+  const [currentSlide2, setCurrentSlide2] = useState(5);
   const [loadButton, setLoadButton] = useState(true);
+  const settings1 = {
+    centerMode: true,
+    infinite: true,
+    centerPadding: "1px",
+    slidesToShow: 3,
+    speed: 500,
+    afterChange: current => setCurrentSlide1(current)
+  };
+
+  const settings2 = {
+    centerMode: true,
+    infinite: true,
+    centerPadding: "1px",
+    slidesToShow: 3,
+    speed: 500,
+    afterChange: current => setCurrentSlide2(current)
+  };
 
   const getData = () => {
     setLoadButton(true);
@@ -73,58 +84,46 @@ const RelatedProductsPage = props => {
         <section className="d-block d-md-none d-lg-none features-mobile">
           <div className="container">
             <div className="slider-nav slider-nav-1 slick-initialized slick-slider">
-              <Slider {...settings}>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-fox.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-rhino.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-ox.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bird-2.png"
-                    alt="fox"
-                  />
-                </div>
+              <Slider {...settings1}>
+                {products &&
+                  products.slice(0, 4).map((item, index) => {
+                    return (
+                      <div className="text-center slider-nav-item-mobile">
+                        <img
+                          className="mx-auto"
+                          src={
+                            "./assets/images/laptop/carousel/" +
+                            getImageName(item.name)
+                          }
+                          alt="fox"
+                        />
+                      </div>
+                    );
+                  })}
               </Slider>
             </div>
-            <div className="slider-for">
-              <div className="item-caption text-center">
-                <h3 className="font-weight-bold">Rhino.</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                  explicabo ducimus maxime asperiores unde! Omnis.
-                </p>
-                <a
-                  href="#"
-                  className="learn-more d-flex align-items-center justify-content-center"
-                >
-                  <span>{lang.learnmore}</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                      alt="{lang.learnmore}"
-                    />
-                  </span>
-                </a>
+            {products && products[currentSlide1] && (
+              <div className="slider-for">
+                <div className="item-caption text-center">
+                  <h3 className="font-weight-bold">
+                    {products[currentSlide1].name}
+                  </h3>
+                  <p>{products[currentSlide1].desc}</p>
+                  <a
+                    href={products[currentSlide1].url}
+                    className="learn-more d-flex align-items-center justify-content-center"
+                  >
+                    <span>{lang.learnmore}</span>
+                    <span>
+                      <img
+                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
+                        alt="{lang.learnmore}"
+                      />
+                    </span>
+                  </a>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </section>
         {/* End section  */}
@@ -135,61 +134,46 @@ const RelatedProductsPage = props => {
         <section className="d-block d-md-none d-lg-none features-mobile">
           <div className="container">
             <div className="slider-nav">
-              <Slider {...settings}>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bear.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/DEER-12.png"
-                    alt="fox"
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-peacock.png"
-                    alt="fox"
-                    style={{ height: "61px" }}
-                  />
-                </div>
-                <div className="text-center slider-nav-item-mobile">
-                  <img
-                    className="mx-auto"
-                    src="./assets/images/laptop/carousel/carousel-bird.png"
-                    alt="fox"
-                  />
-                </div>
+              <Slider {...settings2}>
+                {products &&
+                  products.slice(4, 8).map((item, index) => {
+                    return (
+                      <div className="text-center slider-nav-item-mobile">
+                        <img
+                          className="mx-auto"
+                          src={
+                            "./assets/images/laptop/carousel/" +
+                            getImageName(item.name)
+                          }
+                          alt="fox"
+                        />
+                      </div>
+                    );
+                  })}
               </Slider>
             </div>
-            <div className="slider-for">
-              <div className="item-caption text-center">
-                <h3 className="font-weight-bold">
-                  Lorem ipsum dolor sit amet.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                  explicabo ducimus maxime asperiores unde! Omnis.
-                </p>
-                <a
-                  href="#"
-                  className="learn-more d-flex align-items-center justify-content-center"
-                >
-                  <span>{lang.learnmore}</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                      alt="{lang.learnmore}"
-                    />
-                  </span>
-                </a>
+            {products && products[currentSlide2] && (
+              <div className="slider-for">
+                <div className="item-caption text-center">
+                  <h3 className="font-weight-bold">
+                    {products[currentSlide2].name}
+                  </h3>
+                  <p>{products[currentSlide2].desc}</p>
+                  <a
+                    href={products[currentSlide2].url}
+                    className="learn-more d-flex align-items-center justify-content-center"
+                  >
+                    <span>{lang.learnmore}</span>
+                    <span>
+                      <img
+                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
+                        alt={lang.learnmore}
+                      />
+                    </span>
+                  </a>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </section>
         {/* Features laptop  */}
@@ -223,7 +207,7 @@ const RelatedProductsPage = props => {
                           <span>
                             <img
                               src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                              alt="{lang.learnmore}"
+                              alt={lang.learnmore}
                             />
                           </span>
                         </a>

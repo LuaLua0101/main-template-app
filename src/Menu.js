@@ -95,6 +95,21 @@ const Menu = props => {
                     </li>
                     <li className="nav-item dropdown d-flex align-items-center">
                       <a
+                        className="nav-link px-0"
+                        href=""
+                        onClick={() => {
+                          localStorage.setItem(
+                            "@lang",
+                            localStorage.getItem("@lang") === "vi" ? "en" : "vi"
+                          );
+                          window.location.reload();
+                        }}
+                      >
+                        {localStorage.getItem("@lang") === "vi" ? "EN" : "VI"}
+                      </a>
+                    </li>
+                    {/* <li className="nav-item dropdown d-flex align-items-center">
+                      <a
                         className="nav-link dropdown-toggle d-flex"
                         href="#"
                         id="exploreLaptop"
@@ -129,7 +144,7 @@ const Menu = props => {
                           English
                         </a>
                       </div>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
