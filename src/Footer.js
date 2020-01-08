@@ -1,5 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import languages from "./utils/languages";
+const lang = languages("index");
 
 const Footer = props => {
   return (
@@ -58,7 +60,7 @@ const Footer = props => {
               </div>
               <div className="col-12 col-md-12 col-lg-3 col-xl-3  pl-0 contact">
                 <h4 className="text-uppercase d-none d-lg-block font-weight-bold text-white">
-                  Văn phòng công ty
+                  {lang.office}
                 </h4>
                 <ul className="pl-0">
                   <li>
@@ -112,7 +114,7 @@ const Footer = props => {
               <div className="col-12 col-md-12 col-lg-3 col-xl-3 pr-0 ">
                 <div className="social-network">
                   <h4 className="text-uppercase d-none d-lg-block font-weight-bold text-white">
-                    Contact
+                    {lang.contact}
                   </h4>
                   <ul className="px-0 d-block d-lg-none">
                     <li className="d-inline-block ">

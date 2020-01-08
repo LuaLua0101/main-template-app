@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
 import moment from "moment";
 import { SERVER } from "../../utils/constants";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 export default function MainPage(props) {
   const [teachMeSeries, setTeachMeSeries] = useState([]);
@@ -13,6 +15,7 @@ export default function MainPage(props) {
   const [iotPinned, setIotPinned] = useState({
     id: 0
   });
+  const [appPinned, setAppPinned] = useState();
 
   useEffect(() => {
     axios.get("home").then(res => {
@@ -23,161 +26,142 @@ export default function MainPage(props) {
       setTeachMePinned(teachmepinned);
       setIotHub(iothub);
       setIotPinned(iotpinned);
+      setAppPinned(res.data.app_pinned);
     });
   }, []);
 
   const renderTeachMeList = () => {
-    return (
-      teachMeSeries &&
-      teachMeSeries.map((item, index) => {
-        return (
-          <div className="col-12 col-md-6 col-lg-6 col-xl-6">
-            <article className="article-box">
-              {/* Views, date, comments*/}
-              <div className="article-brief-info d-flex align-items-center d-block d-md-none">
-                <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
-                <div className="view d-flex align-items-center">
-                  <img
-                    src="./assets/images/mobile/icons/icn-eye.png"
-                    alt="views"
-                    className="img-fluid"
-                  />
-                  <span className="text-uppercase">{item.view_count}</span>
-                </div>
-                <div className="comments d-flex align-items-center">
-                  <img
-                    src="./assets/images/mobile/icons/icn-chat.png"
-                    alt="comment"
-                    className="img-fluid"
-                  />
-                  <span>{item.chat_count}</span>
-                </div>
-                <div className="share d-flex align-items-center">
-                  <img
-                    src="./assets/images/mobile/icons/icn-share.png"
-                    alt="share"
-                    className="img-fluid"
-                  />
-                  <span>{item.share_count}</span>
-                </div>
+    return teachMeSeries.map((item, index) => {
+      return (
+        <div className="col-12 col-md-6 col-lg-6 col-xl-6">
+          <article className="article-box">
+            {/* Views, date, comments*/}
+            <div className="article-brief-info d-flex align-items-center d-block d-md-none">
+              <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
+              <div className="view d-flex align-items-center">
+                <img
+                  src="./assets/images/mobile/icons/icn-eye.png"
+                  alt="views"
+                  className="img-fluid"
+                />
+                <span className="text-uppercase">{item.view_count}</span>
               </div>
-              {/* Feature img, title, description */}
-              <div className="article-detail secondary-article secondary-article--left">
-                <div className="row">
-                  <div className="col-12 col-xl-7 left-block">
-                    <div className="img-box">
-                      <img
-                        className="img-fluid thumbnail"
-                        src={
-                          SERVER +
-                          "public/images/teach-me-series/" +
-                          item.id +
-                          "/thumbnail.png"
-                        }
-                        alt="article"
-                      />
-                      {!item.is_image && (
-                        <img
-                          className="play-btn"
-                          src="./assets/images/mobile/icons/icn-play.png"
-                          alt="play"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  <div className="col-12 col-xl-5 right-block">
-                    <a
-                      href={"/teach-me-serie?id=" + item.id}
-                      rel="noopener noreferrer"
-                    >
-                      <h3 className="text-black">{item.title}</h3>
-                      <p>{item.short_desc}</p>
-                    </a>
-                    {/* Views, date visible on laptop*/}
-                    <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                      <time>
-                        {moment(item.created_at).format("MMMM D, YYYY")}
-                      </time>
-                      <div className="view d-flex align-items-center">
-                        <img
-                          src="./assets/images/mobile/icons/icn-eye.png"
-                          alt="views"
-                          className="img-fluid"
-                        />
-                        <span className="text-uppercase">
-                          {item.view_count}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="comments d-flex align-items-center">
+                <img
+                  src="./assets/images/mobile/icons/icn-chat.png"
+                  alt="comment"
+                  className="img-fluid"
+                />
+                <span>{item.chat_count}</span>
               </div>
-            </article>
-          </div>
-        );
-      })
-    );
-  };
-
-  const renderIotHub = () => {
-    return (
-      iotHub &&
-      iotHub.map((item, index) => {
-        return (
-          <div className="col-12 col-md-12 col-lg-12 col-xl-12 ">
-            <article className="article-box-2 article-box mb-0 pt-0">
-              <a href={"/iot-hub?id=" + item.id} rel="noopener noreferrer">
-                {/* Title visible on mobile  */}
-                <h3 className="d-block d-md-none">{item.title}</h3>
-                {/* Details  */}
-                <div className="article-detail row mx-0 ">
-                  <div className="feature-img col-5 col-md-4 col-lg-4 col-xl-4 pl-0 img-box">
-                    <div className="img-box">
-                      <img
-                        src={
-                          SERVER +
-                          "public/images/iot-hubs/" +
-                          item.id +
-                          "/thumbnail.png"
-                        }
-                        className="img-fluid w-100"
-                        alt="article"
-                      />
+              <div className="share d-flex align-items-center">
+                <img
+                  src="./assets/images/mobile/icons/icn-share.png"
+                  alt="share"
+                  className="img-fluid"
+                />
+                <span>{item.share_count}</span>
+              </div>
+            </div>
+            {/* Feature img, title, description */}
+            <div className="article-detail secondary-article secondary-article--left">
+              <div className="row">
+                <div className="col-12 col-xl-7 left-block">
+                  <div className="img-box">
+                    <img
+                      className="img-fluid thumbnail"
+                      src={SERVER + "public/img/post/" + item.cover}
+                      alt="article"
+                    />
+                    {!item.is_image && (
                       <img
                         className="play-btn"
                         src="./assets/images/mobile/icons/icn-play.png"
                         alt="play"
                       />
-                    </div>
+                    )}
                   </div>
-                  <div className="article-info col-7 col-md-8 col-lg-8 col-xl-8 px-0">
-                    {/* Title visible on laptop  */}
-                    <h3 className="d-none d-lg-block">{item.title}</h3>
-                    <p className="mb-0">{item.short_desc}</p>
-                    <div className="d-flex time-and-view align-items-center">
-                      <time>
-                        {moment(item.created_at).format("MMMM D, YYYY")}
-                      </time>
-                      <div className="view d-flex align-items-center">
-                        <img
-                          height={16}
-                          src="./assets/images/mobile/icons/icn-eye-15.png"
-                          alt="views"
-                          className="img-fluid"
-                        />
-                        <span className="text-uppercase">
-                          {item.view_count}
-                        </span>
-                      </div>
+                </div>
+                <div className="col-12 col-xl-5 right-block">
+                  <a
+                    href={"/teach-me-serie?id=" + item.id}
+                    rel="noopener noreferrer"
+                  >
+                    <h3 className="text-black">{item.title}</h3>
+                    <p>{item.short_desc}</p>
+                  </a>
+                  {/* Views, date visible on laptop*/}
+                  <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
+                    <time>
+                      {moment(item.created_at).format("MMMM D, YYYY")}
+                    </time>
+                    <div className="view d-flex align-items-center">
+                      <img
+                        src="./assets/images/mobile/icons/icn-eye.png"
+                        alt="views"
+                        className="img-fluid"
+                      />
+                      <span className="text-uppercase">{item.view_count}</span>
                     </div>
                   </div>
                 </div>
-              </a>
-            </article>
-          </div>
-        );
-      })
-    );
+              </div>
+            </div>
+          </article>
+        </div>
+      );
+    });
+  };
+
+  const renderIotHub = () => {
+    return iotHub.map((item, index) => {
+      return (
+        <div className="col-12 col-md-12 col-lg-12 col-xl-12 ">
+          <article className="article-box-2 article-box mb-0 pt-0">
+            <a href={"/iot-hub?id=" + item.id} rel="noopener noreferrer">
+              {/* Title visible on mobile  */}
+              <h3 className="d-block d-md-none">{item.title}</h3>
+              {/* Details  */}
+              <div className="article-detail row mx-0 ">
+                <div className="feature-img col-5 col-md-4 col-lg-4 col-xl-4 pl-0 img-box">
+                  <div className="img-box">
+                    <img
+                      src={SERVER + "public/img/iothub/" + item.cover}
+                      className="img-fluid w-100"
+                      alt="article"
+                    />
+                    <img
+                      className="play-btn"
+                      src="./assets/images/mobile/icons/icn-play.png"
+                      alt="play"
+                    />
+                  </div>
+                </div>
+                <div className="article-info col-7 col-md-8 col-lg-8 col-xl-8 px-0">
+                  {/* Title visible on laptop  */}
+                  <h3 className="d-none d-lg-block">{item.title}</h3>
+                  <p className="mb-0">{item.short_desc}</p>
+                  <div className="d-flex time-and-view align-items-center">
+                    <time>
+                      {moment(item.created_at).format("MMMM D, YYYY")}
+                    </time>
+                    <div className="view d-flex align-items-center">
+                      <img
+                        height={16}
+                        src="./assets/images/mobile/icons/icn-eye-15.png"
+                        alt="views"
+                        className="img-fluid"
+                      />
+                      <span className="text-uppercase">{item.view_count}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      );
+    });
   };
   return (
     <>
@@ -229,17 +213,15 @@ export default function MainPage(props) {
                 <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                   <div className="card">
                     <div className="card-body">
-                      <h4 className="card-title">NEW UPDATE PACH V4.3</h4>
-                      <p className="card-text">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat.
-                      </p>
+                      <h4 className="card-title">
+                        {appPinned && appPinned.title}
+                      </h4>
+                      <p className="card-text">{appPinned && appPinned.desc}</p>
                       <a
                         href="/application"
                         className="text-capitalize d-none d-sm-block learn-more"
                       >
-                        LEARN MORE
+                        {lang.learnmore}
                       </a>
                     </div>
                   </div>
@@ -263,7 +245,7 @@ export default function MainPage(props) {
                   href="/teach-me-series"
                   className="text-center view-more-articles"
                 >
-                  <span>View all post</span>
+                  <span>{lang.viewall}</span>
                   <span>
                     <img
                       src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
@@ -280,25 +262,17 @@ export default function MainPage(props) {
                   <div className="row mx-0 article-detail align-items-center ">
                     <div className="col-md-6 col-xl-6 left-block pl-0">
                       <a
-                        href={
-                          teachMePinned &&
-                          "/teach-me-serie?id=" + teachMePinned.id
-                        }
+                        href={"/teach-me-serie?id=" + teachMePinned.id}
                         rel="noopener noreferrer"
                       >
                         <div className="img-box">
-                          {teachMePinned && (
-                            <img
-                              src={
-                                SERVER +
-                                "public/images/teach-me-series/" +
-                                teachMePinned.id +
-                                "/thumbnail.png"
-                              }
-                              alt="feature article"
-                            />
-                          )}
-                          {teachMePinned && !teachMePinned.is_image && (
+                          <img
+                            src={
+                              SERVER + "public/img/post/" + teachMePinned.cover
+                            }
+                            alt="feature article"
+                          />
+                          {!teachMePinned.is_image && (
                             <img
                               className="play-btn"
                               src="./assets/images/mobile/icons/icn-play.png"
@@ -331,16 +305,14 @@ export default function MainPage(props) {
                         {teachMePinned && teachMePinned.title}
                       </h3>
                       <p>{teachMePinned && teachMePinned.short_desc}</p>
-                      {teachMePinned && (
-                        <a
-                          href={"/teach-me-serie?id=" + teachMePinned.id}
-                          className="text-capitalize d-none d-sm-block learn-more"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more
-                        </a>
-                      )}
+                      <a
+                        href={"/teach-me-serie?id=" + teachMePinned.id}
+                        className="text-capitalize d-none d-sm-block learn-more"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {lang.learnmore}
+                      </a>
                     </div>
                   </div>
                 </article>
@@ -355,7 +327,7 @@ export default function MainPage(props) {
                 href="/teach-me-series"
                 className="text-uppercase text-center d-block d-lg-none view-more-articles"
               >
-                <span>View all post</span>
+                <span>{lang.viewall}</span>
                 <span>
                   <img
                     src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
@@ -378,7 +350,7 @@ export default function MainPage(props) {
               </div>
               <div className="col-6 d-none d-lg-block text-right">
                 <a href="/iot-hubs" className="text-center view-more-articles">
-                  <span>View all post</span>
+                  <span>{lang.viewall}</span>
                   <span>
                     <img
                       src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
@@ -394,11 +366,9 @@ export default function MainPage(props) {
                 <article className="article-box">
                   {/* Views, date, comments VISIBLE ON MOBILE */}
                   <div className="article-brief-info d-flex align-items-center d-sm-flex d-md-none">
-                    {iotPinned && (
-                      <time>
-                        {moment(iotPinned.created_at).format("MMMM D, YYYY")}
-                      </time>
-                    )}
+                    <time>
+                      {moment(iotPinned.created_at).format("MMMM D, YYYY")}
+                    </time>
                     <div className="view d-flex align-items-center">
                       <img
                         src="./assets/images/mobile/icons/icn-eye.png"
@@ -406,7 +376,7 @@ export default function MainPage(props) {
                         className="img-fluid"
                       />
                       <span className="text-uppercase">
-                        {iotPinned && iotPinned.view_count}
+                        {iotPinned.view_count}
                       </span>
                     </div>
                     <div className="comments d-flex align-items-center">
@@ -415,7 +385,7 @@ export default function MainPage(props) {
                         alt="comment"
                         className="img-fluid"
                       />
-                      <span>{iotPinned && iotPinned.chat_count}</span>
+                      <span>{iotPinned.chat_count}</span>
                     </div>
                     <div className="share d-flex align-items-center">
                       <img
@@ -423,45 +393,36 @@ export default function MainPage(props) {
                         alt="share"
                         className="img-fluid"
                       />
-                      <span>{iotPinned && iotPinned.share_count}</span>
+                      <span>{iotPinned.share_count}</span>
                     </div>
                   </div>
                   {/* Feature img, title, description */}
                   <div className="article-detail">
-                    {iotPinned && (
-                      <a
-                        href={"/iot-hub?id=" + iotPinned.id}
-                        rel="noopener noreferrer"
-                      >
-                        <div className="img-box">
+                    <a
+                      href={"/iot-hub?id=" + iotPinned.id}
+                      rel="noopener noreferrer"
+                    >
+                      <div className="img-box">
+                        <img
+                          className="img-fluid thumbnail"
+                          src={SERVER + "public/img/iothub/" + iotPinned.cover}
+                          alt="article"
+                        />
+                        {!iotPinned.is_image && (
                           <img
-                            className="img-fluid thumbnail"
-                            src={
-                              SERVER +
-                              "public/images/iot-hubs/" +
-                              iotPinned.id +
-                              "/thumbnail.png"
-                            }
-                            alt="article"
+                            className="play-btn"
+                            src="./assets/images/mobile/icons/icn-play.png"
+                            alt="play"
                           />
-                          {!iotPinned.is_image && (
-                            <img
-                              className="play-btn"
-                              src="./assets/images/mobile/icons/icn-play.png"
-                              alt="play"
-                            />
-                          )}
-                        </div>
-                        <h3 className="text-black">{iotPinned.title}</h3>
-                        <p>{iotPinned.short_desc}</p>
-                      </a>
-                    )}
+                        )}
+                      </div>
+                      <h3 className="text-black">{iotPinned.title}</h3>
+                      <p>{iotPinned.short_desc}</p>
+                    </a>
                     <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                      {iotPinned && (
-                        <time>
-                          {moment(iotPinned.created_at).format("MMMM D, YYYY")}
-                        </time>
-                      )}
+                      <time>
+                        {moment(iotPinned.created_at).format("MMMM D, YYYY")}
+                      </time>
                       <div className="view d-flex align-items-center">
                         <img
                           src="./assets/images/mobile/icons/icn-eye.png"
@@ -469,7 +430,7 @@ export default function MainPage(props) {
                           className="img-fluid"
                         />
                         <span className="text-uppercase">
-                          {iotPinned && iotPinned.view_count}
+                          {iotPinned.view_count}
                         </span>
                       </div>
                     </div>
@@ -484,7 +445,7 @@ export default function MainPage(props) {
                 href="/iot-hubs"
                 className="text-uppercase text-center d-lg-none view-more-articles"
               >
-                <span>View all post</span>
+                <span>{lang.viewall}</span>
                 <span>
                   <img
                     src="./assets/images/mobile/icons/icn-arrow-next-blue.png"

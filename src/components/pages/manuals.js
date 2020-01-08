@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
 import { SERVER } from "../../utils/constants";
-import { Spin } from "antd";
-import { app } from "firebase";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const ManualPage = props => {
   const [manuals, setManuals] = useState([]);
@@ -73,7 +73,7 @@ const ManualPage = props => {
                 aria-controls="collapseExample"
               >
                 <div>
-                  <span className="text-uppercase">Product</span>
+                  <span className="text-uppercase">{lang.product}</span>
                   <span className="pull-right">
                     <img
                       src="./assets/images/mobile/icons/icn-arrow-down.png"
@@ -139,9 +139,8 @@ const ManualPage = props => {
                                   <img
                                     src={
                                       SERVER +
-                                      "public/images/manuals/" +
-                                      item.list[subCurrent].id +
-                                      ".png"
+                                      "public/img/Manual/" +
+                                      item.list[subCurrent].cover
                                     }
                                     alt="manual"
                                     className="img-fluid"
@@ -151,7 +150,7 @@ const ManualPage = props => {
                                   <div className="pagination mobile-pagination ">
                                     <div className="d-flex justify-content-center w-100 align-items-center">
                                       <span>
-                                        Page
+                                        {lang.page}
                                         <span className="active-page">
                                           {subCurrent + 1}
                                         </span>
@@ -208,9 +207,8 @@ const ManualPage = props => {
                     <img
                       src={
                         SERVER +
-                        "public/images/manuals/" +
-                        manuals[current].list[subCurrent].id +
-                        ".png"
+                        "public/img/Manual/" +
+                        manuals[current].list[subCurrent].cover
                       }
                       alt="manual"
                       className="img-fluid"
@@ -220,7 +218,7 @@ const ManualPage = props => {
                     <div className="pagination mobile-pagination ">
                       <div className="d-flex justify-content-center w-100 align-items-center">
                         <span>
-                          Page
+                          {lang.page}
                           <span className="active-page">{subCurrent + 1}</span>
                           of {manuals[current].list.length}
                         </span>

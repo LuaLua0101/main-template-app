@@ -3,6 +3,8 @@ import axios from "../../utils/axios";
 import moment from "moment";
 import { SERVER } from "../../utils/constants";
 import { Spin } from "antd";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const IotHubPage = props => {
   const [iotHub, setIotHub] = useState([]);
@@ -38,12 +40,7 @@ const IotHubPage = props => {
                 <div className="img-box">
                   <img
                     className="img-fluid thumbnail"
-                    src={
-                      SERVER +
-                      "public/images/teach-me-series/" +
-                      item.id +
-                      "/thumbnail.png"
-                    }
+                    src={SERVER + "public/img/iothub/" + item.cover}
                     alt="article"
                   />
                   {!item.is_image && (
@@ -114,10 +111,7 @@ const IotHubPage = props => {
                       {iotHubPinned && (
                         <img
                           src={
-                            SERVER +
-                            "public/images/iot-hubs/" +
-                            iotHubPinned.id +
-                            "/thumbnail.png"
+                            SERVER + "public/img/iothub/" + iotHubPinned.cover
                           }
                           className="img-fluid w-100"
                           alt="article"
@@ -151,7 +145,7 @@ const IotHubPage = props => {
                 className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
                 style={{ cursor: "pointer" }}
               >
-                <span>View more</span>
+                <span>{lang.viewmore}</span>
                 <span>
                   <img
                     src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"

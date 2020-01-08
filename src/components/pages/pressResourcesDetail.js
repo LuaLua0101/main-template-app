@@ -11,10 +11,6 @@ import renderHTML from "react-render-html";
 import languages from "../../utils/languages";
 const lang = languages("index");
 
-const replaceAll = (str, find, replace) => {
-  return str.replace(new RegExp(find, "g"), replace);
-};
-
 const TeachMeSeriesDetailPage = props => {
   const [loadButton, setLoadButton] = useState(true);
   const [data, setData] = useState();
@@ -24,7 +20,7 @@ const TeachMeSeriesDetailPage = props => {
     let id = search.get("id");
     setLoadButton(true);
     axios
-      .post("teach-me-series/detail", {
+      .post("press-resources/detail", {
         id
       })
       .then(res => {
@@ -140,6 +136,8 @@ const TeachMeSeriesDetailPage = props => {
               <div className="form-group">
                 <input
                   type="text"
+                  name={lang.name}
+                  id={lang.name}
                   className=" custom-input form-control"
                   placeholder={lang.name}
                   aria-describedby="helpId"
@@ -148,6 +146,8 @@ const TeachMeSeriesDetailPage = props => {
               <div className="form-group">
                 <input
                   type="text"
+                  name="email"
+                  id="email"
                   className=" custom-input form-control"
                   placeholder="Email"
                   aria-describedby="helpId"
@@ -157,6 +157,8 @@ const TeachMeSeriesDetailPage = props => {
                 <textarea
                   className="form-control custom-input "
                   placeholder={lang.message}
+                  name={lang.message}
+                  id="msg"
                   rows={3}
                   defaultValue={""}
                 />

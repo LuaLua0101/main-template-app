@@ -3,6 +3,8 @@ import axios from "../../utils/axios";
 import moment from "moment";
 import { SERVER } from "../../utils/constants";
 import { Spin } from "antd";
+import languages from "../../utils/languages";
+const lang = languages("index");
 
 const TeachMeSeriesPage = props => {
   const [teachMeSeries, setTeachMeSeries] = useState([]);
@@ -15,6 +17,7 @@ const TeachMeSeriesPage = props => {
     axios
       .post("teach-me-series", { page: teachMeSeries.length })
       .then(res => {
+        console.log(res.data);
         const { teachmepinned, teachme, banner } = res.data;
         setTeachMeSeries([...teachMeSeries, ...teachme]);
         !teachMePinned && setTeachMePinned(teachmepinned);
@@ -66,12 +69,7 @@ const TeachMeSeriesPage = props => {
                 <div className="img-box">
                   <img
                     className="img-fluid thumbnail"
-                    src={
-                      SERVER +
-                      "public/images/teach-me-series/" +
-                      item.id +
-                      "/thumbnail.png"
-                    }
+                    src={SERVER + "public/img/post/" + item.cover}
                     alt="article"
                   />
                   {!item.is_image && (
@@ -119,9 +117,7 @@ const TeachMeSeriesPage = props => {
           <div className="container text-center">
             <h2 className="breadcum-title">Teach me series</h2>
             <h3 className="breadcum-subtitle">{banner && banner.title}</h3>
-            <p>
-            {banner && banner.content}
-            </p>
+            <p>{banner && banner.content}</p>
           </div>
         </section>
         {/* // Bread cum  */}
@@ -145,10 +141,7 @@ const TeachMeSeriesPage = props => {
                         <img
                           className="img-fluid"
                           src={
-                            SERVER +
-                            "public/images/teach-me-series/" +
-                            teachMePinned.id +
-                            "/thumbnail.png"
+                            SERVER + "public/img/post/" + teachMePinned.cover
                           }
                           alt="feature article"
                         />
@@ -165,11 +158,11 @@ const TeachMeSeriesPage = props => {
             </article>
           </div>
         </section>
-        {/* Sub articles: 5 on mobiles and view more, 12 on laptop (3 articles/row)  */}
+        {/* Sub articles: 5 on mobiles and {lang.viewmore}, 12 on laptop (3 articles/row)  */}
         <section className="teach-series-sub-articles">
           <div className="container">
             <div className="row">{renderTeachmeList()}</div>
-            {/* View more button */}
+            {/* {lang.viewmore} button */}
             {loadButton ? (
               <div
                 className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
@@ -178,20 +171,20 @@ const TeachMeSeriesPage = props => {
                 <Spin size="large" />
               </div>
             ) : (
-                <div
-                  onClick={getData}
-                  className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
-                  style={{ cursor: "pointer" }}
-                >
-                  <span>View more</span>
-                  <span>
-                    <img
-                      src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"
-                      alt="next"
-                    />
-                  </span>
-                </div>
-              )}
+              <div
+                onClick={getData}
+                className="text-uppercase mx-auto justify-content-center d-flex align-items-center view-more-articles"
+                style={{ cursor: "pointer" }}
+              >
+                <span>{lang.viewmore}</span>
+                <span>
+                  <img
+                    src="./assets/images/mobile/icons/icn-arrow-down-techseries.png"
+                    alt="next"
+                  />
+                </span>
+              </div>
+            )}
           </div>
         </section>
       </div>
