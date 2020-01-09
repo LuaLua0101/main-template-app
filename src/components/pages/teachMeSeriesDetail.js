@@ -9,19 +9,22 @@ import axios from "../../utils/axios";
 import moment from "moment";
 import renderHTML from "react-render-html";
 import languages from "../../utils/languages";
-const lang = languages("index");
+import useFormInput from "../../utils/useFormInput";
 
-const replaceAll = (str, find, replace) => {
-  return str.replace(new RegExp(find, "g"), replace);
-};
+const lang = languages("index");
 
 const TeachMeSeriesDetailPage = props => {
   const [loadButton, setLoadButton] = useState(true);
   const [data, setData] = useState();
+  const [id, setID] = useState(null);
+  const name = useFormInput();
+  const email = useFormInput();
+  const content = useFormInput();
 
   useEffect(() => {
     let search = new URLSearchParams(props.location.search);
     let id = search.get("id");
+    setID(id);
     setLoadButton(true);
     axios
       .post("teach-me-series/detail", {
@@ -32,6 +35,21 @@ const TeachMeSeriesDetailPage = props => {
       })
       .finally(setLoadButton(false));
   }, []);
+
+  const addComment = () => {
+    setLoadButton(true);
+    axios
+      .post("teach-me-series/add-comment", {
+        name: name.value,
+        email: email.value,
+        content: content.value,
+        parent_id: id
+      })
+      .then(res => {
+        console.log(res.data);
+      })
+      .finally(setLoadButton(false));
+  };
 
   return (
     <>
@@ -111,7 +129,9 @@ const TeachMeSeriesDetailPage = props => {
                     <ul>
                       <li style={{ display: "inline-block" }}>
                         <FacebookShareButton
-                          url={"goole.com"}
+                          url={
+                            "https://pitech.mthe.net/teach-me-serie?id=" + id
+                          }
                           className="Demo__some-network__share-button"
                         >
                           <FacebookIcon size={44} round />
@@ -119,7 +139,9 @@ const TeachMeSeriesDetailPage = props => {
                       </li>
                       <li style={{ display: "inline-block" }}>
                         <EmailShareButton
-                          url={"goole.com"}
+                          url={
+                            "https://pitech.mthe.net/teach-me-serie?id=" + id
+                          }
                           className="Demo__some-network__share-button"
                         >
                           <EmailIcon size={44} round />
@@ -136,35 +158,39 @@ const TeachMeSeriesDetailPage = props => {
         <section className="comment-box">
           <div className="container">
             <div className="caption">{lang.reply}</div>
-            <form action="#">
-              <div className="form-group">
-                <input
-                  type="text"
-                  className=" custom-input form-control"
-                  placeholder={lang.name}
-                  aria-describedby="helpId"
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className=" custom-input form-control"
-                  placeholder="Email"
-                  aria-describedby="helpId"
-                />
-              </div>
-              <div className="form-group">
-                <textarea
-                  className="form-control custom-input "
-                  placeholder={lang.message}
-                  rows={3}
-                  defaultValue={""}
-                />
-              </div>
-              <button type="submit" className="btn submit-btn text-capitalize">
-                {lang.send}
-              </button>
-            </form>
+            <div className="form-group">
+              <input
+                type="text"
+                className=" custom-input form-control"
+                placeholder={lang.name}
+                aria-describedby="helpId"
+                {...name}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                className=" custom-input form-control"
+                placeholder="Email"
+                aria-describedby="helpId"
+                {...email}
+              />
+            </div>
+            <div className="form-group">
+              <textarea
+                className="form-control custom-input "
+                placeholder={lang.message}
+                rows={3}
+                {...content}
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn submit-btn text-capitalize"
+              onClick={addComment}
+            >
+              {lang.send}
+            </button>
           </div>
         </section>
       </div>

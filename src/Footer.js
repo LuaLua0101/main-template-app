@@ -119,7 +119,7 @@ const Footer = props => {
                   <ul className="px-0 d-block d-lg-none">
                     <li className="d-inline-block ">
                       <a
-                        href="#"
+                        href="https://www.facebook.com/pitech/"
                         target="_blank"
                         className="d-inline-block d-lg-none"
                       >
@@ -130,7 +130,11 @@ const Footer = props => {
                       </a>
                     </li>
                     <li className="d-inline-block">
-                      <a href="#" target="_blank" className="d-lg-none">
+                      <a
+                        href="https://www.youtube.com/channel/UC7fCBx5nsJQrbu5mU3G1E6Q"
+                        target="_blank"
+                        className="d-lg-none"
+                      >
                         <img
                           src="./assets/images/mobile/icons/icn-youtube.png"
                           alt="youtube"
@@ -140,7 +144,10 @@ const Footer = props => {
                   </ul>
                   <ul className="px-0 d-none d-lg-block">
                     <li className="d-inline-block">
-                      <a href="#" target="_blank">
+                      <a
+                        href="https://www.facebook.com/pitech/"
+                        target="_blank"
+                      >
                         <img
                           src="./assets/images/laptop/icn/icn-fb.png"
                           alt="facebook"
@@ -148,7 +155,10 @@ const Footer = props => {
                       </a>
                     </li>
                     <li className="d-inline-block">
-                      <a href="#" target="_blank">
+                      <a
+                        href="https://www.youtube.com/channel/UC7fCBx5nsJQrbu5mU3G1E6Q"
+                        target="_blank"
+                      >
                         <img
                           src="./assets/images/laptop/icn/icn-youtube.png"
                           alt="youtube"

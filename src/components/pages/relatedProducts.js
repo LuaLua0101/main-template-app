@@ -24,7 +24,7 @@ const RelatedProductsPage = props => {
     centerPadding: "1px",
     slidesToShow: 3,
     speed: 500,
-    afterChange: current => setCurrentSlide2(current)
+    afterChange: current => setCurrentSlide2(current + 4)
   };
 
   const getData = () => {
@@ -35,7 +35,6 @@ const RelatedProductsPage = props => {
     axios
       .get("related-products/" + lang)
       .then(res => {
-        console.log(res.data);
         setProducts(res.data.products);
       })
       .finally(setLoadButton(false));

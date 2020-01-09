@@ -17,7 +17,7 @@ const Menu = props => {
           <div className="container ">
             <nav className="navbar px-0 navbar-expand-md ">
               <a className="navbar-brand" href="/">
-                <h1>
+                <h1 className="mb-0">
                   <img src="./assets/images/mobile/logo_head.png" alt="logo" />
                 </h1>
               </a>
@@ -88,9 +88,9 @@ const Menu = props => {
                         <a className="dropdown-item" href="/career">
                           Career
                         </a>
-                        <a className="dropdown-item" href="/manuals">
+                        {/* <a className="dropdown-item" href="/manuals">
                           Manuals
-                        </a>
+                        </a> */}
                       </div>
                     </li>
                     <li className="nav-item dropdown d-flex align-items-center">

@@ -1274,6 +1274,7 @@ ul li {
   background-size: contain;
   background-repeat: no-repeat;
   left: 0;
+  z-index: 9999;
 }
 .features-mobile .slick-prev::before {
   content: "";
@@ -1561,6 +1562,7 @@ ul li {
 .footer {
   background: #323232;
   padding: 35px 0 25px 30px;
+  font-size: 16px;
 }
 .footer .logo {
   margin-bottom: 25px;
@@ -1573,7 +1575,7 @@ ul li {
   margin-bottom: 20px;
 }
 .footer .contact .contact-icn {
-  width: 15px;
+  width: 20px;
   margin: 0 15px;
 }
 .footer .social-network a:first-child {

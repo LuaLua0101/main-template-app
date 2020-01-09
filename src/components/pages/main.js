@@ -5,6 +5,22 @@ import { SERVER } from "../../utils/constants";
 import languages from "../../utils/languages";
 const lang = languages("index");
 
+function detectmob() {
+  if (
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export default function MainPage(props) {
   const [teachMeSeries, setTeachMeSeries] = useState([]);
   const [iotHub, setIotHub] = useState([]);
@@ -31,7 +47,8 @@ export default function MainPage(props) {
   }, []);
 
   const renderTeachMeList = () => {
-    return teachMeSeries.map((item, index) => {
+    const list = detectmob() ? teachMeSeries.slice(0, 2) : teachMeSeries;
+    return list.map((item, index) => {
       return (
         <div className="col-12 col-md-6 col-lg-6 col-xl-6">
           <article className="article-box">
