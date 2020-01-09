@@ -357,7 +357,7 @@ ul li {
 }
 .article-box .article-detail .img-box:hover .play-btn {
   opacity: 1;
-  z-index: 8;
+  /* z-index: 8; */
 }
 .article-box .article-detail p {
   font-family: "Geomanist Regular";
@@ -1274,7 +1274,7 @@ ul li {
   background-size: contain;
   background-repeat: no-repeat;
   left: 0;
-  z-index: 9999;
+  /* z-index: 9999; */
 }
 .features-mobile .slick-prev::before {
   content: "";
