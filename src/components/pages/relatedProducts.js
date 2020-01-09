@@ -108,18 +108,25 @@ const RelatedProductsPage = props => {
                     {products[currentSlide1].name}
                   </h3>
                   <p>{products[currentSlide1].desc}</p>
-                  <a
-                    href={products[currentSlide1].url}
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>{lang.learnmore}</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                        alt="{lang.learnmore}"
-                      />
+                  {products[currentSlide1].name === "Fox" ||
+                  products[currentSlide1].name === "Rhino" ? (
+                    <a
+                      href={products[currentSlide1].url}
+                      className="learn-more d-flex align-items-center justify-content-center"
+                    >
+                      <span>{lang.learnmore}</span>
+                      <span>
+                        <img
+                          src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
+                          alt="{lang.learnmore}"
+                        />
+                      </span>
+                    </a>
+                  ) : (
+                    <span className="learn-more d-flex align-items-center justify-content-center">
+                      {lang.coming_soon}
                     </span>
-                  </a>
+                  )}
                 </div>
               </div>
             )}
@@ -158,18 +165,25 @@ const RelatedProductsPage = props => {
                     {products[currentSlide2].name}
                   </h3>
                   <p>{products[currentSlide2].desc}</p>
-                  <a
-                    href={products[currentSlide2].url}
-                    className="learn-more d-flex align-items-center justify-content-center"
-                  >
-                    <span>{lang.learnmore}</span>
-                    <span>
-                      <img
-                        src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
-                        alt={lang.learnmore}
-                      />
+                  {products[currentSlide2].name === "Fox" ||
+                  products[currentSlide2].name === "Rhino" ? (
+                    <a
+                      href={products[currentSlide2].url}
+                      className="learn-more d-flex align-items-center justify-content-center"
+                    >
+                      <span>{lang.learnmore}</span>
+                      <span>
+                        <img
+                          src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
+                          alt={lang.learnmore}
+                        />
+                      </span>
+                    </a>
+                  ) : (
+                    <span className="learn-more d-flex align-items-center justify-content-center">
+                      {lang.coming_soon}
                     </span>
-                  </a>
+                  )}
                 </div>
               </div>
             )}
@@ -198,18 +212,24 @@ const RelatedProductsPage = props => {
                       <div className="caption">
                         <h3 className="font-weight-bold">{item.name}</h3>
                         <p>{item.desc}</p>
-                        <a
-                          href={item.url}
-                          className="learn-more d-flex align-items-center justify-content-center"
-                        >
-                          <span>{lang.learnmore}</span>
-                          <span>
-                            <img
-                              src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
-                              alt={lang.learnmore}
-                            />
+                        {item.name === "Fox" || item.name === "Rhino" ? (
+                          <a
+                            href={item.url}
+                            className="learn-more d-flex align-items-center justify-content-center"
+                          >
+                            <span>{lang.learnmore}</span>
+                            <span>
+                              <img
+                                src="./assets/images/mobile/icons/icn-arrow-next-blue.png"
+                                alt={lang.learnmore}
+                              />
+                            </span>
+                          </a>
+                        ) : (
+                          <span className="learn-more d-flex align-items-center justify-content-center">
+                            {lang.coming_soon}
                           </span>
-                        </a>
+                        )}
                       </div>
                     </div>
                   );

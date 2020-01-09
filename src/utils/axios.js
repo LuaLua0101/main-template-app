@@ -1,7 +1,7 @@
 import axios from "axios";
-// const API_URL = "http://localhost:8080/api-pitech-new/api/";
-const API_URL =
-  "https://iht-cors-server.herokuapp.com/https://api.pitech.mthe.net/api/";
+const API_URL = "http://localhost:8080/api-pitech-new/api/";
+// const API_URL =
+//   "https://iht-cors-server.herokuapp.com/https://api.pitech.mthe.net/api/";
 
 axios.defaults.baseURL = API_URL;
 axios.defaults.headers.common.Accept = "application/x-www-form-urlencoded";
