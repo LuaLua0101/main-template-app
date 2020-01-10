@@ -13,8 +13,9 @@ const CLASSNAME =
 
 const ApplicationPage = props => {
   const [application, setApplication] = useState();
-  const [appPinned, setAppPinned] = useState();
   const [appRelated, setAppRelated] = useState([]);
+  const [bannerNewUpdate, setBannerNewUpdate] = useState();
+  const [bannerApp, setBannerApp] = useState();
   const [loadButton, setLoadButton] = useState(true);
   const [more, setMore] = useState(false);
   const [current, setCurrent] = useState(1);
@@ -26,8 +27,9 @@ const ApplicationPage = props => {
       .then(res => {
         console.log(res.data);
         setApplication(res.data.application);
-        setAppPinned(res.data.app_pinned);
         setAppRelated(res.data.related);
+        setBannerNewUpdate(res.data.banner_new);
+        setBannerApp(res.data.banner_app);
       })
       .finally(setLoadButton(false));
   };
@@ -58,13 +60,13 @@ const ApplicationPage = props => {
                         className="card-title"
                         style={{ fontFamily: "Geomanist Regular" }}
                       >
-                        {appPinned && appPinned.title}
+                        {bannerNewUpdate && bannerNewUpdate.title}
                       </h4>
                       <p
                         className="card-text"
                         style={{ fontFamily: "Geomanist Regular" }}
                       >
-                        {appPinned && appPinned.desc}
+                        {bannerNewUpdate && bannerNewUpdate.content}
                       </p>
                     </div>
                   </div>
@@ -90,8 +92,7 @@ const ApplicationPage = props => {
               className="d-none d-lg-block text-center sub-title"
               style={{ fontFamily: "Geomanist Regular" }}
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Reprehenderit, facere?
+              {bannerApp && bannerApp.title}
             </p>
             {/* 1 ITEM / ROW  */}
 
@@ -117,8 +118,7 @@ const ApplicationPage = props => {
                         className="d-block d-lg-none"
                         style={{ fontFamily: "Geomanist Regular" }}
                       >
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Reprehenderit, facere?
+                        {bannerApp && bannerApp.title}
                       </p>
                     </div>
                     <div className="col-12 col-xl-3">
@@ -271,8 +271,7 @@ const ApplicationPage = props => {
               className="text-center sub-title"
               style={{ fontFamily: "Geomanist Regular" }}
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Reprehenderit, facere?
+              {bannerApp && bannerApp.content}
             </p>
             {appRelated && appRelated[current] && (
               <>

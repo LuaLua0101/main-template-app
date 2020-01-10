@@ -24,7 +24,8 @@ function detectmob() {
 export default function MainPage(props) {
   const [teachMeSeries, setTeachMeSeries] = useState([]);
   const [iotHub, setIotHub] = useState([]);
-  const [banner, setBanner] = useState();
+  const [bannerHome, setBannerHome] = useState();
+  const [bannerApp, setBannerApp] = useState();
   const [teachMePinned, setTeachMePinned] = useState({
     id: 0
   });
@@ -36,8 +37,16 @@ export default function MainPage(props) {
   useEffect(() => {
     axios.get("home").then(res => {
       console.log(res.data);
-      const { banner, teachmepinned, teachme, iothub, iotpinned } = res.data;
-      setBanner(banner);
+      const {
+        banner_home,
+        banner_app,
+        teachmepinned,
+        teachme,
+        iothub,
+        iotpinned
+      } = res.data;
+      setBannerHome(banner_home);
+      setBannerApp(banner_app);
       setTeachMeSeries(teachme);
       setTeachMePinned(teachmepinned);
       setIotHub(iothub);
@@ -180,6 +189,7 @@ export default function MainPage(props) {
       );
     });
   };
+
   return (
     <>
       <div>
@@ -192,9 +202,9 @@ export default function MainPage(props) {
                   className="text-uppercase font-weight-bold"
                   style={{ color: "white" }}
                 >
-                  {banner && banner.title}
+                  {bannerHome && bannerHome.title}
                 </h2>
-                <p>{banner && banner.content}</p>
+                <p>{bannerHome && bannerHome.content}</p>
               </div>
               <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 px-0">
                 <img
@@ -231,9 +241,11 @@ export default function MainPage(props) {
                   <div className="card">
                     <div className="card-body">
                       <h4 className="card-title">
-                        {appPinned && appPinned.title}
+                        {bannerApp && bannerApp.title}
                       </h4>
-                      <p className="card-text">{appPinned && appPinned.desc}</p>
+                      <p className="card-text">
+                        {bannerApp && bannerApp.content}
+                      </p>
                       <a
                         href="/application"
                         className="text-capitalize d-none d-sm-block learn-more"

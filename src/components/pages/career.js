@@ -7,6 +7,7 @@ const lang = languages("index");
 const CareerPage = props => {
   const [careers, setCareers] = useState([]);
   const [loadButton, setLoadButton] = useState(true);
+  const [banner, setBanner] = useState();
 
   const getData = () => {
     setLoadButton(true);
@@ -18,6 +19,7 @@ const CareerPage = props => {
       .then(res => {
         console.log(res.data);
         setCareers(res.data.careers);
+        setBanner(res.data.banner);
       })
       .finally(setLoadButton(false));
   };
@@ -36,9 +38,7 @@ const CareerPage = props => {
           <div className="container text-center">
             <h2 className="breadcum-title">Career</h2>
             <p style={{ fontFamily: "Geomanist Regular" }}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
-              dolores, eveniet eius quae maxime, aliquid, nisi voluptate
-              repellat impedit cumque sapiente. Non ut nobis officiis!
+              {banner && banner.content}
             </p>
           </div>
         </section>

@@ -140,7 +140,7 @@ const TeachMeSeriesPage = props => {
                     {teachMePinned && teachMePinned.short_desc}
                   </p>
                 </div>
-                <div className="col-12 col-xl-6 ">
+                <div className="col-12 col-xl-6 align-self-center">
                   <a href="#" target="_blank" rel="noopener noreferrer">
                     <div className="img-box">
                       {teachMePinned && (

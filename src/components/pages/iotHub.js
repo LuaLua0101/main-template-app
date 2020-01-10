@@ -8,6 +8,7 @@ const lang = languages("index");
 
 const IotHubPage = props => {
   const [iotHub, setIotHub] = useState([]);
+  const [banner, setBanner] = useState();
   const [loadButton, setLoadButton] = useState(true);
   const [iotHubPinned, setIotHubPinned] = useState(null);
 
@@ -16,8 +17,9 @@ const IotHubPage = props => {
     axios
       .post("iot-hub", { page: iotHub.length })
       .then(res => {
-        const { iothubpinned, iothub } = res.data;
+        const { iothubpinned, iothub, banner } = res.data;
         setIotHub([...iotHub, ...iothub]);
+        setBanner(banner);
         !iotHubPinned && setIotHubPinned(iothubpinned);
       })
       .finally(setLoadButton(false));
@@ -37,7 +39,7 @@ const IotHubPage = props => {
               className="d-block d-md-none"
               style={{ fontFamily: "Geomanist Regular" }}
             >
-              >{item.title}
+              {item.title}
             </h3>
             {/* Details  */}
             <div className="article-detail row mx-0 ">
@@ -88,9 +90,7 @@ const IotHubPage = props => {
           <div className="container text-center">
             <h2 className="breadcum-title">IOT Hub</h2>
             <p style={{ fontFamily: "Geomanist Regular" }}>
-              > Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-              illo assumenda fuga, fugiat animi atque laborum dicta error iste
-              soluta!
+              {banner && banner.content}
             </p>
           </div>
         </section>

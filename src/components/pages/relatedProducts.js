@@ -9,6 +9,8 @@ const RelatedProductsPage = props => {
   const [currentSlide1, setCurrentSlide1] = useState(1);
   const [currentSlide2, setCurrentSlide2] = useState(5);
   const [loadButton, setLoadButton] = useState(true);
+  const [banner, setBanner] = useState();
+
   const settings1 = {
     centerMode: true,
     infinite: true,
@@ -36,6 +38,7 @@ const RelatedProductsPage = props => {
       .get("related-products/" + lang)
       .then(res => {
         setProducts(res.data.products);
+        setBanner(res.data.banner);
       })
       .finally(setLoadButton(false));
   };
@@ -74,8 +77,7 @@ const RelatedProductsPage = props => {
           <div className="container text-center">
             <h2 className="breadcum-title">Related products</h2>
             <p style={{ fontFamily: "Geomanist Regular" }}>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed.
+              {banner && banner.content}
             </p>
           </div>
         </section>

@@ -276,13 +276,13 @@ ul li {
     text-transform: uppercase;
   }
   .header .navbar-laptop .nav-item {
-    margin-right: 45px;
+    margin-right: 35px;
   }
   .header .navbar-laptop .nav-item:nth-child(2) {
     margin-right: 35px;
   }
   .header .navbar-laptop .nav-item::nth-child(3) {
-    margin-right: 30px;
+    margin-right: 35px;
   }
 }
 .fixed-header {
@@ -1242,6 +1242,9 @@ ul li {
 
   .zooer {
     margin: 50px 0 120px;
+  }
+  .zooer .info-block {
+    padding-left: 25px;
   }
 }
 /****************  Related products page ****************/

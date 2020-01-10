@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
 import { SERVER } from "../../utils/constants";
-import { Spin } from "antd";
-import { app } from "firebase";
-
-const BLOCK_LEFT = "col-12 col-lg-6 col-xl-6 text-block-left";
-const BLOCK_RIGHT = "col-12 col-lg-6 col-xl-6 text-block-right";
 
 const BuildingPage = props => {
   const [careers, setCareers] = useState([]);
@@ -59,11 +54,11 @@ const BuildingPage = props => {
                     className="row align-items-center block-item"
                     key={index}
                   >
-                    <div className="col-12 col-lg-6 col-xl-6">
+                    <div className="col-12 col-lg-6 col-xl-6 text-center">
                       <img
                         src={SERVER + "public/img/Building/" + item.cover}
                         className="img-fluid"
-                        alt="career"
+                        alt={item.title}
                       />
                     </div>
                     <div className="col-12 col-lg-6 col-xl-6 text-block-right">
@@ -100,7 +95,7 @@ const BuildingPage = props => {
                         {item.desc}
                       </p>
                     </div>
-                    <div className="col-12 col-lg-6 col-xl-6">
+                    <div className="col-12 col-lg-6 col-xl-6 text-center">
                       <img
                         src={SERVER + "public/img/Building/" + item.cover}
                         className="img-fluid"
