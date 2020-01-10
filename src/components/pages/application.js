@@ -102,7 +102,11 @@ const ApplicationPage = props => {
                     <div className="col-12 col-xl-3">
                       <img
                         className="icn-summarize"
-                        src="./assets/images/laptop/icn/updates-green.png"
+                        src={
+                          SERVER +
+                          "public/img/applications/" +
+                          application.feature1_cover
+                        }
                         alt="refresh"
                       />
                       <div className="d-lg-none sub-text">
@@ -130,7 +134,11 @@ const ApplicationPage = props => {
                     <div className="col-12 col-xl-3">
                       <img
                         className="icn-summarize"
-                        src="./assets/images/laptop/icn/icn-plugin.png"
+                        src={
+                          SERVER +
+                          "public/img/applications/" +
+                          application.feature2_cover
+                        }
                         alt="refresh"
                       />
                       <div className="d-lg-none sub-text">
@@ -158,7 +166,11 @@ const ApplicationPage = props => {
                     <div className="col-12 col-xl-3">
                       <img
                         className="icn-summarize"
-                        src="./assets/images/laptop/icn/icn-apple-watch.png"
+                        src={
+                          SERVER +
+                          "public/img/applications/" +
+                          application.feature3_cover
+                        }
                         alt="refresh"
                       />
                       <div className="d-lg-none sub-text">

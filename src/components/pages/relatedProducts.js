@@ -111,6 +111,7 @@ const RelatedProductsPage = props => {
                   {products[currentSlide1].name === "Fox" ||
                   products[currentSlide1].name === "Rhino" ? (
                     <a
+                      target="_blank"
                       href={products[currentSlide1].url}
                       className="learn-more d-flex align-items-center justify-content-center"
                     >
@@ -168,6 +169,7 @@ const RelatedProductsPage = props => {
                   {products[currentSlide2].name === "Fox" ||
                   products[currentSlide2].name === "Rhino" ? (
                     <a
+                      target="_blank"
                       href={products[currentSlide2].url}
                       className="learn-more d-flex align-items-center justify-content-center"
                     >
@@ -214,6 +216,7 @@ const RelatedProductsPage = props => {
                         <p>{item.desc}</p>
                         {item.name === "Fox" || item.name === "Rhino" ? (
                           <a
+                            target="_blank"
                             href={item.url}
                             className="learn-more d-flex align-items-center justify-content-center"
                           >

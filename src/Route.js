@@ -25,9 +25,6 @@ const TeachMeSeriesPage = DynamicImport(() =>
 const TeachMeSeriesDetailPage = DynamicImport(() =>
   import("./components/pages/teachMeSeriesDetail")
 );
-const PressResourcesDetailPage = DynamicImport(() =>
-  import("./components/pages/pressResourcesDetail")
-);
 const IotHubDetailPage = DynamicImport(() =>
   import("./components/pages/iotHubDetail")
 );
@@ -49,11 +46,6 @@ const RouteMap = () => {
       <Route exact path="/building" component={BuildingPage} />
       <Route exact path="/manuals" component={ManualPage} />
       <Route exact path="/press-resources" component={PressResourcesPage} />
-      <Route
-        exact
-        path="/press-resource"
-        component={PressResourcesDetailPage}
-      />
       <Route exact path="/related-products" component={RelatedProductsPage} />
       <Route exact path="/teach-me-series" component={TeachMeSeriesPage} />
       <Route exact path="/teach-me-serie" component={TeachMeSeriesDetailPage} />

@@ -29,7 +29,7 @@ const PressResourcesPage = props => {
     return pressResources.map((item, index) => (
       <div className="col-12 col-md-12 col-lg-3 col-xl-3 ">
         <article className="article-box-2 article-box mb-15px ">
-          <a href={"/press-resource?id=" + item.id} rel="noopener noreferrer">
+          <a href={item.url} rel="noopener noreferrer" target="_blank">
             {/* Title visible on mobile  */}
             <h3 className="d-block d-md-none">{item.title}</h3>
             {/* Details  */}
