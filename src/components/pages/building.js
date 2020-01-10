@@ -37,7 +37,7 @@ const BuildingPage = props => {
         <section className="breadcum building-page-breadcum career-breadcum">
           <div className="container text-center">
             <h2 className="breadcum-title">Building The Future</h2>
-            <p>
+            <p style={{ fontFamily: "Geomanist Regular" }}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
               dolores, eveniet eius quae maxime, aliquid, nisi voluptate
               repellat impedit cumque sapiente. Non ut nobis officiis!
@@ -70,8 +70,15 @@ const BuildingPage = props => {
                       <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
                         {item.dep}
                       </h3>
-                      <h4>{item.title}</h4>
-                      <p className="d-none d-lg-block">{item.desc}</p>
+                      <h4 style={{ fontFamily: "Geomanist Regular" }}>
+                        {item.title}
+                      </h4>
+                      <p
+                        className="d-none d-lg-block"
+                        style={{ fontFamily: "Geomanist Regular" }}
+                      >
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ) : (
@@ -83,8 +90,15 @@ const BuildingPage = props => {
                       <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
                         {item.dep}
                       </h3>
-                      <h4>{item.title}</h4>
-                      <p className="d-none d-lg-block">{item.desc}</p>
+                      <h4 style={{ fontFamily: "Geomanist Regular" }}>
+                        {item.title}
+                      </h4>
+                      <p
+                        className="d-none d-lg-block"
+                        style={{ fontFamily: "Geomanist Regular" }}
+                      >
+                        {item.desc}
+                      </p>
                     </div>
                     <div className="col-12 col-lg-6 col-xl-6">
                       <img
@@ -134,7 +148,9 @@ const BuildingPage = props => {
                       </div>
                       <div className="job-desc">
                         <h4>{item.title}</h4>
-                        <p>{item.desc}</p>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {item.desc}
+                        </p>
                       </div>
                     </div>
                   </div>

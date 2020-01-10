@@ -54,10 +54,18 @@ const ApplicationPage = props => {
                 <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                   <div className="card">
                     <div className="card-body pb-0">
-                      <h4 className="card-title">
+                      <h4
+                        className="card-title"
+                        style={{ fontFamily: "Geomanist Regular" }}
+                      >
                         {appPinned && appPinned.title}
                       </h4>
-                      <p className="card-text">{appPinned && appPinned.desc}</p>
+                      <p
+                        className="card-text"
+                        style={{ fontFamily: "Geomanist Regular" }}
+                      >
+                        {appPinned && appPinned.desc}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -72,10 +80,16 @@ const ApplicationPage = props => {
         {/* Latest update  */}
         <section className="application-latest-updates">
           <div className="container">
-            <h2 className="font-weight-bold text-center center-sp-heading mobile-sub-heading">
+            <h2
+              className="font-weight-bold text-center center-sp-heading mobile-sub-heading"
+              style={{ fontFamily: "Geomanist Regular" }}
+            >
               {lang.latest}
             </h2>
-            <p className="d-none d-lg-block text-center sub-title">
+            <p
+              className="d-none d-lg-block text-center sub-title"
+              style={{ fontFamily: "Geomanist Regular" }}
+            >
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Reprehenderit, facere?
             </p>
@@ -88,13 +102,21 @@ const ApplicationPage = props => {
                   <div className="row update-block">
                     <div className="col-12 col-xl-9">
                       <div className="d-none d-lg-block">
-                        <h3 className="font-weight-bold">
+                        <h3
+                          className="font-weight-bold"
+                          style={{ fontFamily: "Geomanist Book" }}
+                        >
                           {application.feature1_title}
                         </h3>
-                        <p>{application.feature1_desc}</p>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {application.feature1_desc}
+                        </p>
                       </div>
                       {/* Note. Paragraph intro laptop was longer  so this will be display in mobile */}
-                      <p className="d-block d-lg-none">
+                      <p
+                        className="d-block d-lg-none"
+                        style={{ fontFamily: "Geomanist Regular" }}
+                      >
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Reprehenderit, facere?
                       </p>
@@ -110,8 +132,12 @@ const ApplicationPage = props => {
                         alt="refresh"
                       />
                       <div className="d-lg-none sub-text">
-                        <h3>{application.feature1_title}</h3>
-                        <p>{application.feature1_desc}</p>
+                        <h3 style={{ fontFamily: "Geomanist Book" }}>
+                          {application.feature1_title}
+                        </h3>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {application.feature1_desc}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -125,10 +151,15 @@ const ApplicationPage = props => {
                   <div className="row update-block">
                     <div className="col-12 col-xl-9">
                       <div className="d-none d-lg-block">
-                        <h3 className="font-weight-bold">
+                        <h3
+                          className="font-weight-bold"
+                          style={{ fontFamily: "Geomanist Book" }}
+                        >
                           {application && application.feature2_title}
                         </h3>
-                        <p>{application && application.feature2_desc}</p>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {application && application.feature2_desc}
+                        </p>
                       </div>
                     </div>
                     <div className="col-12 col-xl-3">
@@ -142,8 +173,12 @@ const ApplicationPage = props => {
                         alt="refresh"
                       />
                       <div className="d-lg-none sub-text">
-                        <h3>{application && application.feature2_title}</h3>
-                        <p>{application && application.feature2_desc}</p>
+                        <h3 style={{ fontFamily: "Geomanist Book" }}>
+                          {application && application.feature2_title}
+                        </h3>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {application && application.feature2_desc}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -157,10 +192,15 @@ const ApplicationPage = props => {
                   <div className="row update-block">
                     <div className="col-12 col-xl-9">
                       <div className="d-none d-lg-block">
-                        <h3 className="font-weight-bold">
+                        <h3
+                          className="font-weight-bold"
+                          style={{ fontFamily: "Geomanist Book" }}
+                        >
                           {application && application.feature3_title}
                         </h3>
-                        <p>{application && application.feature3_desc}</p>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {application && application.feature3_desc}
+                        </p>
                       </div>
                     </div>
                     <div className="col-12 col-xl-3">
@@ -174,8 +214,12 @@ const ApplicationPage = props => {
                         alt="refresh"
                       />
                       <div className="d-lg-none sub-text">
-                        <h3>{application && application.feature2_title}</h3>
-                        <p>{application && application.feature3_desc}</p>
+                        <h3 style={{ fontFamily: "Geomanist Book" }}>
+                          {application && application.feature2_title}
+                        </h3>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {application && application.feature3_desc}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -194,12 +238,16 @@ const ApplicationPage = props => {
               <div className="row update-block">
                 <div className="col-12 col-xl-9">
                   <div className="d-none d-lg-block">
-                    <p>{application && renderHTML(application.detail)}</p>
+                    <p style={{ fontFamily: "Geomanist Regular" }}>
+                      {application && renderHTML(application.detail)}
+                    </p>
                   </div>
                 </div>
                 <div className="col-12 col-xl-3">
                   <div className="d-lg-none sub-text">
-                    <p>{application && renderHTML(application.detail)}</p>
+                    <p style={{ fontFamily: "Geomanist Regular" }}>
+                      {application && renderHTML(application.detail)}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -213,10 +261,16 @@ const ApplicationPage = props => {
         {/* Recent updates  */}
         <section className="recent-updates">
           <div className="container">
-            <h2 className="font-weight-bold text-center center-sp-heading mobile-sub-heading">
+            <h2
+              className="font-weight-bold text-center center-sp-heading mobile-sub-heading"
+              style={{ fontFamily: "Geomanist Regular" }}
+            >
               {lang.recent}
             </h2>
-            <p className="text-center sub-title">
+            <p
+              className="text-center sub-title"
+              style={{ fontFamily: "Geomanist Regular" }}
+            >
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Reprehenderit, facere?
             </p>
@@ -243,8 +297,12 @@ const ApplicationPage = props => {
                   </div>
                 </div>
                 <div className="caption text-left">
-                  <h5>{appRelated[current].title}</h5>
-                  <p>{appRelated[current].desc}</p>
+                  <h5 style={{ fontFamily: "Geomanist Book" }}>
+                    {appRelated[current].title}
+                  </h5>
+                  <p style={{ fontFamily: "Geomanist Regular" }}>
+                    {appRelated[current].desc}
+                  </p>
                 </div>
               </>
             )}

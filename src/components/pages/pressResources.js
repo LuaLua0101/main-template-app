@@ -31,7 +31,12 @@ const PressResourcesPage = props => {
         <article className="article-box-2 article-box mb-15px ">
           <a href={item.url} rel="noopener noreferrer" target="_blank">
             {/* Title visible on mobile  */}
-            <h3 className="d-block d-md-none">{item.title}</h3>
+            <h3
+              className="d-block d-md-none"
+              style={{ fontFamily: "Geomanist Book" }}
+            >
+              {item.title}
+            </h3>
             {/* Details  */}
             <div className="article-detail row mx-0 ">
               <div className="feature-img col-5 col-md-12 col-lg-12 col-xl-12 pl-0">
@@ -52,9 +57,19 @@ const PressResourcesPage = props => {
               </div>
               <div className="article-info col-7 col-md-12 col-lg-12 col-xl-12 px-0">
                 {/* Title visible on laptop  */}
-                <h3 className="d-none d-md-block d-lg-block">{item.title}</h3>
-                <p className="mb-0">{item.short_desc}</p>
-                <div className="d-flex time-and-view align-items-center">
+                <h3
+                  className="d-none d-md-block d-lg-block"
+                  style={{ fontFamily: "Geomanist Book" }}
+                >
+                  {item.title}
+                </h3>
+                <p className="mb-0" style={{ fontFamily: "Geomanist Regular" }}>
+                  {item.short_desc}
+                </p>
+                <div
+                  className="d-flex time-and-view align-items-center"
+                  style={{ fontFamily: "Geomanist Regular" }}
+                >
                   <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
                   <div className="view d-flex align-items-center">
                     <img
@@ -80,7 +95,10 @@ const PressResourcesPage = props => {
         <section className="breadcum press-list-breadcum">
           <div className="container text-center">
             <h2 className="breadcum-title">Press resources</h2>
-            <p className="d-block d-lg-none">
+            <p
+              className="d-block d-lg-none"
+              style={{ fontFamily: "Geomanist Regular" }}
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
               illo assumenda fuga, fugiat animi atque laborum dicta error iste
               soluta!

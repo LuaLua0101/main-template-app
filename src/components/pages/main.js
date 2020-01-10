@@ -109,7 +109,7 @@ export default function MainPage(props) {
                   </a>
                   {/* Views, date visible on laptop*/}
                   <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                    <time>
+                    <time style={{ fontFamily: "Geomanist Regular" }}>
                       {moment(item.created_at).format("MMMM D, YYYY")}
                     </time>
                     <div className="view d-flex align-items-center">
@@ -159,7 +159,7 @@ export default function MainPage(props) {
                   <h3 className="d-none d-lg-block">{item.title}</h3>
                   <p className="mb-0">{item.short_desc}</p>
                   <div className="d-flex time-and-view align-items-center">
-                    <time>
+                    <time style={{ fontFamily: "Geomanist Regular" }}>
                       {moment(item.created_at).format("MMMM D, YYYY")}
                     </time>
                     <div className="view d-flex align-items-center">
@@ -237,6 +237,7 @@ export default function MainPage(props) {
                       <a
                         href="/application"
                         className="text-capitalize d-none d-sm-block learn-more"
+                        style={{ fontFamily: "Geomanist Regular" }}
                       >
                         {lang.learnmore}
                       </a>
@@ -302,7 +303,7 @@ export default function MainPage(props) {
                     <div className="col-md-6 col-xl-6 right-block">
                       {/* Views, title, link */}
                       <div className="article-brief-info d-flex align-items-center">
-                        <time>
+                        <time style={{ fontFamily: "Geomanist Regular" }}>
                           {moment(
                             teachMePinned && teachMePinned.created_at
                           ).format("MMMM D, YYYY")}
@@ -325,8 +326,8 @@ export default function MainPage(props) {
                       <a
                         href={"/teach-me-serie?id=" + teachMePinned.id}
                         className="text-capitalize d-none d-sm-block learn-more"
-                        target="_blank"
                         rel="noopener noreferrer"
+                        style={{ fontFamily: "Geomanist Regular" }}
                       >
                         {lang.learnmore}
                       </a>
@@ -383,7 +384,7 @@ export default function MainPage(props) {
                 <article className="article-box">
                   {/* Views, date, comments VISIBLE ON MOBILE */}
                   <div className="article-brief-info d-flex align-items-center d-sm-flex d-md-none">
-                    <time>
+                    <time style={{ fontFamily: "Geomanist Regular" }}>
                       {moment(iotPinned.created_at).format("MMMM D, YYYY")}
                     </time>
                     <div className="view d-flex align-items-center">
@@ -437,7 +438,7 @@ export default function MainPage(props) {
                       <p>{iotPinned.short_desc}</p>
                     </a>
                     <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
-                      <time>
+                      <time style={{ fontFamily: "Geomanist Regular" }}>
                         {moment(iotPinned.created_at).format("MMMM D, YYYY")}
                       </time>
                       <div className="view d-flex align-items-center">
@@ -461,6 +462,7 @@ export default function MainPage(props) {
               <a
                 href="/iot-hubs"
                 className="text-uppercase text-center d-lg-none view-more-articles"
+                style={{ fontFamily: "Geomanist Regular" }}
               >
                 <span>{lang.viewall}</span>
                 <span>

@@ -35,7 +35,10 @@ const TeachMeSeriesPage = props => {
       <div className="col-12 col-md-4 col-lg-6 col-xl-4" key={index}>
         <article className="article-box">
           {/* Views, date, comments*/}
-          <div className="article-brief-info d-flex align-items-center d-block d-md-none">
+          <div
+            className="article-brief-info d-flex align-items-center d-block d-md-none"
+            style={{ fontFamily: "Geomanist Regular" }}
+          >
             <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
             <div className="view d-flex align-items-center">
               <img
@@ -90,7 +93,10 @@ const TeachMeSeriesPage = props => {
                   <p>{item.short_desc}</p>
                 </a>
                 {/* Views, date visible on laptop*/}
-                <div className="article-brief-info align-items-center d-none d-sm-none d-md-flex">
+                <div
+                  className="article-brief-info align-items-center d-none d-sm-none d-md-flex"
+                  style={{ fontFamily: "Geomanist Regular" }}
+                >
                   <time>{moment(item.created_at).format("MMMM D, YYYY")}</time>
                   <div className="view d-flex align-items-center">
                     <img

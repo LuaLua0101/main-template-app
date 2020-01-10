@@ -35,7 +35,7 @@ const CareerPage = props => {
         <section className="breadcum building-page-breadcum career-breadcum">
           <div className="container text-center">
             <h2 className="breadcum-title">Career</h2>
-            <p>
+            <p style={{ fontFamily: "Geomanist Regular" }}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
               dolores, eveniet eius quae maxime, aliquid, nisi voluptate
               repellat impedit cumque sapiente. Non ut nobis officiis!
@@ -61,21 +61,41 @@ const CareerPage = props => {
                     />
                   </div>
                   <div className="col-12 col-lg-6 col-xl-6 text-block-right">
-                    <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
+                    <h3
+                      className="font-weight-bold text-uppercase mobile-sub-heading"
+                      style={{ fontFamily: "Geomanist Book" }}
+                    >
                       {item.dep}
                     </h3>
-                    <h4>{item.title}</h4>
-                    <p className="d-none d-lg-block">{item.desc}</p>
+                    <h4 style={{ fontFamily: "Geomanist Book" }}>
+                      {item.title}
+                    </h4>
+                    <p
+                      className="d-none d-lg-block"
+                      style={{ fontFamily: "Geomanist Regular" }}
+                    >
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ) : (
                 <div className="row align-items-center block-item " key={index}>
                   <div className="col-12 col-lg-6 col-xl-6 text-block-left">
-                    <h3 className="font-weight-bold text-uppercase mobile-sub-heading">
+                    <h3
+                      className="font-weight-bold text-uppercase mobile-sub-heading"
+                      style={{ fontFamily: "Geomanist Book" }}
+                    >
                       {item.dep}
                     </h3>
-                    <h4>{item.title}</h4>
-                    <p className="d-none d-lg-block">{item.desc}</p>
+                    <h4 style={{ fontFamily: "Geomanist Book" }}>
+                      {item.title}
+                    </h4>
+                    <p
+                      className="d-none d-lg-block"
+                      style={{ fontFamily: "Geomanist Regular" }}
+                    >
+                      {item.desc}
+                    </p>
                   </div>
                   <div className="col-12 col-lg-6 col-xl-6">
                     <img
@@ -101,7 +121,12 @@ const CareerPage = props => {
                     aria-expanded="false"
                     aria-controls={"collapse" + index}
                   >
-                    <span className="title">{item.dep}</span>
+                    <span
+                      className="title"
+                      style={{ fontFamily: "Geomanist Book" }}
+                    >
+                      {item.dep}
+                    </span>
                     <span className="pull-right">
                       <img
                         src="./assets/images/mobile/icons/icn-arrow-down-blue.png"
@@ -124,8 +149,12 @@ const CareerPage = props => {
                         />
                       </div>
                       <div className="job-desc">
-                        <h4>{item.title}</h4>
-                        <p>{item.desc}</p>
+                        <h4 style={{ fontFamily: "Geomanist Book" }}>
+                          {item.title}
+                        </h4>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {item.desc}
+                        </p>
                       </div>
                     </div>
                   </div>

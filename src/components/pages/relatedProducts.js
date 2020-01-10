@@ -73,7 +73,7 @@ const RelatedProductsPage = props => {
         <section className="breadcum building-page-breadcum related-products-breadcum">
           <div className="container text-center">
             <h2 className="breadcum-title">Related products</h2>
-            <p>
+            <p style={{ fontFamily: "Geomanist Regular" }}>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed.
             </p>
@@ -104,16 +104,22 @@ const RelatedProductsPage = props => {
             {products && products[currentSlide1] && (
               <div className="slider-for">
                 <div className="item-caption text-center">
-                  <h3 className="font-weight-bold">
+                  <h3
+                    className="font-weight-bold"
+                    style={{ fontFamily: "Geomanist Regular" }}
+                  >
                     {products[currentSlide1].name}
                   </h3>
-                  <p>{products[currentSlide1].desc}</p>
+                  <p style={{ fontFamily: "Geomanist Regular" }}>
+                    {products[currentSlide1].desc}
+                  </p>
                   {products[currentSlide1].name === "Fox" ||
                   products[currentSlide1].name === "Rhino" ? (
                     <a
                       target="_blank"
                       href={products[currentSlide1].url}
                       className="learn-more d-flex align-items-center justify-content-center"
+                      style={{ fontFamily: "Geomanist Regular" }}
                     >
                       <span>{lang.learnmore}</span>
                       <span>
@@ -124,7 +130,10 @@ const RelatedProductsPage = props => {
                       </span>
                     </a>
                   ) : (
-                    <span className="learn-more d-flex align-items-center justify-content-center">
+                    <span
+                      className="learn-more d-flex align-items-center justify-content-center"
+                      style={{ fontFamily: "Geomanist Regular" }}
+                    >
                       {lang.coming_soon}
                     </span>
                   )}
@@ -162,16 +171,22 @@ const RelatedProductsPage = props => {
             {products && products[currentSlide2] && (
               <div className="slider-for">
                 <div className="item-caption text-center">
-                  <h3 className="font-weight-bold">
+                  <h3
+                    className="font-weight-bold"
+                    style={{ fontFamily: "Geomanist Regular" }}
+                  >
                     {products[currentSlide2].name}
                   </h3>
-                  <p>{products[currentSlide2].desc}</p>
+                  <p style={{ fontFamily: "Geomanist Regular" }}>
+                    {products[currentSlide2].desc}
+                  </p>
                   {products[currentSlide2].name === "Fox" ||
                   products[currentSlide2].name === "Rhino" ? (
                     <a
                       target="_blank"
                       href={products[currentSlide2].url}
                       className="learn-more d-flex align-items-center justify-content-center"
+                      style={{ fontFamily: "Geomanist Regular" }}
                     >
                       <span>{lang.learnmore}</span>
                       <span>
@@ -182,7 +197,10 @@ const RelatedProductsPage = props => {
                       </span>
                     </a>
                   ) : (
-                    <span className="learn-more d-flex align-items-center justify-content-center">
+                    <span
+                      className="learn-more d-flex align-items-center justify-content-center"
+                      style={{ fontFamily: "Geomanist Regular" }}
+                    >
                       {lang.coming_soon}
                     </span>
                   )}
@@ -212,13 +230,21 @@ const RelatedProductsPage = props => {
                         />
                       </figure>
                       <div className="caption">
-                        <h3 className="font-weight-bold">{item.name}</h3>
-                        <p>{item.desc}</p>
+                        <h3
+                          className="font-weight-bold"
+                          style={{ fontFamily: "Geomanist Regular" }}
+                        >
+                          {item.name}
+                        </h3>
+                        <p style={{ fontFamily: "Geomanist Regular" }}>
+                          {item.desc}
+                        </p>
                         {item.name === "Fox" || item.name === "Rhino" ? (
                           <a
                             target="_blank"
                             href={item.url}
                             className="learn-more d-flex align-items-center justify-content-center"
+                            style={{ fontFamily: "Geomanist Regular" }}
                           >
                             <span>{lang.learnmore}</span>
                             <span>
@@ -229,7 +255,10 @@ const RelatedProductsPage = props => {
                             </span>
                           </a>
                         ) : (
-                          <span className="learn-more d-flex align-items-center justify-content-center">
+                          <span
+                            className="learn-more d-flex align-items-center justify-content-center"
+                            style={{ fontFamily: "Geomanist Regular" }}
+                          >
                             {lang.coming_soon}
                           </span>
                         )}

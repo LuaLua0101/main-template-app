@@ -93,7 +93,10 @@ const TeachMeSeriesDetailPage = props => {
                     </div>
                   </div>
                   {/* Feature img, title, description */}
-                  <div className="article-detail">
+                  <div
+                    className="article-detail"
+                    style={{ fontFamily: "Geomanist Regular" }}
+                  >
                     {data && data.content && renderHTML(data.content)}
                   </div>
                 </article>

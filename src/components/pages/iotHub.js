@@ -33,7 +33,12 @@ const IotHubPage = props => {
         <article className="article-box-2 article-box mb-15px ">
           <a href={"/iot-hub?id=" + item.id} rel="noopener noreferrer">
             {/* Title visible on mobile  */}
-            <h3 className="d-block d-md-none">{item.title}</h3>
+            <h3
+              className="d-block d-md-none"
+              style={{ fontFamily: "Geomanist Regular" }}
+            >
+              >{item.title}
+            </h3>
             {/* Details  */}
             <div className="article-detail row mx-0 ">
               <div className="feature-img col-5 col-md-5 col-lg-12 col-xl-12 pl-0 img-box">
@@ -82,8 +87,8 @@ const IotHubPage = props => {
         <section className="breadcum iot-page-breadcum">
           <div className="container text-center">
             <h2 className="breadcum-title">IOT Hub</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+            <p style={{ fontFamily: "Geomanist Regular" }}>
+              > Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
               illo assumenda fuga, fugiat animi atque laborum dicta error iste
               soluta!
             </p>
