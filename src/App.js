@@ -13,9 +13,9 @@ const App = () => {
   return (
     <GlobalStateProvider>
       <Router>
-        <Menu />
+        {/* <Menu /> */}
         <RouteMap />
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </GlobalStateProvider>
   );
