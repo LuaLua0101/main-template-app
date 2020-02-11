@@ -1,9 +1,10 @@
 import React from "react";
-import { Layout, Typography, Card } from "antd";
+import { Layout, Typography, Card, Avatar, Divider } from "antd";
 import CommentBox from "../molecules/commentBox";
 import detectmob from "../../utils/detectMobile";
 
 const { Content } = Layout;
+const { Meta } = Card;
 
 export default function MainContent(props) {
   return (
@@ -31,7 +32,6 @@ export default function MainContent(props) {
                   Tiêu đề bài viết
                 </Typography.Title>
               )}
-
               <img
                 style={detectmob() ? {} : { padding: 30 }}
                 src="https://preview.redd.it/xdlzx5nj1noz.jpg?auto=webp&s=bd7aac2fbd7375d4c09d6ea792ba712c31e5f6ea"
@@ -40,6 +40,19 @@ export default function MainContent(props) {
             </>
           }
         >
+          <Meta
+            avatar={
+              <Avatar
+                size="large"
+                style={{ color: "#f56a00", backgroundColor: "#fde3cf" }}
+              >
+                U
+              </Avatar>
+            }
+            title="Tên người đăng"
+            description="5 phút trước "
+          />
+          <Divider />
           <CommentBox />
         </Card>
       </div>

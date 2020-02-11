@@ -14,7 +14,7 @@ const { SubMenu } = Menu;
 export default function MobileLeftContent(props) {
   return (
     <Layout>
-      <Sider theme="light" width="90%" breakpoint="lg" collapsedWidth="0">
+      <Sider theme="light" width="95%" breakpoint="lg" collapsedWidth="0">
         <ImageList />
       </Sider>
       <Layout>
