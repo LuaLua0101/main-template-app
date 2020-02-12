@@ -24,8 +24,8 @@ export default function ImageBox(props) {
             // avatar={
             //   <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
             // }
-            title="Tiêu đề hình ảnhTiêu đề hình ảnhTiêu đề hình ảnhTiêu đề hình ảnh"
-            description="5 phút trước"
+            title={props.data.title}
+            description={props.data.time}
           />
         </Card>
       </div>
