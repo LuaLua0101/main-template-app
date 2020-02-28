@@ -1,7 +1,9 @@
 import React from "react";
 import { Layout, Avatar } from "antd";
 import { Card } from "antd";
-
+import moment from "moment";
+import "moment/locale/vi";
+moment.locale("vi");
 const { Meta } = Card;
 const { Content } = Layout;
 
@@ -25,7 +27,7 @@ export default function ImageBox(props) {
             //   <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
             // }
             title={props.data.title}
-            description={props.data.time}
+            description={moment(props.data.created_at, "YYYYMMDD").fromNow()}
           />
         </Card>
       </div>

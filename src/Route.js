@@ -8,6 +8,7 @@ const RouteMap = () => {
   return (
     <Switch>
       <Route exact path="/" component={MainPage} />
+      <Route exact path="/comic/:id" component={MainPage} />
     </Switch>
   );
 };

@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout, Typography, Card, Avatar, Divider } from "antd";
 import CommentBox from "../molecules/commentBox";
 import detectmob from "../../utils/detectMobile";
+import { withRouter } from "react-router-dom";
 
 const { Content } = Layout;
 const { Meta } = Card;
 
-export default function MainContent(props) {
+function MainContent(props) {
+  useEffect(() => {
+    console.log(props.location);
+  }, []);
+
   return (
     <Content>
       <div
@@ -59,3 +64,4 @@ export default function MainContent(props) {
     </Content>
   );
 }
+export default withRouter(MainContent);

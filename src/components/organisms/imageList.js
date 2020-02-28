@@ -1,43 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "antd";
 import ImageBox from "../molecules/imageBox";
+import axios from "../../utils/axios";
 
 const ImageList = props => {
-  const [list, setList] = useState([
-    {
-      id: 1,
-      title: "title 1",
-      url: "124.jpg",
-      time: "5 phut truoc"
-    },
-    {
-      id: 1,
-      title: "title 1",
-      url: "124.jpg",
-      time: "5 phut truoc"
-    },
-    {
-      id: 1,
-      title: "title 1",
-      url: "124.jpg",
-      time: "5 phut truoc"
-    },
-    {
-      id: 1,
-      title: "title 1",
-      url: "124.jpg",
-      time: "5 phut truoc"
-    }
-  ]);
+  const [list, setList] = useState(null);
+
+  useEffect(() => {
+    axios.get("comics").then(res => {
+      setList(res.data.comics);
+    });
+  }, []);
 
   return (
     <>
-      {list.map((item, index) => {
-        return <ImageBox key={index} data={item} />;
-      })}
-      <Button style={{ margin: "auto" }} block>
+      {list &&
+        list.map((item, index) => {
+          return <ImageBox key={index} data={item} />;
+        })}
+      {/* <Button style={{ margin: "auto" }} block>
         Default
-      </Button>
+      </Button> */}
     </>
   );
 };
