@@ -7,9 +7,9 @@ const ImageList = props => {
   const [list, setList] = useState(null);
 
   useEffect(() => {
-    axios.get("comics").then(res => {
-      setList(res.data.comics);
-    });
+    // axios.get("comics").then(res => {
+    //   setList(res.data.comics);
+    // });
   }, []);
 
   return (
