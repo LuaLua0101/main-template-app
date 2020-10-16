@@ -1,7 +1,5 @@
 import * as firebase from "firebase"
-import "@firebase/messaging"
-import { notification, Icon } from "antd"
-import React from "react"
+import "firebase/auth";
 
 firebase.initializeApp({
   apiKey: "AIzaSyD7U24KhqiMqjQi6Ib6I86_obfPyaUhu84",
@@ -17,39 +15,6 @@ firebase.initializeApp({
 const db = firebase.firestore()
 const storage = firebase.storage()
 const messaging = firebase.messaging()
+const remoteConfig = firebase.remoteConfig();
 
-export { db, storage, messaging }
-
-const openNotification = (data) => {
-  notification.open({
-    message: data.title,
-    description: data.body,
-    icon: <Icon type="message" style={{ color: "#108ee9" }} />,
-  })
-}
-messaging.usePublicVapidKey(
-  "BMcTJsADWzGznVv31dvH1IajXCCmheyuLyRRAWkaOOivlbHJk2JUUlwv7GlZNGOztL3nGqmPkYIfrxvycHrd_o8"
-)
-messaging
-  .getToken()
-  .then((currentToken) => {
-    if (currentToken) {
-      console.log(currentToken)
-    } else {
-      // Show permission request.
-      console.log(
-        "No Instance ID token available. Request permission to generate one."
-      )
-    }
-  })
-  .catch((err) => {
-    console.log("An error occurred while retrieving token. ", err)
-  })
-
-messaging.onMessage((payload) => {
-  console.log("Message received. ", payload)
-  openNotification({
-    title: payload.notification.title,
-    body: payload.notification.body,
-  })
-})
+export { db, storage, messaging, remoteConfig }

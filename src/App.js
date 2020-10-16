@@ -3,7 +3,8 @@ import { GlobalStateProvider } from "./Store"
 import RouteMap from "./Route"
 import { BrowserRouter as Router } from "react-router-dom"
 import "antd/dist/antd.css"
-import { db, storage, messaging } from "./firebase"
+import { db, storage } from "./firebase"
+import './fcm'
 
 const storageRef = storage.ref()
 
@@ -28,8 +29,6 @@ const App = () => {
         // Uh-oh, an error occurred!
       })
   }, [])
-
-  useEffect(() => {}, [])
 
   return (
     <GlobalStateProvider>
