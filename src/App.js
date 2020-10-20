@@ -4,7 +4,7 @@ import RouteMap from "./Route"
 import { BrowserRouter as Router } from "react-router-dom"
 import "antd/dist/antd.css"
 import { db, storage } from "./firebase"
-import './fcm'
+import "./fcm"
 
 const storageRef = storage.ref()
 

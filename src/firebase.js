@@ -1,5 +1,5 @@
 import * as firebase from "firebase"
-import "firebase/auth";
+import "firebase/auth"
 
 firebase.initializeApp({
   apiKey: "AIzaSyD7U24KhqiMqjQi6Ib6I86_obfPyaUhu84",
@@ -15,6 +15,6 @@ firebase.initializeApp({
 const db = firebase.firestore()
 const storage = firebase.storage()
 const messaging = firebase.messaging()
-const remoteConfig = firebase.remoteConfig();
+const remoteConfig = firebase.remoteConfig()
 
 export { db, storage, messaging, remoteConfig }
