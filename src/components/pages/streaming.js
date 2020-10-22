@@ -1,13 +1,33 @@
 import React, { useState, useEffect } from "react"
 import Camera from "react-html5-camera-photo"
 import io from "socket.io-client"
+import Webcam from "react-webcam";
 
 const socket = io("http://localhost:8000")
+
+const videoConstraints = {
+  aspectRatio: 0.6666666667,
+  facingMode: "user"
+};
 
 const Streaming = (props) => {
   const [count, setCount] = useState(0)
   const [message, setMessage] = useState("")
   const [inRoom, setInRoom] = useState(false)
+  const [imgSrc, setImgSrc] = useState(null);
+  const webcamRef = React.useRef(null);
+  const mediaRecorderRef = React.useRef(null);
+  
+  useEffect(() => {
+    setInterval(() => {
+      const imageSrc = webcamRef.current.getScreenshot();
+      setImgSrc(imageSrc);
+    }, 1);
+
+    return () => {
+      clearInterval()
+    }
+  }, []);
 
   useEffect(() => {
     socket.on("hello", (payload) => {
@@ -56,11 +76,23 @@ const Streaming = (props) => {
 
   return (
     <>
-      <Camera
+      {/* <Camera
         onTakePhoto={(dataUri) => {
           handleTakePhoto(dataUri)
         }}
-      />
+      /> */}
+      <Webcam  videoConstraints={videoConstraints}
+        width={window.width / 2}
+        ref={webcamRef}
+        screenshotQuality={1}
+        onUserMedia={() => {
+
+        }}/>
+      {imgSrc && (
+        <img
+          src={imgSrc}
+        />
+      )}
       <header className="App-header">
         <h1>
           {inRoom && `You Have Entered The Room`}
