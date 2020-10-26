@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Camera from "react-html5-camera-photo"
 import io from "socket.io-client"
 import Webcam from "react-webcam";
 
@@ -10,24 +9,16 @@ const videoConstraints = {
   facingMode: "user"
 };
 
+const audioConstraints = {
+  aspectRatio: 0.6666666667,
+  facingMode: "user"
+};
+
 const Streaming = (props) => {
   const [count, setCount] = useState(0)
   const [message, setMessage] = useState("")
   const [inRoom, setInRoom] = useState(false)
-  const [imgSrc, setImgSrc] = useState(null);
   const webcamRef = React.useRef(null);
-  const mediaRecorderRef = React.useRef(null);
-  
-  useEffect(() => {
-    setInterval(() => {
-      const imageSrc = webcamRef.current.getScreenshot();
-      setImgSrc(imageSrc);
-    }, 1);
-
-    return () => {
-      clearInterval()
-    }
-  }, []);
 
   useEffect(() => {
     socket.on("hello", (payload) => {
@@ -59,7 +50,7 @@ const Streaming = (props) => {
   }, [])
 
   const handleInRoom = () => {
-    inRoom ? setInRoom(false) : setInRoom(true)
+    setInRoom(!inRoom)
   }
 
   const handleNewMessage = () => {
@@ -70,45 +61,28 @@ const Streaming = (props) => {
     setCount(count + 1)
   }
 
-  const handleTakePhoto = (dataUri) => {
-    console.log("takePhoto")
-  }
-
   return (
     <>
-      {/* <Camera
-        onTakePhoto={(dataUri) => {
-          handleTakePhoto(dataUri)
-        }}
-      /> */}
-      <Webcam  videoConstraints={videoConstraints}
-        width={window.width / 2}
+      <Webcam videoConstraints={videoConstraints}
+        audioConstraints={audioConstraints}
+        width={window.width / 10}
         ref={webcamRef}
         screenshotQuality={1}
-        onUserMedia={() => {
-
-        }}/>
-      {imgSrc && (
-        <img
-          src={imgSrc}
-        />
-      )}
-      <header className="App-header">
-        <h1>
-          {inRoom && `You Have Entered The Room`}
-          {!inRoom && `Outside Room`}
-        </h1>
-
-        <p>{count} messages have been emitted</p>
-        <p>{message} messages from server</p>
-
-        {inRoom && <button onClick={handleNewMessage}>Emit new message</button>}
-
-        <button onClick={handleInRoom}>
-          {inRoom && `Leave Room`}
-          {!inRoom && `Enter Room`}
-        </button>
-      </header>
+        audio={true}
+        onUserMedia={stream => {
+          console.log(stream)
+        }} />
+      <h1>
+        {inRoom && 'You Have Entered The Room'}
+        {!inRoom && 'Outside Room'}
+      </h1>
+      <p>{count} messages have been emitted</p>
+      <p>{message} messages from server</p>
+      {inRoom && <button onClick={handleNewMessage}>Emit new message</button>}
+      <button onClick={handleInRoom}>
+        {inRoom && 'Leave Room'}
+        {!inRoom && 'Enter Room'}
+      </button>
     </>
   )
 }

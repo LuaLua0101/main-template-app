@@ -6,6 +6,9 @@ const MainPage = DynamicImport(() => import("./components/pages/main"))
 const StreamingPage = DynamicImport(() =>
   import("./components/pages/streaming")
 )
+const CapturingPage = DynamicImport(() =>
+  import("./components/pages/captureVideo")
+)
 
 const RouteMap = () => {
   return (
@@ -13,6 +16,7 @@ const RouteMap = () => {
       <Route exact path="/" component={MainPage} />
       <Route exact path="/comic/:id" component={MainPage} />
       <Route exact path="/streaming" component={StreamingPage} />
+      <Route exact path="/capturing-video" component={CapturingPage} />
     </Switch>
   )
 }
