@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { GlobalStateProvider } from "./Store"
 import RouteMap from "./Route"
 import { BrowserRouter as Router } from "react-router-dom"
-import "antd/dist/antd.css"
+// import "antd/dist/antd.css"
 // import { db, storage } from "./firebase"
 // import "./fcm"
 
