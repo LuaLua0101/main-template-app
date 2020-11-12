@@ -12,6 +12,7 @@ const LeftContent = DynamicImport(() => import("../templates/leftContent"));
 
 export default function MainPage(props) {
   return <>
+  home
   {/* <button onClick={() => getRemoteConfigParam('init_param')}>Click remote</button>
  <button onClick={googleSignIn} >Sign in with Google</button>
  <button onClick={facebookSignIn} >Sign in with Facebook</button> */}

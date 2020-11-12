@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { GlobalStateProvider } from "./Store"
-import RouteMap from "./Route"
-import { BrowserRouter as Router } from "react-router-dom"
+import RouteMap from "./route"
 // import "antd/dist/antd.css"
 // import { db, storage } from "./firebase"
 // import "./fcm"
@@ -29,9 +28,7 @@ const App = () => {
 
   return (
     <GlobalStateProvider>
-      <Router>
-        <RouteMap />
-      </Router>
+      <RouteMap />
     </GlobalStateProvider>
   )
 }
