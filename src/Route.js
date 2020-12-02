@@ -30,6 +30,12 @@ const VictoryChartPage = DynamicImport(() =>
 const FacebookPage = DynamicImport(() =>
   import("./components/pages/facebook")
 )
+const SlideShowPage = DynamicImport(() =>
+  import("./components/pages/slideshow")
+)
+const PdfViewerPage = DynamicImport(() =>
+  import("./components/pages/pdfviewer")
+)
 const Page404 = DynamicImport(() =>
   import("./components/pages/404")
 )
@@ -48,6 +54,8 @@ const RouteMap = () =>(
       <Route path="/vis-chart" component={VisChartPage} />
       <Route path="/vic-chart" component={VictoryChartPage} />
       <Route path="/facebook" component={FacebookPage} />
+      <Route path="/slideshow" component={SlideShowPage} />
+      <Route path="/pdf" component={PdfViewerPage} />
       <Route component={Page404} />
     </Switch>
   </Router>
