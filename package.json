@@ -10,6 +10,7 @@
     "firebase": "^7.24.0",
     "handsontable": "^8.1.0",
     "json-loader": "^0.5.7",
+    "lightweight-charts": "^3.3.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "plotly.js": "^1.57.1",

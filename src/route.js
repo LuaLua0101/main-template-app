@@ -36,6 +36,9 @@ const SlideShowPage = DynamicImport(() =>
 const PdfViewerPage = DynamicImport(() =>
   import("./components/pages/pdfviewer")
 )
+const LightWeightChartPage = DynamicImport(() =>
+  import("./components/pages/lwChart")
+)
 const Page404 = DynamicImport(() =>
   import("./components/pages/404")
 )
@@ -51,6 +54,7 @@ const RouteMap = () =>(
       <Route path="/login" component={LoginPage} />
       <Route path="/deck" component={DeckPage} />
       <Route path="/plot" component={PlotlyPage} />
+      <Route path="/lw-chart" component={LightWeightChartPage} />
       <Route path="/vis-chart" component={VisChartPage} />
       <Route path="/vic-chart" component={VictoryChartPage} />
       <Route path="/facebook" component={FacebookPage} />
