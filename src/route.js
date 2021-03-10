@@ -39,6 +39,9 @@ const PdfViewerPage = DynamicImport(() =>
 const LightWeightChartPage = DynamicImport(() =>
   import("./components/pages/lwChart")
 )
+const StockPage = DynamicImport(() =>
+  import("./components/pages/stock")
+)
 const Page404 = DynamicImport(() =>
   import("./components/pages/404")
 )
@@ -60,6 +63,7 @@ const RouteMap = () =>(
       <Route path="/facebook" component={FacebookPage} />
       <Route path="/slideshow" component={SlideShowPage} />
       <Route path="/pdf" component={PdfViewerPage} />
+      <Route path="/stock" component={StockPage} />
       <Route component={Page404} />
     </Switch>
   </Router>
