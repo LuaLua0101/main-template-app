@@ -36,11 +36,17 @@ const SlideShowPage = DynamicImport(() =>
 const PdfViewerPage = DynamicImport(() =>
   import("./components/pages/pdfviewer")
 )
+const SCOViewerPage = DynamicImport(() =>
+  import("./components/pages/scoviewer")
+)
+const WavejsPage = DynamicImport(() =>
+  import("./components/pages/wavejs")
+)
 const Page404 = DynamicImport(() =>
   import("./components/pages/404")
 )
 
-const RouteMap = () =>(
+const RouteMap = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={MainPage} />
@@ -56,6 +62,8 @@ const RouteMap = () =>(
       <Route path="/facebook" component={FacebookPage} />
       <Route path="/slideshow" component={SlideShowPage} />
       <Route path="/pdf" component={PdfViewerPage} />
+      <Route path="/sco" component={SCOViewerPage} />
+      <Route path="/wavejs" component={WavejsPage} />
       <Route component={Page404} />
     </Switch>
   </Router>
