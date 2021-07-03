@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { GlobalStateProvider } from "./Store"
-import RouteMap from "./Route"
+import RouteMap from "./routeMap"
 // import "antd/dist/antd.css"
 // import { db, storage } from "./firebase"
 // import "./fcm"
