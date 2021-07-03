@@ -8,7 +8,7 @@
     "@thewillhuang/scorm-hook": "^4.0.4",
     "@upandgo/react-scorm-container": "^2.1.0",
     "antd": "^3.26.20",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "eslint-plugin-react-hooks": "^1.7.0",
     "firebase": "^7.24.0",
     "handsontable": "^8.1.0",
