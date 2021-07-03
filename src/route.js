@@ -42,6 +42,12 @@ const SCOViewerPage = DynamicImport(() =>
 const WavejsPage = DynamicImport(() =>
   import("./components/pages/wavejs")
 )
+const LightWeightChartPage = DynamicImport(() =>
+  import("./components/pages/lwChart")
+)
+const StockPage = DynamicImport(() =>
+  import("./components/pages/stock")
+)
 const Page404 = DynamicImport(() =>
   import("./components/pages/404")
 )
@@ -57,6 +63,7 @@ const RouteMap = () => (
       <Route path="/login" component={LoginPage} />
       <Route path="/deck" component={DeckPage} />
       <Route path="/plot" component={PlotlyPage} />
+      <Route path="/lw-chart" component={LightWeightChartPage} />
       <Route path="/vis-chart" component={VisChartPage} />
       <Route path="/vic-chart" component={VictoryChartPage} />
       <Route path="/facebook" component={FacebookPage} />
@@ -64,6 +71,7 @@ const RouteMap = () => (
       <Route path="/pdf" component={PdfViewerPage} />
       <Route path="/sco" component={SCOViewerPage} />
       <Route path="/wavejs" component={WavejsPage} />
+      <Route path="/stock" component={StockPage} />
       <Route component={Page404} />
     </Switch>
   </Router>
