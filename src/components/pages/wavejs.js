@@ -8,11 +8,11 @@ const LMS = () => {
   useEffect(() => {
     wave1.fromElement("audio_element_id", "canvas_id_1", {
       type: "shockwave",
-      colors: ["#00fdff", "#03e7e9", "#27646f"],
+      colors: ["#07e0ff", "#03e7e9", "#27646f"],
     });
     wave2.fromElement("audio_element_id", "canvas_id_2", {
       type: "flower",
-      colors: ["#00fdff"],
+      colors: ["#07e0ff"],
     });
   }, []);
 

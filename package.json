@@ -13,6 +13,8 @@
     "firebase": "^7.24.0",
     "handsontable": "^8.1.0",
     "json-loader": "^0.5.7",
+    "leaflet": "^1.7.1",
+    "leaflet-geosearch": "^3.5.0",
     "lightweight-charts": "^3.3.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
@@ -23,6 +25,7 @@
     "react-getscreen": "^1.1.3",
     "react-hooks-global-state": "^0.9.0",
     "react-html5-camera-photo": "^1.5.4",
+    "react-leaflet": "^3.2.1",
     "react-loadable": "^5.5.0",
     "react-plotly.js": "^2.5.0",
     "react-reveal": "^1.2.2",
@@ -58,17 +61,10 @@
       "react-hooks/exhaustive-deps": "warn"
     }
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {}
 }

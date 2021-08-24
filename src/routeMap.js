@@ -48,6 +48,9 @@ const LightWeightChartPage = DynamicImport(() =>
 const StockPage = DynamicImport(() =>
   import("./components/pages/stock")
 )
+const LeafMapPage = DynamicImport(() =>
+  import("./components/pages/leafLetMap")
+)
 const Page404 = DynamicImport(() =>
   import("./components/pages/404")
 )
@@ -72,6 +75,7 @@ const RouteMap = () => (
       <Route path="/sco" component={SCOViewerPage} />
       <Route path="/wavejs" component={WavejsPage} />
       <Route path="/stock" component={StockPage} />
+      <Route path="/leaflet-map" component={LeafMapPage} />
       <Route component={Page404} />
     </Switch>
   </Router>
