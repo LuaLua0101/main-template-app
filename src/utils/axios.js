@@ -1,9 +1,9 @@
 import axios from "axios";
 // const API_URL = "http://localhost:8080/api-komic/api/";
-const API_URL = "http://139.180.195.15/api-komic/api/";
+const API_URL = "https://api.github.com/repos/tannerlinsley/react-query";
 
 axios.defaults.baseURL = API_URL;
-axios.defaults.headers.common.Accept = "application/x-www-form-urlencoded";
+axios.defaults.headers.common.Accept = "application/json";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
 axios.interceptors.request.use(async function(config) {
