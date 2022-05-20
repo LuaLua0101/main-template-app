@@ -2,6 +2,7 @@
   "name": "react-hook",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lualua0101.github.io",
   "dependencies": {
     "@foobar404/wave": "^1.2.7",
     "@handsontable/react": "^4.0.0",
@@ -11,6 +12,7 @@
     "axios": "^0.19.2",
     "eslint-plugin-react-hooks": "^1.7.0",
     "firebase": "^7.24.0",
+    "gh-pages": "^4.0.0",
     "google-spreadsheet": "^3.1.15",
     "gun": "^0.2020.1235",
     "gun-react": "^0.1.8",
@@ -51,6 +53,8 @@
     "xlsx": "^0.16.8"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts --max_old_space_size=8192 start",
     "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts --max_old_space_size=8192 build",
     "test": "react-scripts test",
@@ -70,6 +74,5 @@
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ],
-  "devDependencies": {}
+  ]
 }
