@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react"
-import Axios from "axios"
-import "./stock.css"
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import "./stock.css";
 
 const fieldArr = [
   "b",
@@ -25,12 +25,12 @@ const fieldArr = [
   "u",
   "v",
   "w",
-  "x"
-]
+  "x",
+];
 
 const Stock = () => {
-  const [oData, setOData] = useState(_oData)
-  const [data, setData] = useState(_oData)
+  const [oData, setOData] = useState(_oData);
+  const [data, setData] = useState(_oData);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,22 +38,22 @@ const Stock = () => {
         "https://banggia.cafef.vn/stockhandler.ashx?center=undefined"
       ).then((res) => {
         // console.log(res.data)
-        setOData([...data])
-        setData(res.data)
-      })
-    }, 2000)
-  }, [])
+        setOData([...data]);
+        setData(res.data);
+      });
+    }, 2000);
+  }, []);
 
   const changeColor = (index, field) => {
-    const o = oData[index][field]
-    const n = data[index][field]
-    return o > n ? "red" : o < n ? "lime" : "#ffcc00"
-  }
+    const o = oData[index] ? oData[index][field] : 0;
+    const n = data[index] ? data[index][field] : 0;
+    return o > n ? "red" : o < n ? "lime" : "#ffcc00";
+  };
 
   return (
     <table>
       <thead>
-        <tr >
+        <tr>
           <th rowSpan={2}>Sàn</th>
           <th rowSpan={2}>Sàn</th>
           <th rowSpan={2}>Sàn</th>
@@ -66,7 +66,7 @@ const Stock = () => {
           <th>Sàn</th>
           <th>Sàn</th>
         </tr>
-        <tr >
+        <tr>
           <th>Sàn</th>
           <th>Sàn</th>
           <th>Sàn</th>
@@ -104,14 +104,14 @@ const Stock = () => {
                   </td>
                 ))}
               </tr>
-            )
+            );
           })}
       </tbody>
     </table>
-  )
-}
+  );
+};
 
-export default Stock
+export default Stock;
 
 var _oData = [
   {
@@ -12514,4 +12514,4 @@ var _oData = [
     tb: 0,
     ts: 0,
   },
-]
+];
